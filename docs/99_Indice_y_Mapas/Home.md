@@ -1,39 +1,63 @@
 # Quelonio — Biblia Cervecera Operativa
 
-Este vault reúne el conocimiento técnico, operativo y de diseño cervecero
-utilizado para **formular recetas**, **controlar procesos** y **diagnosticar defectos**
-en entornos artesanales e industriales.
+Este sitio reúne el conocimiento técnico, operativo y de diseño cervecero utilizado para **formular recetas**, **controlar procesos** y **diagnosticar defectos** en entornos artesanales e industriales.
 
 ---
 
-## 🔬 Módulos técnicos
+## Inicio del Sistema (Quelonio)
 
-- [[01_Agua]]
-- [[02_Malta]]
-- [[03_Levadura]]
-- [[04_Lupulo]]
-
----
-
-## ⚙️ Sistemas y estilos
-- [[05_Sistemas_IPA_Moderna]]
+- [START HERE — Orden de arranque](START_HERE.md)
+- [LAUNCHER — Selector de proyectos](LAUNCHER.md)
+- [SESSIONS LOG — Checkpoints](SESSIONS_LOG.md)
 
 ---
 
-## 🧪 Procesos & QA/QC
-- [[06_Procesos_QA_QC]]
+## Módulos técnicos
+
+- [Agua](../01_Agua/01_Agua.md)
+- [Malta](../02_Malta/02_Malta.md)
+- [Levadura](../03_Levadura/03_Levadura.md)
+- [Lúpulo](../04_Lupulo/04_Lupulo.md)
 
 ---
 
-## 🗺️ Índices y mapas
-- [[Mapa_General_Quelonio]]
+## Sistemas y estilos
+
+- [IPA Moderna](../05_Sistemas_IPA_Moderna/05_Sistemas_IPA_Moderna.md)
 
 ---
 
-## 📌 Cómo usar este vault
-- Empezá por **Agua → Malta → Lúpulo → Levadura**
-- Cruzá con **Procesos_QA_QC** para validar decisiones
-- Usá los índices por “Parte” para profundizar
+## Procesos & QA/QC
+
+- [Procesos QA/QC](../06_Procesos_QA_QC/06_Procesos_QA_QC.md)
+
+---
+
+## Módulos base de operación
+
+- [Fermentación y maduración](../07_Fermentacion_Maduracion/07_Fermentacion_Maduracion.md)
+- [Recetas y formulación](../08_Recetas_Formulacion/08_Recetas_Formulacion.md)
+- [Empaque y estabilidad](../09_Empaque_Estabilidad/09_Empaque_Estabilidad.md)
+- [Limpieza y sanitización](../10_Limpieza_Sanitizacion/10_Limpieza_Sanitizacion.md)
+- [Sensorial](../11_Sensorial/11_Sensorial.md)
+
+---
+
+## Índices y mapas
+
+- [Mapa general de Quelonio](Mapa_General_Quelonio.md)
+- [Índice total](Indice_Total.md)
+
+---
+
+## Cómo usar este sitio
+
+- Empezá por **Agua → Malta → Lúpulo → Levadura**.
+- Cruzá decisiones con **Procesos QA/QC** para validar.
+- Para profundizar, usá los **índices DEEP** por “Parte”.
+- Si estás buscando algo puntual, usá la **búsqueda** del sitio.
+
+---
 
 ## Accesos a contenido profundo (DEEP)
 

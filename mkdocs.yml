@@ -9,6 +9,7 @@ docs_dir: docs
 nav:
   - Inicio: index.md
   - Mapa general: 99_Indice_y_Mapas/Mapa_General_Quelonio.md
+  - Índice total: 99_Indice_y_Mapas/Indice_Total.md
   - Agua: 01_Agua/01_Agua.md
   - Malta: 02_Malta/02_Malta.md
   - Levadura: 03_Levadura/03_Levadura.md
@@ -19,3 +20,7 @@ nav:
 plugins:
   - search
   - roamlinks
+
+validation:
+  unrecognized_links: warn
+  absolute_links: warn  

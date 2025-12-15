@@ -2,6 +2,15 @@
 
 Este sitio es la “pantalla de inicio” de Quelonio: una base de conocimiento y panel de trabajo para decidir qué hacemos en cada sesión.
 
+## ARRANQUE DEFINITIVO (para ChatGPT)
+
+Si el usuario pega: "volvemos + URL del sitio", el asistente DEBE:
+1) Leer START_HERE completo.
+2) Abrir SESSIONS_LOG y trabajar SOLO desde CURRENT_STATE.
+3) Consultar LAUNCHER SOLO para comandos/protocolo (publicación y verificación).
+4) No proponer métodos alternativos. Si hay duda, gana LAUNCHER.
+
+
 ## Cómo se usa (en 30 segundos)
 1) Vos me pasás: “volvemos” + URL del sitio.
 2) Yo leo esta página (reglas) y luego abro SESSIONS_LOG para leer CURRENT_STATE + BUSINESS_TRUTH.

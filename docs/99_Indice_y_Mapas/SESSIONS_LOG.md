@@ -47,18 +47,19 @@ Regla de trazabilidad:
   3) Fuente (medición / planilla / cotización / cálculo / KB)
 
 Estado (marcar):
-- unit_economics_status: vigente | en revisión
-- ops_process_status: vigente | en revisión
-- recipes_specs_status: vigente | en revisión
-- qa_qc_status: vigente | en revisión
-- branding_comms_status: vigente | en revisión
-- last_truth_update: AAAA-MM-DD
+- unit_economics_status: en revisión
+- ops_process_status: en revisión
+- recipes_specs_status: en revisión
+- qa_qc_status: en revisión
+- branding_comms_status: en revisión
+- last_truth_update: 2025-12-15
 - truth_links (dónde vive lo vigente):
-  - Economía unitaria: (ruta/link)
-  - Operaciones y procesos: (ruta/link)
-  - Especificaciones recetas: (ruta/link)
-  - QA/QC: (ruta/link)
-  - Branding/comms: (ruta/link)
+  - Economía unitaria: ../98_Verdad_Negocio/01_Economia_Unitaria.md
+  - Operaciones y procesos: ../98_Verdad_Negocio/02_Operaciones.md
+  - Especificaciones recetas: ../98_Verdad_Negocio/03_Specs_Recetas.md
+  - QA/QC: ../98_Verdad_Negocio/04_QAQC.md
+  - Branding/comms: ../98_Verdad_Negocio/05_Branding_Comms.md
+
 
 ---
 
@@ -101,3 +102,40 @@ Estado (marcar):
 
 Regla “Temporal”:
 - Si el modo es Temporal, no se registra aquí, salvo que el usuario diga explícitamente “promover a permanente”.
+
+### Sesión: 2025-12-15
+- Modo: Continuar
+- Proyecto: Biblia
+- Objetivo de la sesión (1 frase): Consolidar OS Boot v1 (arranque determinístico + verdad de negocio)
+
+- Hecho (3–7 bullets):
+  - Se agregó CURRENT_STATE y BUSINESS_TRUTH a SESSIONS_LOG
+  - Se ajustó START_HERE al orden START_HERE → SESSIONS_LOG → LAUNCHER (fallback)
+  - Se ajustó LAUNCHER como fallback por CURRENT_STATE
+  - Se agregó checklist de publicación “solo comandos”
+
+- Archivos tocados (rutas):
+  - docs/99_Indice_y_Mapas/SESSIONS_LOG.md
+  - docs/99_Indice_y_Mapas/START_HERE.md
+  - docs/99_Indice_y_Mapas/LAUNCHER.md
+
+- Resultado verificable (ej. build strict OK / deploy OK / endpoint OK):
+  - Deploy OK: cambios visibles en la web (OS v1)
+
+- Pendientes inmediatos (máx 5):
+  1) Definir truth_links canónicos (Verdad de Negocio)
+  2) Crear stubs para verdad vigente (economía/ops/specs/qaqc/branding)
+  3) Completar BUSINESS_TRUTH_STATUS (vigente/en revisión + last_truth_update)
+
+- Próximo paso recomendado (1):
+  - Definir y escribir truth_links (aunque apunten a stubs)
+
+- Notas / decisiones (si aplica):
+  - Pages manda como “vigente”; planillas/cotizaciones son fuente y deben referenciarse
+
+- Actualizaciones de Verdad (si aplica; negocio):
+  - Qué queda vigente: OS Boot v1 como protocolo de trabajo
+  - Dónde quedó escrito (ruta/link): START_HERE + LAUNCHER + SESSIONS_LOG
+  - Fuente (medición/planilla/cotización/cálculo/KB): protocolo operativo
+  - Impacto (costos, calidad, plazo, ventas, riesgo): reduce pérdida de contexto y mejora trazabilidad
+

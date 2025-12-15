@@ -3,11 +3,11 @@
 Este sitio es la “pantalla de inicio” de Quelonio: una base de conocimiento y panel de trabajo para decidir qué hacemos en cada sesión.
 
 ## Cómo se usa (en 30 segundos)
-1) Vos me pasás: **“volvemos” + URL del sitio**.
-2) Yo leo esta página y luego abro el **LAUNCHER** (selector de proyectos).
-3) Te ofrezco 3 caminos: **Continuar / Nuevo / Temporal**.
-4) Trabajamos 1 paso por vez.
-5) Cerramos con un **Checkpoint** (para retomar sin perder contexto).
+1) Vos me pasás: “volvemos” + URL del sitio.
+2) Yo leo esta página (reglas) y luego abro SESSIONS_LOG para leer CURRENT_STATE + BUSINESS_TRUTH.
+3) Si CURRENT_STATE.project_active está definido: continúo ese proyecto directo (sin menú).
+4) Si CURRENT_STATE está vacío o pedís cambiar/crear proyecto: abro LAUNCHER (Continuar / Nuevo / Temporal).
+5) Cerramos con un Checkpoint: actualizo CURRENT_STATE + agrego la entrada de sesión.
 
 ## Regla de MODO (importante)
 - Si vos decís **“volvemos”**, continuamos con contexto como si ya conociéramos el proyecto y el historial.

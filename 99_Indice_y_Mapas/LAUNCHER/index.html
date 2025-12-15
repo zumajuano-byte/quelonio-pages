@@ -894,6 +894,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#orden-de-arranque-importante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orden de arranque (importante)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#a-continuar-si-ya-hay-proyecto-en-curso" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1000,10 +1011,19 @@
 
 
 <h1 id="launcher-selector-de-proyectos">LAUNCHER — Selector de proyectos</h1>
+<h2 id="orden-de-arranque-importante">Orden de arranque (importante)</h2>
+<ul>
+<li>Primero se lee: START_HERE (reglas del sistema).</li>
+<li>Segundo se lee: SESSIONS_LOG, se toma <code>CURRENT_STATE</code> y se continúa automático.</li>
+<li>Este LAUNCHER se usa SOLO si:
+  1) <code>CURRENT_STATE</code> está vacío/incompleto, o
+  2) el usuario pide explícitamente cambiar de proyecto, crear uno nuevo, o trabajar temporal.</li>
+</ul>
+<p>Link directo: Sessions Log (fuente de estado y verdad): ../SESSIONS_LOG/</p>
 <p>Elegí un modo:</p>
 <h2 id="a-continuar-si-ya-hay-proyecto-en-curso">A) Continuar (si ya hay proyecto en curso)</h2>
 <ul>
-<li>Continuar el último proyecto trabajado y aplicar su checklist de arranque.</li>
+<li>Por defecto: continuar el proyecto indicado en <code>SESSIONS_LOG &gt; CURRENT_STATE.project_active</code> (sin menú).</li>
 <li>Al final: generar Checkpoint.</li>
 </ul>
 <h2 id="b-nuevo-elegir-1-proyecto">B) Nuevo (elegir 1 proyecto)</h2>

@@ -894,6 +894,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#current_state-leer-esto-primero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CURRENT_STATE (leer esto primero)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business_truth-verdad-vigente-del-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BUSINESS_TRUTH (verdad vigente del negocio)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#plantilla-copiarpegar-por-sesion" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -939,19 +961,105 @@
 
 
 <h1 id="sessions-log-checkpoints">Sessions Log — Checkpoints</h1>
+<p>Este archivo cumple 3 funciones:
+1) Arranque determinístico: permite retomar contexto sin depender del mensaje del usuario.
+2) Bitácora: registra sesiones y resultados verificables.
+3) Trazabilidad: registra cambios en la “verdad vigente” del negocio (definiciones, supuestos, números, decisiones).</p>
+<hr />
+<h2 id="current_state-leer-esto-primero">CURRENT_STATE (leer esto primero)</h2>
+<ul>
+<li>last_updated: AAAA-MM-DD</li>
+<li>project_active: Biblia | Web+API | Latas</li>
+<li>mode_default: Continuar</li>
+<li>objective_now: (1 línea)</li>
+<li>next_3:
+  1)
+  2)
+  3)</li>
+<li>open_threads (máx 5):</li>
+<li></li>
+<li></li>
+<li></li>
+<li>pointers (links/rutas):</li>
+<li>launcher_or_overview: (ruta/link interno)</li>
+<li>last_session: AAAA-MM-DD</li>
+<li>key_files_or_paths: (rutas/URLs relevantes)</li>
+</ul>
+<p>Regla: si el usuario solo pega la URL, el asistente asume "Continuar" y toma el proyecto desde <code>project_active</code>.</p>
+<hr />
+<h2 id="business_truth-verdad-vigente-del-negocio">BUSINESS_TRUTH (verdad vigente del negocio)</h2>
+<p>Quelonio Pages es la fuente de verdad para:
+- Definiciones operativas (qué significa cada KPI, estándar, proceso).
+- Supuestos vigentes (costos, capacidades, restricciones, pricing, objetivos).
+- Decisiones aprobadas y su justificación.
+- Valores “vigentes” (aunque el cálculo viva en planillas o fuentes externas).</p>
+<p>Regla de trazabilidad:
+- Todo cambio relevante de verdad debe dejar:
+  1) Qué queda vigente (en texto)
+  2) Dónde quedó escrito (ruta/link)
+  3) Fuente (medición / planilla / cotización / cálculo / KB)</p>
+<p>Estado (marcar):
+- unit_economics_status: vigente | en revisión
+- ops_process_status: vigente | en revisión
+- recipes_specs_status: vigente | en revisión
+- qa_qc_status: vigente | en revisión
+- branding_comms_status: vigente | en revisión
+- last_truth_update: AAAA-MM-DD
+- truth_links (dónde vive lo vigente):
+  - Economía unitaria: (ruta/link)
+  - Operaciones y procesos: (ruta/link)
+  - Especificaciones recetas: (ruta/link)
+  - QA/QC: (ruta/link)
+  - Branding/comms: (ruta/link)</p>
+<hr />
 <h2 id="plantilla-copiarpegar-por-sesion">Plantilla (copiar/pegar por sesión)</h2>
 <h3 id="sesion-aaaa-mm-dd">Sesión: AAAA-MM-DD</h3>
 <ul>
 <li>Modo: Continuar / Nuevo / Temporal</li>
 <li>Proyecto: Biblia / Web+API / Latas / Temporal</li>
-<li>Objetivo de la sesión (1 frase):</li>
-<li>Hecho (3–7 bullets):</li>
-<li>Archivos tocados (rutas):</li>
-<li>Resultado verificable (ej. build strict OK / deploy OK / endpoint OK):</li>
-<li>Pendientes inmediatos (máx 5):</li>
-<li>Próximo paso recomendado (1):</li>
-<li>Notas / decisiones (si aplica):</li>
+<li>
+<p>Objetivo de la sesión (1 frase):</p>
+</li>
+<li>
+<p>Hecho (3–7 bullets):</p>
+</li>
+<li></li>
+<li></li>
+<li></li>
+<li>
+<p>Archivos tocados (rutas):</p>
+</li>
+<li></li>
+<li>
+<p>Resultado verificable (ej. build strict OK / deploy OK / endpoint OK):</p>
+</li>
+<li></li>
+<li>
+<p>Pendientes inmediatos (máx 5):
+  1)
+  2)
+  3)
+  4)
+  5)</p>
+</li>
+<li>
+<p>Próximo paso recomendado (1):</p>
+</li>
+<li></li>
+<li>
+<p>Notas / decisiones (si aplica):</p>
+</li>
+<li></li>
+<li>
+<p>Actualizaciones de Verdad (si aplica; negocio):</p>
+</li>
+<li>Qué queda vigente:</li>
+<li>Dónde quedó escrito (ruta/link):</li>
+<li>Fuente (medición/planilla/cotización/cálculo/KB):</li>
+<li>Impacto (costos, calidad, plazo, ventas, riesgo):</li>
 </ul>
+<p>Regla “Temporal”:
+- Si el modo es Temporal, no se registra aquí, salvo que el usuario diga explícitamente “promover a permanente”.</p>
 
 
 

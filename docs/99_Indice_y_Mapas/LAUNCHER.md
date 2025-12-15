@@ -1,9 +1,20 @@
 # LAUNCHER — Selector de proyectos
 
+## Orden de arranque (importante)
+
+- Primero se lee: START_HERE (reglas del sistema).
+- Segundo se lee: SESSIONS_LOG, se toma `CURRENT_STATE` y se continúa automático.
+- Este LAUNCHER se usa SOLO si:
+  1) `CURRENT_STATE` está vacío/incompleto, o
+  2) el usuario pide explícitamente cambiar de proyecto, crear uno nuevo, o trabajar temporal.
+
+Link directo: Sessions Log (fuente de estado y verdad): ../SESSIONS_LOG/
+
+
 Elegí un modo:
 
 ## A) Continuar (si ya hay proyecto en curso)
-- Continuar el último proyecto trabajado y aplicar su checklist de arranque.
+- Por defecto: continuar el proyecto indicado en `SESSIONS_LOG > CURRENT_STATE.project_active` (sin menú).
 - Al final: generar Checkpoint.
 
 ## B) Nuevo (elegir 1 proyecto)

@@ -6,6 +6,30 @@ Este archivo cumple 3 funciones:
 3) Trazabilidad: registra cambios en la “verdad vigente” del negocio (definiciones, supuestos, números, decisiones).
 
 ---
+## REGLAS DE TRABAJO (PERSISTENTES) — “Regla de oro”
+Objetivo: evitar ambigüedad entre “bibliografía” y “heurística operativa” durante la profundización.
+
+### Clasificación obligatoria de contenido
+- **(BIBLIO)**: afirmaciones/decisiones respaldadas por bibliografía (referencia: libro → capítulo → sección/página).
+- **(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)**: prácticas operativas útiles aún no ancladas a bibliografía dentro del vault.
+
+### Regla principal
+- **Ninguna HEURÍSTICA puede presentarse como BIBLIO.**  
+  Si no está citada, debe quedar rotulada como **(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)**.
+
+### Método de trabajo en 2 pasadas
+1) **Pasada 1 (Scaffolding funcional):** construir SOP/checklists/gates/logs operables, rotulando lo no citado como HEURÍSTICA.
+2) **Pasada 2 (Anclaje bibliográfico):** convertir cada HEURÍSTICA relevante en BIBLIO con cita exacta; si hay conflicto entre fuentes, se registra el conflicto.
+
+### Requisito de trazabilidad por DEEP
+- Cada DEEP debe incluir **“Matriz de afirmaciones”** con:
+  - Afirmación/decisión
+  - Tag (BIBLIO / HEURÍSTICA)
+  - Fuente (o PENDIENTE_BIBLIO)
+  - Métrica/criterio de validación (si es HEURÍSTICA)
+  - Estado (por citar / citado / en revisión)
+
+
 
 ## CURRENT_STATE (leer esto primero)
 - last_updated: 2025-12-15

@@ -54,11 +54,12 @@ Estado (marcar):
 - branding_comms_status: en revisión
 - last_truth_update: 2025-12-15
 - truth_links (dónde vive lo vigente):
-  - Economía unitaria: ../98_Verdad_Negocio/01_Economia_Unitaria.md
-  - Operaciones y procesos: ../98_Verdad_Negocio/02_Operaciones.md
-  - Especificaciones recetas: ../98_Verdad_Negocio/03_Specs_Recetas.md
-  - QA/QC: ../98_Verdad_Negocio/04_QAQC.md
-  - Branding/comms: ../98_Verdad_Negocio/05_Branding_Comms.md
+
+  - [Economía unitaria](../98_Verdad_Negocio/01_Economia_Unitaria.md)
+  - [Operaciones y procesos](../98_Verdad_Negocio/02_Operaciones.md)
+  - [Especificaciones recetas](../98_Verdad_Negocio/03_Specs_Recetas.md)
+  - [QA/QC](../98_Verdad_Negocio/04_QAQC.md)
+  - [Branding/comms](../98_Verdad_Negocio/05_Branding_Comms.md)
 
 
 ---

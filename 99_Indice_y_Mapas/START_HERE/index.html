@@ -990,11 +990,11 @@
 <h1 id="start-here-quelonio-orden-de-arranque">START HERE — Quelonio (Orden de arranque)</h1>
 <p>Este sitio es la “pantalla de inicio” de Quelonio: una base de conocimiento y panel de trabajo para decidir qué hacemos en cada sesión.</p>
 <h2 id="como-se-usa-en-30-segundos">Cómo se usa (en 30 segundos)</h2>
-<p>1) Vos me pasás: <strong>“volvemos” + URL del sitio</strong>.
-2) Yo leo esta página y luego abro el <strong>LAUNCHER</strong> (selector de proyectos).
-3) Te ofrezco 3 caminos: <strong>Continuar / Nuevo / Temporal</strong>.
-4) Trabajamos 1 paso por vez.
-5) Cerramos con un <strong>Checkpoint</strong> (para retomar sin perder contexto).</p>
+<p>1) Vos me pasás: “volvemos” + URL del sitio.
+2) Yo leo esta página (reglas) y luego abro SESSIONS_LOG para leer CURRENT_STATE + BUSINESS_TRUTH.
+3) Si CURRENT_STATE.project_active está definido: continúo ese proyecto directo (sin menú).
+4) Si CURRENT_STATE está vacío o pedís cambiar/crear proyecto: abro LAUNCHER (Continuar / Nuevo / Temporal).
+5) Cerramos con un Checkpoint: actualizo CURRENT_STATE + agrego la entrada de sesión.</p>
 <h2 id="regla-de-modo-importante">Regla de MODO (importante)</h2>
 <ul>
 <li>Si vos decís <strong>“volvemos”</strong>, continuamos con contexto como si ya conociéramos el proyecto y el historial.</li>

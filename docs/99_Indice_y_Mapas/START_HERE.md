@@ -40,7 +40,7 @@ Si el usuario pega: "volvemos + URL del sitio", el asistente DEBE:
 - Links en Markdown estándar (no Obsidian `[[ ]]`).
 - Links siempre con `/` (no usar `\`).
 - Si algo ya funciona, no se toca sin razón.
-- Lectura obligatoria: [Reglas de trabajo (Regla de oro)](99_Indice_y_Mapas/SESSIONS_LOG.md#reglas-de-trabajo-persistentes--regla-de-oro)
+- Lectura obligatoria: [Reglas de trabajo (Regla de oro)](../99_Indice_y_Mapas/SESSIONS_LOG.md#reglas-de-trabajo-persistentes--regla-de-oro)
 
 
 ## Publicación (checklist rápido)

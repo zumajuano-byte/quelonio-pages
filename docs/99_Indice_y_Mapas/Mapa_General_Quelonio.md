@@ -44,3 +44,8 @@ Procesos_QA_QC → Controla todo el flujo
 - Diseño de receta → Agua / Malta / Lúpulo
 - Problemas en cerveza → Procesos_QA_QC → Defectos
 - Estabilidad baja → Cold-side / Packaging
+
+## Método de trabajo (canónico)
+- [Contrato de Estructura](CONTRATO_ESTRUCTURA.md)
+- [Checklist de sesión — Construcción](CHECKLIST_SESION_CONSTRUCCION.md)
+

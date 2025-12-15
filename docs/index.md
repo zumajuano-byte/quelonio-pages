@@ -28,6 +28,8 @@ Este sitio es la versión navegable del vault de Obsidian, organizada para:
 - [Lúpulo](04_Lupulo/04_Lupulo.md)
 - [IPA Moderna](05_Sistemas_IPA_Moderna/05_Sistemas_IPA_Moderna.md)
 - [Procesos QA/QC](06_Procesos_QA_QC/06_Procesos_QA_QC.md)
+- [Verdad de Negocio](98_Verdad_Negocio/98_Verdad_Negocio.md)
+
 
 ---
 

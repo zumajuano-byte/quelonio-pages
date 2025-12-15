@@ -19,12 +19,11 @@ Este archivo cumple 3 funciones:
   3) Registrar primera sesión real (con “Actualizaciones de Verdad” si aplica) y completar BUSINESS_TRUTH_STATUS
 
 - open_threads (máx 5):
-  - START_HERE aún apunta a LAUNCHER como paso 2
-  - LAUNCHER aún no declara “fallback por CURRENT_STATE”
   - Definir truth_links canónicos por proyecto (negocio)
   - Revisar “Inicializando búsqueda” si queda colgado
   - (vacío)
-
+  - “Publicación: hacer visible y navegable el módulo 98_Verdad_Negocio (índice + links clicables)”
+ 
 - pointers (links/rutas):
   - launcher_or_overview: ../LAUNCHER/
   - last_session: 2025-12-15
@@ -55,12 +54,12 @@ Estado (marcar):
 - last_truth_update: 2025-12-15
 - truth_links (dónde vive lo vigente):
 
-  - [Economía unitaria](../98_Verdad_Negocio/01_Economia_Unitaria.md)
-  - [Operaciones y procesos](../98_Verdad_Negocio/02_Operaciones.md)
-  - [Especificaciones recetas](../98_Verdad_Negocio/03_Specs_Recetas.md)
-  - [QA/QC](../98_Verdad_Negocio/04_QAQC.md)
-  - [Branding/comms](../98_Verdad_Negocio/05_Branding_Comms.md)
-
+ - [98 — Verdad de Negocio (Índice)](98_Verdad_Negocio/98_Verdad_Negocio.md)
+- [Economía unitaria](98_Verdad_Negocio/01_Economia_Unitaria.md)
+- [Operaciones](98_Verdad_Negocio/02_Operaciones.md)
+- [Specs recetas](98_Verdad_Negocio/03_Specs_Recetas.md)
+- [QA/QC](98_Verdad_Negocio/04_QAQC.md)
+- [Branding/Comms](98_Verdad_Negocio/05_Branding_Comms.md)
 
 ---
 

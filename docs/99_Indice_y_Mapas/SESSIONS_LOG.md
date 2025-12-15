@@ -140,3 +140,45 @@ Regla “Temporal”:
   - Fuente (medición/planilla/cotización/cálculo/KB): protocolo operativo
   - Impacto (costos, calidad, plazo, ventas, riesgo): reduce pérdida de contexto y mejora trazabilidad
 
+### Sesión: 2025-12-15
+- Modo: Continuar
+- Proyecto: Biblia
+- Objetivo de la sesión (1 frase): Implementar OS Boot v1 y crear “Verdad vigente” linkeada desde BUSINESS_TRUTH
+
+- Hecho (3–7 bullets):
+  - Se consolidó el arranque determinístico (START_HERE → SESSIONS_LOG → LAUNCHER fallback)
+  - Se completó CURRENT_STATE con valores reales
+  - Se creó la carpeta 98_Verdad_Negocio con 5 stubs canónicos
+  - Se actualizaron truth_links en BUSINESS_TRUTH con links clickeables
+
+- Archivos tocados (rutas):
+  - docs/99_Indice_y_Mapas/START_HERE.md
+  - docs/99_Indice_y_Mapas/LAUNCHER.md
+  - docs/99_Indice_y_Mapas/SESSIONS_LOG.md
+  - docs/98_Verdad_Negocio/01_Economia_Unitaria.md
+  - docs/98_Verdad_Negocio/02_Operaciones.md
+  - docs/98_Verdad_Negocio/03_Specs_Recetas.md
+  - docs/98_Verdad_Negocio/04_QAQC.md
+  - docs/98_Verdad_Negocio/05_Branding_Comms.md
+
+- Resultado verificable (ej. build strict OK / deploy OK / endpoint OK):
+  - SESSIONS_LOG muestra CURRENT_STATE + BUSINESS_TRUTH con links funcionales
+
+- Pendientes inmediatos (máx 5):
+  1) Completar contenido “real” de 01_Economia_Unitaria (valores vigentes + fuentes)
+  2) Definir estándares mínimos concretos en 04_QAQC (umbrales)
+  3) Crear “Índice de recetas vigentes” y poblar al menos 1 receta (03_Specs_Recetas)
+  4) Alinear Operaciones con SOPs reales (02_Operaciones)
+  5) Definir reglas finales de claims/tono (05_Branding_Comms)
+
+- Próximo paso recomendado (1):
+  - Completar 01_Economia_Unitaria con 5–10 valores vigentes y link a la fuente (planilla/cotización)
+
+- Notas / decisiones (si aplica):
+  - Pages manda como vigente; fuentes externas se referencian y se promueven solo vía actualización aquí
+
+- Actualizaciones de Verdad (si aplica; negocio):
+  - Qué queda vigente: OS Boot v1 + ubicación canónica de “Verdad vigente” en 98_Verdad_Negocio
+  - Dónde quedó escrito (ruta/link): BUSINESS_TRUTH → truth_links (SESSIONS_LOG) + 98_Verdad_Negocio/*
+  - Fuente (medición/planilla/cotización/cálculo/KB): decisión operativa del sistema
+  - Impacto (costos, calidad, plazo, ventas, riesgo): reduce pérdida de contexto y habilita trazabilidad de decisiones

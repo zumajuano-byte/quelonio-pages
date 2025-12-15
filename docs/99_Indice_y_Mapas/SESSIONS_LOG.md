@@ -54,12 +54,13 @@ Estado (marcar):
 - last_truth_update: 2025-12-15
 - truth_links (dónde vive lo vigente):
 
-- [98 — Verdad de Negocio (Índice)](98_Verdad_Negocio/98_Verdad_Negocio.md)
-- [Economía unitaria](98_Verdad_Negocio/01_Economia_Unitaria.md)
-- [Operaciones](98_Verdad_Negocio/02_Operaciones.md)
-- [Specs recetas](98_Verdad_Negocio/03_Specs_Recetas.md)
-- [QA/QC](98_Verdad_Negocio/04_QAQC.md)
-- [Branding/Comms](98_Verdad_Negocio/05_Branding_Comms.md)
+- [98 — Verdad de Negocio (Índice)](../98_Verdad_Negocio/98_Verdad_Negocio.md)
+- [Economía unitaria](../98_Verdad_Negocio/01_Economia_Unitaria.md)
+- [Operaciones y procesos](../98_Verdad_Negocio/02_Operaciones.md)
+- [Especificaciones recetas](../98_Verdad_Negocio/03_Specs_Recetas.md)
+- [QA/QC](../98_Verdad_Negocio/04_QAQC.md)
+- [Branding/comms](../98_Verdad_Negocio/05_Branding_Comms.md)
+
 
 ---
 

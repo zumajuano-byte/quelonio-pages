@@ -968,24 +968,33 @@
 <hr />
 <h2 id="current_state-leer-esto-primero">CURRENT_STATE (leer esto primero)</h2>
 <ul>
-<li>last_updated: AAAA-MM-DD</li>
-<li>project_active: Biblia | Web+API | Latas</li>
+<li>last_updated: 2025-12-15</li>
+<li>project_active: Biblia</li>
 <li>mode_default: Continuar</li>
-<li>objective_now: (1 línea)</li>
-<li>next_3:
-  1)
-  2)
-  3)</li>
-<li>open_threads (máx 5):</li>
-<li></li>
-<li></li>
-<li></li>
-<li>pointers (links/rutas):</li>
-<li>launcher_or_overview: (ruta/link interno)</li>
-<li>last_session: AAAA-MM-DD</li>
-<li>key_files_or_paths: (rutas/URLs relevantes)</li>
+<li>objective_now: Cerrar OS Boot v1 (arranque determinístico + fuente de verdad de negocio)</li>
+<li>
+<p>next_3:
+  1) Alinear START_HERE para que el orden sea START_HERE → SESSIONS_LOG → LAUNCHER (solo fallback)
+  2) Alinear LAUNCHER como fallback (no menú por defecto) + link directo a SESSIONS_LOG
+  3) Registrar primera sesión real con “Actualizaciones de Verdad” (si aplica) y dejar BUSINESS_TRUTH en estado “en revisión” con links</p>
+</li>
+<li>
+<p>open_threads (máx 5):</p>
+</li>
+<li>START_HERE aún describe arranque por LAUNCHER (hay que corregirlo)</li>
+<li>LAUNCHER aún no declara “fallback por CURRENT_STATE”</li>
+<li>Definir truth_links canónicos por proyecto (negocio)</li>
+<li>Revisar “Inicializando búsqueda” (si queda colgado en navegadores)</li>
+<li>
+<p>(vacío)</p>
+</li>
+<li>
+<p>pointers (links/rutas):</p>
+</li>
+<li>launcher_or_overview: ../LAUNCHER/</li>
+<li>last_session: 2025-12-15</li>
+<li>key_files_or_paths: docs/99_Indice_y_Mapas/START_HERE.md; docs/99_Indice_y_Mapas/SESSIONS_LOG.md; docs/99_Indice_y_Mapas/LAUNCHER.md</li>
 </ul>
-<p>Regla: si el usuario solo pega la URL, el asistente asume "Continuar" y toma el proyecto desde <code>project_active</code>.</p>
 <hr />
 <h2 id="business_truth-verdad-vigente-del-negocio">BUSINESS_TRUTH (verdad vigente del negocio)</h2>
 <p>Quelonio Pages es la fuente de verdad para:

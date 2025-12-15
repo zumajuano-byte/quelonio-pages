@@ -15,5 +15,5 @@ Un método simple para catar, registrar y comparar lotes sin que dependa del hum
 4) Final: retrogusto (qué queda).
 5) Registrar 3 cosas: “me gusta”, “no me gusta”, “sospecha”.
 
-## Placeholder DEEP (más adelante)
-Rueda de defectos, ejemplos, y plantillas de registro por estilo.
+## Parte DEEP (profundización)
+- [DEEP v1 — Sensorial (protocolo + defectos guía + liberación + feedback al Spec)](DEEP/01_DEEP_Sensorial_v1.md)

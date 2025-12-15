@@ -8,26 +8,31 @@ Este archivo cumple 3 funciones:
 ---
 
 ## CURRENT_STATE (leer esto primero)
-
 - last_updated: 2025-12-15
 - project_active: Biblia
 - mode_default: Continuar
-- objective_now: Consolidar OS Boot v1 (arranque determinístico + verdad de negocio) y validar retoma sin literalidad
+- objective_now: Profundización v1 (estructura funcional end-to-end) — Specs → Fermentación/Maduración → Limpieza/Sanitización → Empaque/Estabilidad (+Log) → Sensorial/Liberación
 - next_3:
-  1) Actualizar START_HERE para que el orden sea START_HERE → SESSIONS_LOG → LAUNCHER (solo fallback)
-  2) Actualizar LAUNCHER para que “Continuar” use CURRENT_STATE por defecto
-  3) Registrar primera sesión real (con “Actualizaciones de Verdad” si aplica) y completar BUSINESS_TRUTH_STATUS
-
+  1) Verificar build strict + deploy (cero warnings) y validar navegación/links DEEP en web
+  2) Iniciar “pasada 2” de anclaje bibliográfico: convertir HEURÍSTICAS a BIBLIO (refs libro→capítulo→sección/página)
+  3) Crear 1 Spec real completo (v1.0) + 1 Lote ejemplo usando los logs (para demostrar operación end-to-end)
 - open_threads (máx 5):
-  - Definir truth_links canónicos por proyecto (negocio)
-  - Revisar “Inicializando búsqueda” si queda colgado
-  - (vacío)
-  - “Publicación: hacer visible y navegable el módulo 98_Verdad_Negocio (índice + links clicables)”
- 
+  - Anclaje bibliográfico: definir formato de cita y ubicación de referencias por módulo
+  - Completar tolerancias iniciales del Spec (OG/FG/ABV/CO2/pH) con datos y/o bibliografía
+  - Definir umbrales mínimos “medibles” para liberación (Gate D) y retención
+  - Protocolos anti-oxidación: formalizar método elegido (sin optimización aún)
+  - Estabilidad: definir rutina mínima Día 0/7/14/30 y criterios de “No OK”
 - pointers (links/rutas):
   - launcher_or_overview: ../LAUNCHER/
   - last_session: 2025-12-15
-  - key_files_or_paths: docs/99_Indice_y_Mapas/START_HERE.md; docs/99_Indice_y_Mapas/SESSIONS_LOG.md; docs/99_Indice_y_Mapas/LAUNCHER.md
+  - key_files_or_paths:
+    - docs/08_Recetas_Formulacion/DEEP/01_DEEP_Recetas_Specs_v1.md
+    - docs/07_Fermentacion_Maduracion/DEEP/01_DEEP_Fermentacion_Maduracion_v1.md
+    - docs/10_Limpieza_Sanitizacion/DEEP/01_DEEP_Limpieza_Sanitizacion_v1.md
+    - docs/09_Empaque_Estabilidad/DEEP/01_DEEP_Empaque_Estabilidad_v1.md
+    - docs/09_Empaque_Estabilidad/DEEP/TP_Log_Envasado_y_Estabilidad.md
+    - docs/11_Sensorial/DEEP/01_DEEP_Sensorial_v1.md
+    - docs/00_Templates/TP_SpecSheet_Cerveza.md
 
 ---
 
@@ -182,3 +187,42 @@ Regla “Temporal”:
   - Dónde quedó escrito (ruta/link): BUSINESS_TRUTH → truth_links (SESSIONS_LOG) + 98_Verdad_Negocio/*
   - Fuente (medición/planilla/cotización/cálculo/KB): decisión operativa del sistema
   - Impacto (costos, calidad, plazo, ventas, riesgo): reduce pérdida de contexto y habilita trazabilidad de decisiones
+
+
+### Sesión: 2025-12-15
+
+- Modo: Continuar
+- Proyecto: Biblia
+- Objetivo de la sesión (1 frase): Profundización v1 — crear estructura DEEP funcional end-to-end + template de log para empaque/estabilidad
+
+- Hecho (3–7 bullets):
+  - Se creó DEEP v1 de Recetas/Specs con targets, gates y versionado (scaffolding HEURÍSTICA/BIBLIO)
+  - Se creó DEEP v1 de Fermentación/Maduración con rutina, árbol de decisiones y gates
+  - Se creó DEEP v1 de Limpieza/Sanitización con SOP, CIP y verificación mínima
+  - Se creó DEEP v1 de Empaque/Estabilidad con SOP, checklist anti-oxidación y liberación
+  - Se creó Template de Log de Envasado y Estabilidad (retención 0/7/14/30 + Gate D)
+  - Se creó DEEP v1 de Sensorial orientado a liberación y feedback controlado al Spec
+  - Se linkearon todos los DEEP desde sus módulos base
+
+- Archivos tocados (rutas):
+  - docs/08_Recetas_Formulacion/DEEP/01_DEEP_Recetas_Specs_v1.md
+  - docs/07_Fermentacion_Maduracion/DEEP/01_DEEP_Fermentacion_Maduracion_v1.md
+  - docs/10_Limpieza_Sanitizacion/DEEP/01_DEEP_Limpieza_Sanitizacion_v1.md
+  - docs/09_Empaque_Estabilidad/DEEP/01_DEEP_Empaque_Estabilidad_v1.md
+  - docs/09_Empaque_Estabilidad/DEEP/TP_Log_Envasado_y_Estabilidad.md
+  - docs/11_Sensorial/DEEP/01_DEEP_Sensorial_v1.md
+  - docs/00_Templates/TP_SpecSheet_Cerveza.md
+  - (y módulos base linkeados: 07/08/09/10/11)
+
+- Resultado verificable (ej. build strict OK / deploy OK / endpoint OK):
+  - Archivos creados y links DEEP confirmados por el usuario; pendiente validar deploy/build strict
+
+- Pendientes inmediatos (máx 5):
+  1) Ejecutar build strict + deploy y validar links en web
+  2) Definir formato de citas bibliográficas y empezar anclaje (pasada 2)
+  3) Completar tolerancias iniciales del Spec con datos/biblio
+  4) Crear 1 Spec real v1.0 y un ejemplo de Lote usando logs
+  5) Definir criterios mínimos de liberación (Gate D) con umbrales medibles
+
+- Próximo paso recomendado (1):
+  - Deploy + verificación web; luego iniciar anclaje bibliográfico desde “Empaque/Estabilidad” y “Fermentación/Maduración”

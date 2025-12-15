@@ -18,5 +18,5 @@ La maduración es el “acomodo final”: clarifica, limpia perfiles y estabiliz
 - [Conceptos base](Conceptos_base.md)
 - [Control de fermentación](Control_de_fermentacion.md)
 
-## Placeholder DEEP (más adelante)
-Cuando esté listo, acá agregamos una “Parte DEEP” (parte profunda) con guías paso a paso y casos reales.
+## Parte DEEP (profundización)
+- [DEEP v1 — Fermentación y maduración (SOP + rutina + gates + decisiones)](DEEP/01_DEEP_Fermentacion_Maduracion_v1.md)

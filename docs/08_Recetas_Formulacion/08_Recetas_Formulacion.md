@@ -11,5 +11,5 @@ Este módulo es para diseñar y ajustar recetas sin perderse: qué cambia el cue
 ## Páginas (base)
 - [Cálculos rápidos](Calculos_rapidos.md)
 
-## Placeholder DEEP (más adelante)
-Parte profunda con: escalado, eficiencia, perfiles por estilo, y “receta → proceso”.
+## Parte DEEP (profundización)
+- [DEEP v1 — Recetas y Specs (definición vigente + tolerancias + versionado)](DEEP/01_DEEP_Recetas_Specs_v1.md)

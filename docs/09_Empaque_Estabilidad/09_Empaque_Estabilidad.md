@@ -11,3 +11,7 @@ Una cerveza excelente puede arruinarse en 48 horas si entra oxígeno o si se cal
 
 ## Placeholder DEEP (más adelante)
 Parte profunda con: proceso de enlatado, purga, control de oxígeno, y checklist de línea.
+
+## Parte DEEP (profundización)
+- [DEEP v1 — Empaque y estabilidad (SOP + checklist + liberación)](DEEP/01_DEEP_Empaque_Estabilidad_v1.md)
+

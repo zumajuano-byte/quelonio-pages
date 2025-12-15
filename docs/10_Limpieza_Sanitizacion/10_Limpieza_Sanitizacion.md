@@ -12,5 +12,5 @@ Sin limpieza consistente, QA/QC se vuelve “apagar incendios”.
 - Registrar: qué químico, concentración, tiempo de contacto y enjuague (si aplica).
 - Verificar olores/viscosidad/restos antes de usar.
 
-## Placeholder DEEP (más adelante)
-Parte profunda con: CIP (limpieza en circuito), químicos, concentraciones, tiempos y verificación.
+## Parte DEEP (profundización)
+- [DEEP v1 — Limpieza y sanitización (SOP + CIP + verificación + registros)](DEEP/01_DEEP_Limpieza_Sanitizacion_v1.md)

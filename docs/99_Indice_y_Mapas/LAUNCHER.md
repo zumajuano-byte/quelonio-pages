@@ -1,5 +1,9 @@
 # LAUNCHER — Selector de proyectos
 
+## METHOD LOCK
+Para GitHub Pages de este repo: publicar = mkdocs gh-deploy --force (canónico). No mezclar con otros métodos.
+
+
 ## Orden de arranque (importante)
 
 - Primero se lee: START_HERE (reglas del sistema).

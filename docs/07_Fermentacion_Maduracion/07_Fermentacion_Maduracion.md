@@ -20,3 +20,4 @@ La maduración es el “acomodo final”: clarifica, limpia perfiles y estabiliz
 
 ## Parte DEEP (profundización)
 - [DEEP v1 — Fermentación y maduración (SOP + rutina + gates + decisiones)](DEEP/01_DEEP_Fermentacion_Maduracion_v1.md)
+- [Fermentación y Maduración (DEEP)](DEEP/00_INDEX.md)

@@ -15,3 +15,5 @@ Parte profunda con: proceso de enlatado, purga, control de oxígeno, y checklist
 ## Parte DEEP (profundización)
 - [DEEP v1 — Empaque y estabilidad (SOP + checklist + liberación)](DEEP/01_DEEP_Empaque_Estabilidad_v1.md)
 
+## DEEP
+- [Índice DEEP — Empaque & Estabilidad](DEEP/...00_INDEX.md)

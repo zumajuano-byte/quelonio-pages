@@ -49,3 +49,7 @@ Procesos_QA_QC → Controla todo el flujo
 - [Contrato de Estructura](CONTRATO_ESTRUCTURA.md)
 - [Checklist de sesión — Construcción](CHECKLIST_SESION_CONSTRUCCION.md)
 
+## Estructura canónica
+- [Contrato de Estructura](CONTRATO_ESTRUCTURA.md)
+- [Checklist de sesión](CHECKLIST_SESION_CONSTRUCCION.md)
+

@@ -35,28 +35,40 @@ Objetivo: evitar ambigüedad entre “bibliografía” y “heurística operativ
 - last_updated: 2025-12-15
 - project_active: Biblia
 - mode_default: Continuar
-- objective_now: Profundización v1 (estructura funcional end-to-end) — Specs → Fermentación/Maduración → Limpieza/Sanitización → Empaque/Estabilidad (+Log) → Sensorial/Liberación
+- objective_now: Profundización v1 (estructura funcional end-to-end) — Specs → Fermentación/Maduración → Limpieza/Sanitización → Empaque/Estabilidad (+Log) → Sensorial/Liberación. (Hoy se cerró normalización de entrypoints + arranque definitivo)
 - next_3:
-  1) Verificar build strict + deploy (cero warnings) y validar navegación/links DEEP en web
-  2) Iniciar “pasada 2” de anclaje bibliográfico: convertir HEURÍSTICAS a BIBLIO (refs libro→capítulo→sección/página)
-  3) Crear 1 Spec real completo (v1.0) + 1 Lote ejemplo usando los logs (para demostrar operación end-to-end)
+  1) Verificar build strict + deploy (cero warnings) y validar navegación/links DEEP en web (entradas canónicas `00_INDEX.md`)
+   2) Publicar cambios de arranque definitivo (START_HERE + LAUNCHER + SESSIONS_LOG) y validar en web que el arranque muestra LAUNCHER siempre
+  3) Iniciar “pasada 2” de anclaje bibliográfico: convertir HEURÍSTICAS a BIBLIO (refs libro→capítulo→sección/página)
 - open_threads (máx 5):
+  - Auditoría de redundancias/solapamientos: definir qué es canónico vs “puentes” (ej. Empaque en QA/QC vs Módulo 09)
   - Anclaje bibliográfico: definir formato de cita y ubicación de referencias por módulo
   - Completar tolerancias iniciales del Spec (OG/FG/ABV/CO2/pH) con datos y/o bibliografía
   - Definir umbrales mínimos “medibles” para liberación (Gate D) y retención
-  - Protocolos anti-oxidación: formalizar método elegido (sin optimización aún)
   - Estabilidad: definir rutina mínima Día 0/7/14/30 y criterios de “No OK”
 - pointers (links/rutas):
   - launcher_or_overview: ../LAUNCHER/
   - last_session: 2025-12-15
   - key_files_or_paths:
+    - docs/99_Indice_y_Mapas/START_HERE.md
+    - docs/99_Indice_y_Mapas/LAUNCHER.md
+    - docs/99_Indice_y_Mapas/SESSIONS_LOG.md
+    - docs/99_Indice_y_Mapas/CONTRATO_ESTRUCTURA.md
+    - docs/99_Indice_y_Mapas/CHECKLIST_SESION_CONSTRUCCION.md
+    - docs/08_Recetas_Formulacion/DEEP/00_INDEX.md
     - docs/08_Recetas_Formulacion/DEEP/01_DEEP_Recetas_Specs_v1.md
+    - docs/07_Fermentacion_Maduracion/DEEP/00_INDEX.md
     - docs/07_Fermentacion_Maduracion/DEEP/01_DEEP_Fermentacion_Maduracion_v1.md
+    - docs/10_Limpieza_Sanitizacion/DEEP/00_INDEX.md
     - docs/10_Limpieza_Sanitizacion/DEEP/01_DEEP_Limpieza_Sanitizacion_v1.md
+    - docs/09_Empaque_Estabilidad/DEEP/00_INDEX.md
     - docs/09_Empaque_Estabilidad/DEEP/01_DEEP_Empaque_Estabilidad_v1.md
     - docs/09_Empaque_Estabilidad/DEEP/TP_Log_Envasado_y_Estabilidad.md
+    - docs/11_Sensorial/DEEP/00_INDEX.md
     - docs/11_Sensorial/DEEP/01_DEEP_Sensorial_v1.md
     - docs/00_Templates/TP_SpecSheet_Cerveza.md
+   - last_commit_note: dc00fff (normalización entrypoints publicada) + cambios locales pendientes (arranque definitivo / launcher / sessions_log) aún sin publicar
+
 
 ---
 

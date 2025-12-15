@@ -17,6 +17,10 @@ Este sitio es la versión navegable del vault de Obsidian, organizada para:
 - [LAUNCHER — Selector de proyectos](99_Indice_y_Mapas/LAUNCHER.md)
 - [SESSIONS LOG — Checkpoints](99_Indice_y_Mapas/SESSIONS_LOG.md)
 
+
+## Método (canónico)
+- [Contrato de Estructura](99_Indice_y_Mapas/CONTRATO_ESTRUCTURA.md)
+
 ---
 
 ## Módulos principales

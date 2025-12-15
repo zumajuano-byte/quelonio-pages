@@ -6,6 +6,12 @@ last_updated: 2025-12-15
 
 # Contrato de Estructura — Biblia Quelonio (CANÓNICO)
 
+## Regla — EntryPoints (NORMALIZACIÓN)
+- Toda carpeta `DEEP/` y toda carpeta `*_DEEP/` debe tener `00_INDEX.md`.
+- `00_INDEX.md` es el punto de entrada canónico.
+- Si existe un índice histórico (`00_Indice_*.md`, `00_INDEX_QAQC_Parte6.md` o `01_DEEP_*_v1.md`), no se renombra: `00_INDEX.md` actúa como alias y lo linkea.
+
+
 ## Propósito
 Eliminar inconsistencias entre sesiones. A partir de este contrato:
 - toda nueva carpeta/archivo/link sigue reglas fijas,

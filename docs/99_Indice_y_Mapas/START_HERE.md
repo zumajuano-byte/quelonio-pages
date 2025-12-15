@@ -6,9 +6,10 @@ Este sitio es la “pantalla de inicio” de Quelonio: una base de conocimiento 
 
 Si el usuario pega: "volvemos + URL del sitio", el asistente DEBE:
 1) Leer START_HERE completo.
-2) Abrir SESSIONS_LOG y trabajar SOLO desde CURRENT_STATE.
-3) Consultar LAUNCHER SOLO para comandos/protocolo (publicación y verificación).
-4) No proponer métodos alternativos. Si hay duda, gana LAUNCHER.
+2) Siempre mostrar LAUNCHER al inicio (aunque exista project_active), para que el usuario elija: continuar activo, elegir otro, nuevo o temporal.
+3) Abrir SESSIONS_LOG y trabajar SOLO desde CURRENT_STATE.
+4) Usar LAUNCHER como fuente única del menú y del protocolo (publicación/verificación). No inventar opciones fuera de LAUNCHER.
+5) No proponer métodos alternativos. Si hay duda, gana LAUNCHER.
 
 
 ## Cómo se usa (en 30 segundos)

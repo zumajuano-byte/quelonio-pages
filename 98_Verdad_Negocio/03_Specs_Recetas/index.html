@@ -19,7 +19,7 @@
     
     
       
-        <title>Sessions Log — Checkpoints - Quelonio — Biblia Cervecera</title>
+        <title>Verdad vigente — Especificaciones de Recetas - Quelonio — Biblia Cervecera</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sessions-log-checkpoints" class="md-skip">
+        <a href="#verdad-vigente-especificaciones-de-recetas" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sessions Log — Checkpoints
+              Verdad vigente — Especificaciones de Recetas
             
           </span>
         </div>
@@ -219,7 +219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Mapa_General_Quelonio/" class="md-nav__link">
+      <a href="../../99_Indice_y_Mapas/Mapa_General_Quelonio/" class="md-nav__link">
         
   
   
@@ -246,7 +246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Indice_Total/" class="md-nav__link">
+      <a href="../../99_Indice_y_Mapas/Indice_Total/" class="md-nav__link">
         
   
   
@@ -894,10 +894,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#current_state-leer-esto-primero" class="md-nav__link">
+  <a href="#proposito" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CURRENT_STATE (leer esto primero)
+        Propósito
       
     </span>
   </a>
@@ -905,10 +905,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#business_truth-verdad-vigente-del-negocio" class="md-nav__link">
+  <a href="#regla-de-verdad" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BUSINESS_TRUTH (verdad vigente del negocio)
+        Regla de verdad
       
     </span>
   </a>
@@ -916,33 +916,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#plantilla-copiarpegar-por-sesion" class="md-nav__link">
+  <a href="#estado" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Plantilla (copiar/pegar por sesión)
+        Estado
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Plantilla (copiar/pegar por sesión)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificacion-canonica-plantilla-por-receta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Especificación canónica (plantilla por receta)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Especificación canónica (plantilla por receta)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sesion-aaaa-mm-dd" class="md-nav__link">
+  <a href="#ej-apa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sesión: AAAA-MM-DD
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sesion-2025-12-15" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sesión: 2025-12-15
+        (ej. APA)
       
     </span>
   </a>
@@ -951,6 +951,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-de-recetas-vigentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índice de recetas vigentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
   
 </li>
       
@@ -971,170 +993,54 @@
 
 
 
-<h1 id="sessions-log-checkpoints">Sessions Log — Checkpoints</h1>
-<p>Este archivo cumple 3 funciones:
-1) Arranque determinístico: permite retomar contexto sin depender del mensaje del usuario.
-2) Bitácora: registra sesiones y resultados verificables.
-3) Trazabilidad: registra cambios en la “verdad vigente” del negocio (definiciones, supuestos, números, decisiones).</p>
-<hr />
-<h2 id="current_state-leer-esto-primero">CURRENT_STATE (leer esto primero)</h2>
+<h1 id="verdad-vigente-especificaciones-de-recetas">Verdad vigente — Especificaciones de Recetas</h1>
+<h2 id="proposito">Propósito</h2>
+<p>Definir qué es “vigente” para cada receta/estilo (parámetros objetivo + tolerancias) para que producción y QA/QC tengan una referencia única.</p>
+<h2 id="regla-de-verdad">Regla de verdad</h2>
 <ul>
-<li>last_updated: 2025-12-15</li>
-<li>project_active: Biblia</li>
-<li>mode_default: Continuar</li>
-<li>objective_now: Consolidar OS Boot v1 (arranque determinístico + verdad de negocio) y validar retoma sin literalidad</li>
-<li>
-<p>next_3:
-  1) Actualizar START_HERE para que el orden sea START_HERE → SESSIONS_LOG → LAUNCHER (solo fallback)
-  2) Actualizar LAUNCHER para que “Continuar” use CURRENT_STATE por defecto
-  3) Registrar primera sesión real (con “Actualizaciones de Verdad” si aplica) y completar BUSINESS_TRUTH_STATUS</p>
-</li>
-<li>
-<p>open_threads (máx 5):</p>
-</li>
-<li>START_HERE aún apunta a LAUNCHER como paso 2</li>
-<li>LAUNCHER aún no declara “fallback por CURRENT_STATE”</li>
-<li>Definir truth_links canónicos por proyecto (negocio)</li>
-<li>Revisar “Inicializando búsqueda” si queda colgado</li>
-<li>
-<p>(vacío)</p>
-</li>
-<li>
-<p>pointers (links/rutas):</p>
-</li>
-<li>launcher_or_overview: ../LAUNCHER/</li>
-<li>last_session: 2025-12-15</li>
-<li>key_files_or_paths: docs/99_Indice_y_Mapas/START_HERE.md; docs/99_Indice_y_Mapas/SESSIONS_LOG.md; docs/99_Indice_y_Mapas/LAUNCHER.md</li>
+<li>Receta “vigente” = la última versión aprobada aquí.</li>
+<li>Cambios experimentales van como “en revisión” y solo pasan a “vigente” si se registra decisión.</li>
 </ul>
-<hr />
-<h2 id="business_truth-verdad-vigente-del-negocio">BUSINESS_TRUTH (verdad vigente del negocio)</h2>
-<p>Quelonio Pages es la fuente de verdad para:
-- Definiciones operativas (qué significa cada KPI, estándar, proceso).
-- Supuestos vigentes (costos, capacidades, restricciones, pricing, objetivos).
-- Decisiones aprobadas y su justificación.
-- Valores “vigentes” (aunque el cálculo viva en planillas o fuentes externas).</p>
-<p>Regla de trazabilidad:
-- Todo cambio relevante de verdad debe dejar:
-  1) Qué queda vigente (en texto)
-  2) Dónde quedó escrito (ruta/link)
-  3) Fuente (medición / planilla / cotización / cálculo / KB)</p>
-<p>Estado (marcar):
-- unit_economics_status: en revisión
-- ops_process_status: en revisión
-- recipes_specs_status: en revisión
-- qa_qc_status: en revisión
-- branding_comms_status: en revisión
-- last_truth_update: 2025-12-15
-- truth_links (dónde vive lo vigente):
-  - Economía unitaria: ../98_Verdad_Negocio/01_Economia_Unitaria.md
-  - Operaciones y procesos: ../98_Verdad_Negocio/02_Operaciones.md
-  - Especificaciones recetas: ../98_Verdad_Negocio/03_Specs_Recetas.md
-  - QA/QC: ../98_Verdad_Negocio/04_QAQC.md
-  - Branding/comms: ../98_Verdad_Negocio/05_Branding_Comms.md</p>
-<hr />
-<h2 id="plantilla-copiarpegar-por-sesion">Plantilla (copiar/pegar por sesión)</h2>
-<h3 id="sesion-aaaa-mm-dd">Sesión: AAAA-MM-DD</h3>
+<h2 id="estado">Estado</h2>
 <ul>
-<li>Modo: Continuar / Nuevo / Temporal</li>
-<li>Proyecto: Biblia / Web+API / Latas / Temporal</li>
-<li>
-<p>Objetivo de la sesión (1 frase):</p>
-</li>
-<li>
-<p>Hecho (3–7 bullets):</p>
-</li>
-<li></li>
-<li></li>
-<li></li>
-<li>
-<p>Archivos tocados (rutas):</p>
-</li>
-<li></li>
-<li>
-<p>Resultado verificable (ej. build strict OK / deploy OK / endpoint OK):</p>
-</li>
-<li></li>
-<li>
-<p>Pendientes inmediatos (máx 5):
-  1)
-  2)
-  3)
-  4)
-  5)</p>
-</li>
-<li>
-<p>Próximo paso recomendado (1):</p>
-</li>
-<li></li>
-<li>
-<p>Notas / decisiones (si aplica):</p>
-</li>
-<li></li>
-<li>
-<p>Actualizaciones de Verdad (si aplica; negocio):</p>
-</li>
-<li>Qué queda vigente:</li>
-<li>Dónde quedó escrito (ruta/link):</li>
-<li>Fuente (medición/planilla/cotización/cálculo/KB):</li>
-<li>Impacto (costos, calidad, plazo, ventas, riesgo):</li>
+<li>status: en revisión | vigente</li>
+<li>last_updated: AAAA-MM-DD</li>
 </ul>
-<p>Regla “Temporal”:
-- Si el modo es Temporal, no se registra aquí, salvo que el usuario diga explícitamente “promover a permanente”.</p>
-<h3 id="sesion-2025-12-15">Sesión: 2025-12-15</h3>
+<h2 id="especificacion-canonica-plantilla-por-receta">Especificación canónica (plantilla por receta)</h2>
+<h3 id="ej-apa"><NOMBRE RECETA> (ej. APA)</h3>
 <ul>
-<li>Modo: Continuar</li>
-<li>Proyecto: Biblia</li>
-<li>
-<p>Objetivo de la sesión (1 frase): Consolidar OS Boot v1 (arranque determinístico + verdad de negocio)</p>
-</li>
-<li>
-<p>Hecho (3–7 bullets):</p>
-</li>
-<li>Se agregó CURRENT_STATE y BUSINESS_TRUTH a SESSIONS_LOG</li>
-<li>Se ajustó START_HERE al orden START_HERE → SESSIONS_LOG → LAUNCHER (fallback)</li>
-<li>Se ajustó LAUNCHER como fallback por CURRENT_STATE</li>
-<li>
-<p>Se agregó checklist de publicación “solo comandos”</p>
-</li>
-<li>
-<p>Archivos tocados (rutas):</p>
-</li>
-<li>docs/99_Indice_y_Mapas/SESSIONS_LOG.md</li>
-<li>docs/99_Indice_y_Mapas/START_HERE.md</li>
-<li>
-<p>docs/99_Indice_y_Mapas/LAUNCHER.md</p>
-</li>
-<li>
-<p>Resultado verificable (ej. build strict OK / deploy OK / endpoint OK):</p>
-</li>
-<li>
-<p>Deploy OK: cambios visibles en la web (OS v1)</p>
-</li>
-<li>
-<p>Pendientes inmediatos (máx 5):
-  1) Definir truth_links canónicos (Verdad de Negocio)
-  2) Crear stubs para verdad vigente (economía/ops/specs/qaqc/branding)
-  3) Completar BUSINESS_TRUTH_STATUS (vigente/en revisión + last_truth_update)</p>
-</li>
-<li>
-<p>Próximo paso recomendado (1):</p>
-</li>
-<li>
-<p>Definir y escribir truth_links (aunque apunten a stubs)</p>
-</li>
-<li>
-<p>Notas / decisiones (si aplica):</p>
-</li>
-<li>
-<p>Pages manda como “vigente”; planillas/cotizaciones son fuente y deben referenciarse</p>
-</li>
-<li>
-<p>Actualizaciones de Verdad (si aplica; negocio):</p>
-</li>
-<li>Qué queda vigente: OS Boot v1 como protocolo de trabajo</li>
-<li>Dónde quedó escrito (ruta/link): START_HERE + LAUNCHER + SESSIONS_LOG</li>
-<li>Fuente (medición/planilla/cotización/cálculo/KB): protocolo operativo</li>
-<li>Impacto (costos, calidad, plazo, ventas, riesgo): reduce pérdida de contexto y mejora trazabilidad</li>
+<li>versión: vX</li>
+<li>estado: en revisión | vigente</li>
+<li>lote objetivo: (L)</li>
+<li>OG objetivo / rango:</li>
+<li>FG objetivo / rango:</li>
+<li>ABV objetivo / rango:</li>
+<li>IBU objetivo / rango:</li>
+<li>SRM objetivo / rango:</li>
+<li>pH (mash / pre-boil / post-boil / final):</li>
+<li>Perfil agua (objetivo):</li>
+<li>Grist (% y kg):</li>
+<li>Lúpulo (schedule):</li>
+<li>Levadura (cepa, pitch rate, temp):</li>
+<li>Fermentación (temp y días):</li>
+<li>Maduración / dry hop / cold crash:</li>
+<li>Envasado (CO2 vols / O2 objetivo / método):</li>
+<li>Riesgos críticos (oxidación, diacetilo, etc.)</li>
+<li>Criterios de aprobación sensorial:</li>
+</ul>
+<h2 id="indice-de-recetas-vigentes">Índice de recetas vigentes</h2>
+<ul>
+<li>APA:</li>
+<li>Hoppy Lager:</li>
+<li>NEIPA:</li>
+<li>Cold IPA:</li>
+<li>(otras)</li>
+</ul>
+<h2 id="fuentes">Fuentes</h2>
+<ul>
+<li>Logs de batch:</li>
+<li>Sensory:</li>
+<li>Registros QA/QC:</li>
 </ul>
 
 

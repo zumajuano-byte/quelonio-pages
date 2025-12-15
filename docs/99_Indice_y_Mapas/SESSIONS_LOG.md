@@ -12,17 +12,17 @@ Este archivo cumple 3 funciones:
 - last_updated: 2025-12-15
 - project_active: Biblia
 - mode_default: Continuar
-- objective_now: Cerrar OS Boot v1 (arranque determinístico + fuente de verdad de negocio)
+- objective_now: Consolidar OS Boot v1 (arranque determinístico + verdad de negocio) y validar retoma sin literalidad
 - next_3:
-  1) Alinear START_HERE para que el orden sea START_HERE → SESSIONS_LOG → LAUNCHER (solo fallback)
-  2) Alinear LAUNCHER como fallback (no menú por defecto) + link directo a SESSIONS_LOG
-  3) Registrar primera sesión real con “Actualizaciones de Verdad” (si aplica) y dejar BUSINESS_TRUTH en estado “en revisión” con links
+  1) Actualizar START_HERE para que el orden sea START_HERE → SESSIONS_LOG → LAUNCHER (solo fallback)
+  2) Actualizar LAUNCHER para que “Continuar” use CURRENT_STATE por defecto
+  3) Registrar primera sesión real (con “Actualizaciones de Verdad” si aplica) y completar BUSINESS_TRUTH_STATUS
 
 - open_threads (máx 5):
-  - START_HERE aún describe arranque por LAUNCHER (hay que corregirlo)
+  - START_HERE aún apunta a LAUNCHER como paso 2
   - LAUNCHER aún no declara “fallback por CURRENT_STATE”
   - Definir truth_links canónicos por proyecto (negocio)
-  - Revisar “Inicializando búsqueda” (si queda colgado en navegadores)
+  - Revisar “Inicializando búsqueda” si queda colgado
   - (vacío)
 
 - pointers (links/rutas):

@@ -1,57 +1,53 @@
-# START HERE — Quelonio (Orden de arranque)
+# START_HERE — Arranque operativo (canónico)
 
-Este sitio es la “pantalla de inicio” de Quelonio: una base de conocimiento y panel de trabajo para decidir qué hacemos en cada sesión.
+Este archivo define **cómo arrancamos una sesión** cuando volvés con la URL pública del sitio.
 
-## ARRANQUE DEFINITIVO (para ChatGPT)
+## Objetivo del arranque
 
-Si el usuario pega: "volvemos + URL del sitio", el asistente DEBE:
-1) Leer START_HERE completo.
-2) Siempre mostrar LAUNCHER al inicio (aunque exista project_active), para que el usuario elija: continuar activo, elegir otro, nuevo o temporal.
-3) Abrir SESSIONS_LOG y trabajar SOLO desde CURRENT_STATE.
-4) Usar LAUNCHER como fuente única del menú y del protocolo (publicación/verificación). No inventar opciones fuera de LAUNCHER.
-5) No proponer métodos alternativos. Si hay duda, gana LAUNCHER.
+1) Evitar interpretaciones o “métodos alternativos” no acordados.
+2) Continuar el **proyecto activo** sin perder contexto.
+3) Si falta contexto o pedís cambiar de frente, usar un **menú único** (LAUNCHER).
 
+## Paso 0 — Verificación rápida (si estás en el repo local)
 
-## Cómo se usa (en 30 segundos)
-1) Vos me pasás: “volvemos” + URL del sitio.
-2) Yo leo esta página (reglas) y luego abro SESSIONS_LOG para leer CURRENT_STATE + BUSINESS_TRUTH.
-3) Si CURRENT_STATE.project_active está definido: continúo ese proyecto directo (sin menú).
-4) Si CURRENT_STATE está vacío o pedís cambiar/crear proyecto: abro LAUNCHER (Continuar / Nuevo / Temporal).
-5) Cerramos con un Checkpoint: actualizo CURRENT_STATE + agrego la entrada de sesión.
+- `git status` debe estar limpio (o, si hay cambios, que sean los que vos acabás de hacer).
+- El sitio público es: https://zumajuano-byte.github.io/quelonio-pages/
 
-## Regla de MODO (importante)
-- Si vos decís **“volvemos”**, continuamos con contexto como si ya conociéramos el proyecto y el historial.
-- Si NO decís “volvemos”, tratamos la sesión como nueva (sin asumir contexto).
+## Paso 1 — Leer estado (Source of Truth del progreso)
 
-## Reglas de trabajo (no negociables)
-- Si hay terminal/comandos: 1 comando por vez (copiar/pegar), esperamos salida, recién después el siguiente.
-- Si hay opciones múltiples: se listan opciones y se marca una recomendación.
-- Si hay riesgo de romper algo: plan de bajo riesgo (validación/rollback).
-- Prioridad: acceso al contenido > estética.
-- Si hay contradicción entre instrucciones: se define qué regla manda primero. 
+Abrir: [SESSIONS_LOG](SESSIONS_LOG.md)
 
-## Qué significa cada término (lenguaje simple)
-- **Build estricto**: una “prueba de seguridad” para confirmar que el sitio arma y que los links no están rotos.
-- **Deploy**: publicar los cambios para que se vean en la web.
-- **Links relativos**: links “por carpetas”. Ojo: desde `99_Indice_y_Mapas/` muchas veces hay que usar `../` para salir de esa carpeta.
-- **DEEP**: contenido profundo/extendido. No hace falta que esté todo en el menú; lo importante es que sea accesible por índices.
+Ahí está el bloque `CURRENT_STATE` (proyecto activo, último update, próximos pasos, etc.).
 
-## Reglas del proyecto Biblia (estabilidad primero)
-- La estructura actual es estable y no debe romperse.
-- Links en Markdown estándar (no Obsidian `[[ ]]`).
-- Links siempre con `/` (no usar `\`).
-- Si algo ya funciona, no se toca sin razón.
-- Lectura obligatoria: [Reglas de trabajo (Regla de oro)](../99_Indice_y_Mapas/SESSIONS_LOG.md#reglas-de-trabajo-persistentes--regla-de-oro)
+## Paso 2 — Regla de navegación (clave)
 
+- Si `CURRENT_STATE.project_active` **está definido** y vos no pedís cambiar:
+  - Continuamos **directo** ese proyecto (sin menú).
+- Si `CURRENT_STATE.project_active` **no está definido**, o vos decís explícitamente que querés cambiar:
+  - Abrimos el menú: [LAUNCHER](LAUNCHER.md)
 
-## Publicación (checklist rápido)
-Si hicimos cambios en la Biblia (MkDocs):
-1) `git status`
-2) `python -m mkdocs build --strict`
-3) `git add -A` → `git commit -m "docs: ..."` → `git push`
-4) Publicar: `python -m mkdocs gh-deploy --force`
-5) Verificación rápida en la web: Inicio + módulo tocado
+## Paso 3 — Regla de oro (método acordado)
 
-## ¿Qué vamos a hacer hoy?
-Ir al LAUNCHER (selector de proyectos):
-- [Abrir LAUNCHER](LAUNCHER.md)
+Antes de proponer o ejecutar cambios: leer y respetar “Regla de oro” en:
+
+[SESSIONS_LOG · Regla de oro](SESSIONS_LOG.md#reglas-de-trabajo-persistentes--regla-de-oro)
+
+## Release mínimo (cuando tocaste archivos)
+
+> Importante: el deploy “oficial” es con `gh-deploy` (no cambiamos esto).
+
+1) Validación local (opcional pero recomendado):
+   - `python -m mkdocs build --strict`
+
+2) Commit + push (si hay cambios):
+   - `git add -A`
+   - `git commit -m "..."`  
+   - `git push`
+
+3) Deploy a GitHub Pages:
+   - `python -m mkdocs gh-deploy --force`
+
+4) Verificar en la web:
+   - Home carga
+   - Navegación principal funciona
+   - No hay links rotos evidentes (START_HERE / LAUNCHER / SESSIONS_LOG / CONTRATO_ESTRUCTURA)

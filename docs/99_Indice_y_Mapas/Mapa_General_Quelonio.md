@@ -1,55 +1,29 @@
 # Mapa General — Quelonio
 
-Este mapa muestra cómo se relacionan los módulos del sistema.
+Este mapa muestra cómo se relacionan los módulos del sistema (Biblia Cervecera) y cuál es el punto de entrada recomendado según el problema.
 
 ---
 
-## Flujo conceptual
+## Flujo conceptual (alto nivel)
 
-Agua → Mash → Malta  
-Agua → pH → Lúpulo  
-Levadura → Fermentación → Estabilidad  
-Procesos_QA_QC → Controla todo el flujo
-
----
-
-## Relaciones clave
-
-- **Agua**
-  - impacta pH de mash
-  - modula amargor y perfil de lúpulo
-  - define estabilidad
-
-- **Malta**
-  - define fermentabilidad
-  - condiciona cuerpo y mouthfeel
-
-- **Levadura**
-  - transforma el diseño en producto
-  - define perfil sensorial y defectos
-
-- **Lúpulo**
-  - interactúa con pH, oxígeno y temperatura
-  - muy sensible a QA/QC cold-side
-
-- **Procesos / QA-QC**
-  - detecta errores
-  - define CCP
-  - protege shelf life
+- Agua → Mash → Malta  
+- Agua → pH → Lúpulo  
+- Levadura → Fermentación → Estabilidad  
+- Procesos QA/QC → Controla todo el flujo (CCPs, control limits, troubleshooting)
 
 ---
 
 ## Puntos de entrada recomendados
 
-- Diseño de receta → Agua / Malta / Lúpulo
-- Problemas en cerveza → Procesos_QA_QC → Defectos
-- Estabilidad baja → Cold-side / Packaging
+- **Diseño de receta** → Agua / Malta / Lúpulo / IPA Moderna / Recetas & Specs
+- **Problemas en cerveza** → Procesos QA/QC → Defectos / Diagnóstico
+- **Estabilidad baja / oxidación** → Cold-side / Empaque & Estabilidad
+- **Fermentación irregular** → Fermentación & Maduración → Control / Troubleshooting
 
-## Método de trabajo (canónico)
-- [Contrato de Estructura](CONTRATO_ESTRUCTURA.md)
-- [Checklist de sesión — Construcción](CHECKLIST_SESION_CONSTRUCCION.md)
+---
 
-## Estructura canónica
-- [Contrato de Estructura](CONTRATO_ESTRUCTURA.md)
-- [Checklist de sesión](CHECKLIST_SESION_CONSTRUCCION.md)
+## Arranque y método de trabajo (canónico)
 
+- [START_HERE](START_HERE.md) — regla de navegación del arranque
+- [LAUNCHER](LAUNCHER.md) — menú único para elegir proyecto si falta contexto o querés cambiar
+- [SESSIONS_LOG](SESSIONS_LOG.md) — estado operativo, reglas persistentes y checkpoints

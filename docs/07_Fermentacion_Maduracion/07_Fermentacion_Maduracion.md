@@ -1,23 +1,27 @@
-# Fermentación y maduración
+# Fermentación + Maduración (07)
 
-## Qué es (en simple)
-La fermentación es la etapa donde la levadura transforma azúcares en alcohol, gas (CO₂) y muchos aromas/sabores.
-La maduración es el “acomodo final”: clarifica, limpia perfiles y estabiliza la cerveza antes de envasar.
+Este módulo convierte **receta + proceso hot-side** en un producto estable y repetible.
+Está diseñado para operar en dos niveles:
 
-## Para qué sirve este módulo
-- Tomar mejores decisiones de temperatura, tiempos y salud de levadura.
-- Evitar defectos comunes (solvente, azufre, diacetilo, oxidación temprana).
-- Tener un método repetible (misma receta = resultados más parejos).
+- **Operación (rápido):** control mínimo, targets, checklists y decisiones típicas.
+- **DEEP (profundo):** fundamentos + criterios de diagnóstico y optimización.
 
-## Qué vas a encontrar acá
-- Conceptos base (qué mirar y por qué).
-- Control de fermentación (qué medir y qué ajustar).
-- Checklist rápida de proceso.
+## Entrada rápida
 
-## Páginas (base)
 - [Conceptos base](Conceptos_base.md)
 - [Control de fermentación](Control_de_fermentacion.md)
+- [DEEP — Índice](DEEP/00_INDEX.md)
 
-## Parte DEEP (profundización)
-- [DEEP v1 — Fermentación y maduración (SOP + rutina + gates + decisiones)](DEEP/01_DEEP_Fermentacion_Maduracion_v1.md)
-- [Fermentación y Maduración (DEEP)](DEEP/00_INDEX.md)
+## Uso recomendado (orden)
+
+1) **Control de fermentación** → cuando estás produciendo o preparando un lote.  
+2) **Curva térmica + diacetilo** → cuando definís estrategia térmica y liberación.  
+3) **Transferencias / cold crash / salida** → cuando pasás a clarificación y empaque.  
+4) **Troubleshooting** → cuando algo se desvió.
+
+## Definiciones mínimas (para hablar “igual”)
+
+- **AA% (apparent attenuation):** indica conversión fermentativa aparente.
+- **VDK / diacetilo:** subproducto; se gestiona por tiempo/temperatura y salud de levadura.
+- **Cold crash:** descenso controlado para clarificación; riesgo principal: ingreso de O₂.
+- **Objetivo final:** estabilidad sensorial y física compatible con el método de empaque.

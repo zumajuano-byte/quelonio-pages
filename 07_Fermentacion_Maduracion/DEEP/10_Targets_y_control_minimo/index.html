@@ -1537,6 +1537,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#matriz-de-afirmaciones-anclaje-bibliografico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matriz de afirmaciones (anclaje bibliográfico)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1570,31 +1581,31 @@
 2) Densidad
 3) pH
 4) Oxígeno disuelto
-5) CO₂ :contentReference[oaicite:3]{index=3}</p>
-<p><strong>Regla práctica:</strong> si temperatura y densidad están “bajo control”, el 80% de los problemas se vuelven diagnosticables.</p>
+5) CO₂ (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)</p>
+<p><strong>Regla práctica:</strong> si temperatura y densidad están “bajo control”, el 80% de los problemas se vuelven diagnosticables. (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)</p>
 <hr />
 <h2 id="2-targets-operativos-por-fase-sin-numeros-magicos">2) Targets operativos por fase (sin números “mágicos”)<a class="headerlink" href="#2-targets-operativos-por-fase-sin-numeros-magicos" title="Permanent link">&para;</a></h2>
 <h3 id="fase-a-arranque-lag-inicio-actividad">Fase A — Arranque (lag → inicio actividad)<a class="headerlink" href="#fase-a-arranque-lag-inicio-actividad" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Objetivo: levadura activa sin stress.</li>
-<li>Gate: inicio visible y/o caída de densidad dentro del tiempo esperado (según cepa y pitch).</li>
+<li>Gate: inicio visible y/o caída de densidad dentro del tiempo esperado (según cepa y pitch). (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)</li>
 </ul>
 <h3 id="fase-b-fermentacion-activa">Fase B — Fermentación activa<a class="headerlink" href="#fase-b-fermentacion-activa" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Objetivo: caída de densidad sostenida y temperatura estable.</li>
-<li>Gate: tendencia consistente (no “plana”).</li>
+<li>Gate: tendencia consistente (no “plana”). (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)</li>
 </ul>
 <h3 id="fase-c-cierre-maduracion">Fase C — Cierre / maduración<a class="headerlink" href="#fase-c-cierre-maduracion" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Objetivo: terminar atenuación + limpieza de subproductos (diacetilo/precursor).</li>
-<li>Gate: densidad estable + tiempo suficiente en condiciones correctas (y, si aplica, test de diacetilo forzado).</li>
+<li>Gate: densidad estable + tiempo suficiente en condiciones correctas (y, si aplica, test de diacetilo forzado). (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)</li>
 </ul>
 <hr />
 <h2 id="3-control-termico-criterio-tecnico">3) Control térmico: criterio técnico<a class="headerlink" href="#3-control-termico-criterio-tecnico" title="Permanent link">&para;</a></h2>
 <p>Fermentar demasiado caliente incrementa:
 - ésteres,
 - alcoholes superiores (fuseles),
-- y riesgo de diacetilo/residual si el cierre es deficiente. :contentReference[oaicite:4]{index=4}</p>
+- y riesgo de diacetilo/residual si el cierre es deficiente. (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)</p>
 <hr />
 <h2 id="4-checklist-minimo-de-registro-qaqc-de-proceso">4) Checklist mínimo de registro (QA/QC de proceso)<a class="headerlink" href="#4-checklist-minimo-de-registro-qaqc-de-proceso" title="Permanent link">&para;</a></h2>
 <p>Por lote:
@@ -1610,6 +1621,57 @@
 <h2 id="5-puentes-no-duplicar">5) Puentes (no duplicar)<a class="headerlink" href="#5-puentes-no-duplicar" title="Permanent link">&para;</a></h2>
 <p>Para profundidad “biológica” (pitch rate, oxigenación, repitch, floculación), usar el módulo 03_Levadura:
 - allí está el detalle “por qué” y “cómo” desde levadura; acá consolidamos el “control de proceso”.</p>
+<hr />
+<hr />
+<h2 id="matriz-de-afirmaciones-anclaje-bibliografico">Matriz de afirmaciones (anclaje bibliográfico)<a class="headerlink" href="#matriz-de-afirmaciones-anclaje-bibliografico" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Afirmación</th>
+<th>Tag</th>
+<th>Fuente</th>
+<th>Métrica/validación</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temperatura es la variable #1 por impacto y controlabilidad</td>
+<td>HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO</td>
+<td>—</td>
+<td>Overshoot térmico; defectos sensoriales</td>
+<td>Pendiente</td>
+</tr>
+<tr>
+<td>Densidad (serie temporal) permite gates repetibles de avance de fase</td>
+<td>HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO</td>
+<td>—</td>
+<td>Varianza FG; “stalls”; retrabajos</td>
+<td>Pendiente</td>
+</tr>
+<tr>
+<td>pH agrega capacidad diagnóstica (fermentación desviada/infección)</td>
+<td>HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO</td>
+<td>—</td>
+<td>pH vs curva densidad; defectos</td>
+<td>Pendiente</td>
+</tr>
+<tr>
+<td>DO y/o método de oxigenación condiciona arranque y performance</td>
+<td>HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO</td>
+<td>—</td>
+<td>Lag time; atenuación; off-flavors</td>
+<td>Pendiente</td>
+</tr>
+<tr>
+<td>“Densidad estable + cierre” reduce empaque prematuro e inestabilidad</td>
+<td>HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO</td>
+<td>—</td>
+<td>gushing; sobre/infra-carb; diacetilo</td>
+<td>Pendiente</td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#start_here-arranque-operativo-canonico" class="md-skip">
+        <a href="#start_here-quelonio-os-boot-deterministico" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -360,10 +360,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-del-arranque" class="md-nav__link">
+  <a href="#regla-de-arranque-deterministica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objetivo del arranque
+        Regla de arranque (determinística)
       
     </span>
   </a>
@@ -371,10 +371,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paso-0-verificacion-rapida-si-estas-en-el-repo-local" class="md-nav__link">
+  <a href="#seleccion-automatica-del-proyecto-activo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Paso 0 — Verificación rápida (si estás en el repo local)
+        Selección automática del proyecto activo
       
     </span>
   </a>
@@ -382,10 +382,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paso-1-leer-estado-source-of-truth-del-progreso" class="md-nav__link">
+  <a href="#cambio-explicito-de-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Paso 1 — Leer estado (Source of Truth del progreso)
+        Cambio explícito de proyecto
       
     </span>
   </a>
@@ -393,10 +393,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paso-2-regla-de-navegacion-clave" class="md-nav__link">
+  <a href="#protocolo-de-cierre-para-no-manosear-muchos-archivos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Paso 2 — Regla de navegación (clave)
+        Protocolo de cierre (para no “manosear” muchos archivos)
       
     </span>
   </a>
@@ -404,21 +404,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paso-3-regla-de-oro-metodo-acordado" class="md-nav__link">
+  <a href="#si-algo-no-cierra" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Paso 3 — Regla de oro (método acordado)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#release-minimo-cuando-tocaste-archivos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release mínimo (cuando tocaste archivos)
+        Si algo no cierra
       
     </span>
   </a>
@@ -1552,10 +1541,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-del-arranque" class="md-nav__link">
+  <a href="#regla-de-arranque-deterministica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objetivo del arranque
+        Regla de arranque (determinística)
       
     </span>
   </a>
@@ -1563,10 +1552,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paso-0-verificacion-rapida-si-estas-en-el-repo-local" class="md-nav__link">
+  <a href="#seleccion-automatica-del-proyecto-activo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Paso 0 — Verificación rápida (si estás en el repo local)
+        Selección automática del proyecto activo
       
     </span>
   </a>
@@ -1574,10 +1563,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paso-1-leer-estado-source-of-truth-del-progreso" class="md-nav__link">
+  <a href="#cambio-explicito-de-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Paso 1 — Leer estado (Source of Truth del progreso)
+        Cambio explícito de proyecto
       
     </span>
   </a>
@@ -1585,10 +1574,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paso-2-regla-de-navegacion-clave" class="md-nav__link">
+  <a href="#protocolo-de-cierre-para-no-manosear-muchos-archivos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Paso 2 — Regla de navegación (clave)
+        Protocolo de cierre (para no “manosear” muchos archivos)
       
     </span>
   </a>
@@ -1596,21 +1585,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paso-3-regla-de-oro-metodo-acordado" class="md-nav__link">
+  <a href="#si-algo-no-cierra" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Paso 3 — Regla de oro (método acordado)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#release-minimo-cuando-tocaste-archivos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release mínimo (cuando tocaste archivos)
+        Si algo no cierra
       
     </span>
   </a>
@@ -1637,46 +1615,52 @@
   
 
 
-<h1 id="start_here-arranque-operativo-canonico">START_HERE — Arranque operativo (canónico)<a class="headerlink" href="#start_here-arranque-operativo-canonico" title="Permanent link">&para;</a></h1>
-<p>Este archivo define <strong>cómo arrancamos una sesión</strong> cuando volvés con la URL pública del sitio.</p>
-<h2 id="objetivo-del-arranque">Objetivo del arranque<a class="headerlink" href="#objetivo-del-arranque" title="Permanent link">&para;</a></h2>
-<p>1) Evitar interpretaciones o “métodos alternativos” no acordados.
-2) Continuar el <strong>proyecto activo</strong> sin perder contexto.
-3) Si falta contexto o pedís cambiar de frente, usar un <strong>menú único</strong> (LAUNCHER).</p>
-<h2 id="paso-0-verificacion-rapida-si-estas-en-el-repo-local">Paso 0 — Verificación rápida (si estás en el repo local)<a class="headerlink" href="#paso-0-verificacion-rapida-si-estas-en-el-repo-local" title="Permanent link">&para;</a></h2>
+<h1 id="start_here-quelonio-os-boot-deterministico">START_HERE — Quelonio OS Boot (Determinístico)<a class="headerlink" href="#start_here-quelonio-os-boot-deterministico" title="Permanent link">&para;</a></h1>
+<p>Este archivo define <strong>cómo arrancar una sesión</strong> sin ambigüedad, para evitar inconsistencias entre chats.</p>
+<h2 id="regla-de-arranque-deterministica">Regla de arranque (determinística)<a class="headerlink" href="#regla-de-arranque-deterministica" title="Permanent link">&para;</a></h2>
+<p><strong>Entrada mínima recomendada (proyecto activo):</strong>
+volvemos
+URL: https://zumajuano-byte.github.io/quelonio-pages/</p>
+<p>Con eso, el asistente debe:
+1) Abrir este <code>START_HERE</code>.
+2) Resolver <strong>proyecto activo</strong> usando la regla “Selección automática” (abajo).
+3) Abrir el archivo del proyecto elegido (<code>PROYECTO_*.md</code>) y operar <strong>solo desde su CURRENT_STATE</strong>.</p>
+<h2 id="seleccion-automatica-del-proyecto-activo">Selección automática del proyecto activo<a class="headerlink" href="#seleccion-automatica-del-proyecto-activo" title="Permanent link">&para;</a></h2>
+<p>Si el usuario no especifica proyecto, el proyecto activo se determina así:</p>
+<p>1) Abrir estos 3 archivos:
+   - <code>99_Indice_y_Mapas/PROYECTO_BIBLIA.md</code>
+   - <code>99_Indice_y_Mapas/PROYECTO_WEB_API.md</code>
+   - <code>99_Indice_y_Mapas/PROYECTO_LATAS.md</code></p>
+<p>2) Elegir como “activo” el que tenga <strong><code>last_updated</code> más reciente</strong> (formato <code>YYYY-MM-DD</code>).
+3) Si falta <code>last_updated</code> o hay empate, usar <strong>Biblia</strong> como default.</p>
+<h2 id="cambio-explicito-de-proyecto">Cambio explícito de proyecto<a class="headerlink" href="#cambio-explicito-de-proyecto" title="Permanent link">&para;</a></h2>
+<p>Para evitar cualquier duda, el usuario puede arrancar así:</p>
 <ul>
-<li><code>git status</code> debe estar limpio (o, si hay cambios, que sean los que vos acabás de hacer).</li>
-<li>El sitio público es: https://zumajuano-byte.github.io/quelonio-pages/</li>
+<li>
+<p><strong>Biblia</strong>
+volvemos
+URL: https://zumajuano-byte.github.io/quelonio-pages/99_Indice_y_Mapas/PROYECTO_BIBLIA/</p>
+</li>
+<li>
+<p><strong>Web + API</strong>
+volvemos
+URL: https://zumajuano-byte.github.io/quelonio-pages/99_Indice_y_Mapas/PROYECTO_WEB_API/</p>
+</li>
+<li>
+<p><strong>Latas</strong>
+volvemos
+URL: https://zumajuano-byte.github.io/quelonio-pages/99_Indice_y_Mapas/PROYECTO_LATAS/</p>
+</li>
 </ul>
-<h2 id="paso-1-leer-estado-source-of-truth-del-progreso">Paso 1 — Leer estado (Source of Truth del progreso)<a class="headerlink" href="#paso-1-leer-estado-source-of-truth-del-progreso" title="Permanent link">&para;</a></h2>
-<p>Abrir: <a href="../SESSIONS_LOG/">SESSIONS_LOG</a></p>
-<p>Ahí está el bloque <code>CURRENT_STATE</code> (proyecto activo, último update, próximos pasos, etc.).</p>
-<h2 id="paso-2-regla-de-navegacion-clave">Paso 2 — Regla de navegación (clave)<a class="headerlink" href="#paso-2-regla-de-navegacion-clave" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Si <code>CURRENT_STATE.project_active</code> <strong>está definido</strong> y vos no pedís cambiar:</li>
-<li>Continuamos <strong>directo</strong> ese proyecto (sin menú).</li>
-<li>Si <code>CURRENT_STATE.project_active</code> <strong>no está definido</strong>, o vos decís explícitamente que querés cambiar:</li>
-<li>Abrimos el menú: <a href="../LAUNCHER/">LAUNCHER</a></li>
-</ul>
-<h2 id="paso-3-regla-de-oro-metodo-acordado">Paso 3 — Regla de oro (método acordado)<a class="headerlink" href="#paso-3-regla-de-oro-metodo-acordado" title="Permanent link">&para;</a></h2>
-<p>Antes de proponer o ejecutar cambios: leer y respetar “Regla de oro” en:</p>
-<p><a href="../SESSIONS_LOG/#reglas-de-trabajo-persistentes--regla-de-oro">SESSIONS_LOG · Regla de oro</a></p>
-<h2 id="release-minimo-cuando-tocaste-archivos">Release mínimo (cuando tocaste archivos)<a class="headerlink" href="#release-minimo-cuando-tocaste-archivos" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Importante: el deploy “oficial” es con <code>gh-deploy</code> (no cambiamos esto).</p>
-</blockquote>
-<p>1) Validación local (opcional pero recomendado):
-   - <code>python -m mkdocs build --strict</code></p>
-<p>2) Commit + push (si hay cambios):
-   - <code>git add -A</code>
-   - <code>git commit -m "..."</code><br />
-   - <code>git push</code></p>
-<p>3) Deploy a GitHub Pages:
-   - <code>python -m mkdocs gh-deploy --force</code></p>
-<p>4) Verificar en la web:
-   - Home carga
-   - Navegación principal funciona
-   - No hay links rotos evidentes (START_HERE / LAUNCHER / SESSIONS_LOG / CONTRATO_ESTRUCTURA)</p>
+<h2 id="protocolo-de-cierre-para-no-manosear-muchos-archivos">Protocolo de cierre (para no “manosear” muchos archivos)<a class="headerlink" href="#protocolo-de-cierre-para-no-manosear-muchos-archivos" title="Permanent link">&para;</a></h2>
+<p>Al cerrar una sesión de un proyecto:
+1) Actualizar <strong>solo</strong> el archivo <code>PROYECTO_*.md</code> correspondiente:
+   - <code>last_updated</code>
+   - <code>CURRENT_STATE</code> (qué se hizo + próximo paso + hilos abiertos)
+   - (Opcional) agregar una entrada breve en “LOG del proyecto”
+2) No tocar <code>SESSIONS_LOG.md</code> salvo cambios de metodología / reglas globales.</p>
+<h2 id="si-algo-no-cierra">Si algo no cierra<a class="headerlink" href="#si-algo-no-cierra" title="Permanent link">&para;</a></h2>
+<p>Abrir <code>99_Indice_y_Mapas/LAUNCHER.md</code> para seleccionar proyecto manualmente o revisar reglas de operación.</p>
 
 
 

@@ -2,8 +2,8 @@
 status: draft
 scope: proceso
 sources:
-  - "White & Zainasheff — Yeast (temperatura como control; precursor de diacetilo)"
-  - "Palmer — How to Brew (temperatura alta: ésteres/fuseles/diacetilo)"
+  - "PENDIENTE_BIBLIO — White & Zainasheff — Yeast (temperatura como control; precursor de diacetilo)"
+  - "PENDIENTE_BIBLIO — Palmer — How to Brew (temperatura alta: ésteres/fuseles/diacetilo)"
 ---
 
 # 20 — Curva térmica, rampas y descanso de diacetilo (DEEP)
@@ -19,8 +19,8 @@ Definir un **perfil térmico controlable** (no una receta fija), con gates claro
 ---
 
 ## 1) Principio rector: temperatura = palanca #1 de consistencia
-- La temperatura afecta la velocidad y el perfil sensorial; cambios en temperatura cambian el resultado. :contentReference[oaicite:0]{index=0}
-- Fermentar demasiado caliente incrementa **ésteres**, **alcoholes superiores (fuseles)** y **riesgo de diacetilo**. :contentReference[oaicite:1]{index=1}
+- La temperatura afecta la velocidad y el perfil sensorial; cambios en temperatura cambian el resultado. (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+- Fermentar demasiado caliente incrementa **ésteres**, **alcoholes superiores (fuseles)** y **riesgo de diacetilo**. (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
 
 ---
 
@@ -35,19 +35,19 @@ Gate de salida:
 
 ### Fase B — Fermentación activa
 **Objetivo:** mantener el fermentador dentro del rango de cepa con mínima oscilación.  
-**Criterio:** control estable > “ajustar todo el tiempo”.
+**Criterio:** control estable > “ajustar todo el tiempo”. (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
 
 Gate de salida:
-- acercarse a densidad terminal (criterio de tendencia).
+- acercarse a densidad terminal (criterio de tendencia). (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
 
 ### Fase C — Cierre / rampa final (maduración)
 **Objetivo:** terminar atenuación y permitir que la levadura reduzca subproductos.  
-**Criterio:** una **rampa moderada** puede acelerar el cierre (según cepa/estilo). :contentReference[oaicite:2]{index=2}
+**Criterio:** una **rampa moderada** puede acelerar el cierre (según cepa/estilo). (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
 
 ---
 
 ## 3) Diacetilo y precursor: criterio de proceso
-- Parte del control de cierre es permitir que la levadura reduzca compuestos no deseados; se menciona el rol del **precursor de diacetilo** como parte del problema si se corta/enfría antes de tiempo. :contentReference[oaicite:3]{index=3}
+- Parte del control de cierre es permitir que la levadura reduzca compuestos no deseados; el **precursor de diacetilo** es relevante si se corta/enfría antes de tiempo. (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
 - Implicancia: **no cold crash / no separar levadura** hasta que el lote haya “cerrado” (densidad estable + gate sensorial o test).
 
 ---
@@ -55,7 +55,7 @@ Gate de salida:
 ## 4) Gates recomendados (para decidir rampas y frío)
 Usar gates simples y repetibles:
 - **Gate 1 (inicio):** caída de densidad confirmada.
-- **Gate 2 (fase final):** estás a pocos puntos de FG (o tendencia de densidad desacelera).
+- **Gate 2 (fase final):** estás a pocos puntos de FG (o tendencia de densidad desacelera). (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
 - **Gate 3 (cierre):** densidad estable + tiempo mínimo de maduración (y test de diacetilo si aplica).
 - **Gate 4 (frío):** recién aquí se habilita cold crash / transferencia a empaque.
 
@@ -73,3 +73,16 @@ Usar gates simples y repetibles:
 ## 6) Puentes (no duplicar)
 - Detalle de “pitch rate” y “oxígeno” vive en 03_Levadura (Bloque 02).
 - Detalle de diacetilo test / acondicionamiento vive en 03_Levadura (Bloque 04) como técnica; aquí se usa como gate de proceso.
+
+---
+
+* * *
+## Matriz de afirmaciones (anclaje bibliográfico)
+
+| Afirmación | Tag | Fuente | Métrica/validación | Estado |
+|---|---|---|---|---|
+| La temperatura es la palanca #1 para consistencia y perfil sensorial | HEURÍSTICA OPERATIVA \| PENDIENTE_BIBLIO | — | Deriva sensorial; varianza curva | Pendiente |
+| Evitar overshoot en arranque reduce defectos y desvíos | HEURÍSTICA OPERATIVA \| PENDIENTE_BIBLIO | — | Overshoot vs ésteres/fuseles | Pendiente |
+| Una rampa moderada al final puede ayudar al cierre según cepa/estilo | HEURÍSTICA OPERATIVA \| PENDIENTE_BIBLIO | — | Tiempo a FG; diacetilo | Pendiente |
+| No habilitar frío/transferencia antes de “cierre” reduce diacetilo residual | HEURÍSTICA OPERATIVA \| PENDIENTE_BIBLIO | — | Test diacetilo; panel sensorial | Pendiente |
+| Gates simples (densidad+tiempo+sensorial/test) mejoran repetibilidad | HEURÍSTICA OPERATIVA \| PENDIENTE_BIBLIO | — | Repetibilidad por receta | Pendiente |

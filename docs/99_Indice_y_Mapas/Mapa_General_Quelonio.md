@@ -1,29 +1,32 @@
-# Mapa General — Quelonio
+# Mapa General — Quelonio (Biblia + Proyectos)
 
-Este mapa muestra cómo se relacionan los módulos del sistema (Biblia Cervecera) y cuál es el punto de entrada recomendado según el problema.
+Este documento es el “mapa rápido” del sitio y del sistema de arranque.
 
----
+## 1) OS Boot (cómo arrancar una sesión)
 
-## Flujo conceptual (alto nivel)
+- [START_HERE](START_HERE.md)
+- [LAUNCHER](LAUNCHER.md)
+- [Contrato de estructura](CONTRATO_ESTRUCTURA.md)
+- [Sessions Log (global)](SESSIONS_LOG.md)
 
-- Agua → Mash → Malta  
-- Agua → pH → Lúpulo  
-- Levadura → Fermentación → Estabilidad  
-- Procesos QA/QC → Controla todo el flujo (CCPs, control limits, troubleshooting)
+## 2) Proyectos (estado vivo)
 
----
+- [Proyecto — Biblia](PROYECTO_BIBLIA.md)
+- [Proyecto — Web + API](PROYECTO_WEB_API.md)
+- [Proyecto — Latas](PROYECTO_LATAS.md)
 
-## Puntos de entrada recomendados
+## 3) Módulos principales (Biblia)
 
-- **Diseño de receta** → Agua / Malta / Lúpulo / IPA Moderna / Recetas & Specs
-- **Problemas en cerveza** → Procesos QA/QC → Defectos / Diagnóstico
-- **Estabilidad baja / oxidación** → Cold-side / Empaque & Estabilidad
-- **Fermentación irregular** → Fermentación & Maduración → Control / Troubleshooting
+- [Agua](../01_Agua/01_Agua.md)
+- [Malta](../02_Malta/02_Malta.md)
+- [Levadura](../03_Levadura/03_Levadura.md)
+- [Lúpulo](../04_Lupulo/04_Lupulo.md)
+- [IPA Moderna](../05_Sistemas_IPA_Moderna/05_Sistemas_IPA_Moderna.md)
+- [Procesos QA/QC](../06_Procesos_QA_QC/06_Procesos_QA_QC.md)
+- [Fermentación + Maduración](../07_Fermentacion_Maduracion/07_Fermentacion_Maduracion.md)
+- [Recetas + Formulación](../08_Recetas_Formulacion/08_Recetas_Formulacion.md)
+- [Empaque + Estabilidad](../09_Empaque_Estabilidad/09_Empaque_Estabilidad.md)
+- [Limpieza + Sanitización](../10_Limpieza_Sanitizacion/10_Limpieza_Sanitizacion.md)
+- [Sensorial](../11_Sensorial/11_Sensorial.md)
 
----
-
-## Arranque y método de trabajo (canónico)
-
-- [START_HERE](START_HERE.md) — regla de navegación del arranque
-- [LAUNCHER](LAUNCHER.md) — menú único para elegir proyecto si falta contexto o querés cambiar
-- [SESSIONS_LOG](SESSIONS_LOG.md) — estado operativo, reglas persistentes y checkpoints
+> Nota: este mapa no debe apuntar a archivos eliminados.

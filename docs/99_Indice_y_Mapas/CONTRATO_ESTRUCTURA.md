@@ -87,3 +87,27 @@ Un cambio está “listo” cuando:
 - Se puede navegar desde un índice canónico.
 - `python -m mkdocs build --strict` no muestra warnings.
 - Se publicó con el método canónico y es visible en GitHub Pages.
+
+* * *
+## Regla 6 — Citas y trazabilidad (BIBLIO vs HEURÍSTICA)
+
+### 6.1 Tags obligatorios (en texto)
+- **(BIBLIO)** = afirmación respaldada con referencia completa (fuente → edición/año → capítulo/sección → página).
+- **(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)** = práctica útil aún no anclada.
+
+**Regla:** si falta la referencia completa, NO puede decir **(BIBLIO)**.
+
+### 6.2 Formato canónico de cita (cuando pasa a BIBLIO)
+En la frase:
+- **(BIBLIO: `<COD_FUENTE>`)**
+
+En “Referencias” del mismo archivo (o del bloque DEEP donde se use):
+- **`<COD_FUENTE>` — Autor, Título, Edición/Año, Capítulo/Sección, p. XX–YY.**
+
+Ejemplo:
+- (BIBLIO: PALMER_HTB_4ED_CH07_P145)
+- PALMER_HTB_4ED_CH07_P145 — John Palmer, *How to Brew*, 4th ed., Ch. 7, p. 145.
+
+### 6.3 Matriz de afirmaciones (obligatoria en DEEP canónicos)
+Tabla mínima:
+- **Afirmación | Tag | Fuente | Métrica/validación | Estado**

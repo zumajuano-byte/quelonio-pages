@@ -1,116 +1,117 @@
----
+﻿---
 status: draft
 scope: empaque_estabilidad
 type: troubleshooting
 sources:
-  - "Palmer — How to Brew (oxidación/cartón; almacenaje; chill haze y estabilidad; vida útil depende del envasado)"
-  - "White & Zainasheff — Yeast (fallas de carbonatación; sobrecarbonatación por contaminación; sanitizantes)"
+  - "Palmer â€” How to Brew (oxidaciÃ³n/cartÃ³n; almacenaje; chill haze y estabilidad; vida Ãºtil depende del envasado)"
+  - "White & Zainasheff â€” Yeast (fallas de carbonataciÃ³n; sobrecarbonataciÃ³n por contaminaciÃ³n; sanitizantes)"
 ---
 
-# 40 — Shelf-life y Troubleshooting de Empaque (síntomas → causas → acciones)
+# 40 â€” Shelf-life y Troubleshooting de Empaque (sÃ­ntomas â†’ causas â†’ acciones)
 
 ## Objetivo
 Cerrar el loop de estabilidad:
-- detectar temprano degradación,
-- identificar causa raíz (empaque vs almacenamiento vs microbiología),
+- detectar temprano degradaciÃ³n,
+- identificar causa raÃ­z (empaque vs almacenamiento vs microbiologÃ­a),
 - ejecutar acciones correctivas,
 - y registrar para mejorar el SOP.
 
 ---
 
-## 1) Gates de estabilidad (mínimos)
-### Gate A — Al cierre del envasado
+## 1) Gates de estabilidad (mÃ­nimos)
+### Gate A â€” Al cierre del envasado
 - Procedimiento de purga y transferencia ejecutado (Bloque 20).
 - Headspace controlado.
 - Incidentes registrados (paradas, mangueras, envase abierto).
 
-### Gate B — 7 días
-- Chequeo sensorial rápido (aroma “apagado”, papel/cartón, azufre, solvente).
-- Chequeo de carbonatación (en botella/keg).
+### Gate B â€” 7 dÃ­as
+- Chequeo sensorial rÃ¡pido (aroma â€œapagadoâ€, papel/cartÃ³n, azufre, solvente).
+- Chequeo de carbonataciÃ³n (en botella/keg).
 
-### Gate C — 14–30 días
-- Evaluación de estabilidad real por estilo (especial foco en hoppy).
+### Gate C â€” 14â€“30 dÃ­as
+- EvaluaciÃ³n de estabilidad real por estilo (especial foco en hoppy).
 
 ---
 
-## 2) Síntoma: oxidación / “papel-cartón” / envejecimiento acelerado
-### Lectura técnica (qué significa)
-Si una cerveza toma carácter a cartón con el tiempo, se interpreta como oxidación; la vida útil real depende de cómo se embotelló/envasó y se almacenó. :contentReference[oaicite:0]{index=0}
+## 2) SÃ­ntoma: oxidaciÃ³n / â€œpapel-cartÃ³nâ€ / envejecimiento acelerado
+### Lectura tÃ©cnica (quÃ© significa)
+Si una cerveza toma carÃ¡cter a cartÃ³n con el tiempo, se interpreta como oxidaciÃ³n; la vida Ãºtil real depende de cÃ³mo se embotellÃ³/envasÃ³ y se almacenÃ³.
 
-### Causas probables (orden típico)
-1) Purga insuficiente (línea/envase).
-2) Transferencia con aire (salpicado, caída libre).
+### Causas probables (orden tÃ­pico)
+1) Purga insuficiente (lÃ­nea/envase).
+2) Transferencia con aire (salpicado, caÃ­da libre).
 3) Headspace alto o envase abierto demasiado tiempo.
-4) Almacenamiento caliente o con ciclos térmicos (acelera degradación).
+4) Almacenamiento caliente o con ciclos tÃ©rmicos (acelera degradaciÃ³n).
 
 ### Acciones correctivas
 - Detener y auditar SOP de purgas y transferencias (checklist obligatorio).
 - Reducir tiempos entre llenado y cierre.
-- Mejorar control de almacenamiento y logística.
+- Mejorar control de almacenamiento y logÃ­stica.
 
 ---
 
-## 3) Síntoma: aroma “apagado” muy rápido (especialmente cervezas lupuladas)
+## 3) SÃ­ntoma: aroma â€œapagadoâ€ muy rÃ¡pido (especialmente cervezas lupuladas)
 ### Causas probables
-- Oxígeno en empaque (misma lógica que arriba).
+- OxÃ­geno en empaque (misma lÃ³gica que arriba).
 - Temperatura de guarda inadecuada / fluctuante.
 
 ### Acciones
 - Reforzar Bloque 20 (purga y circuito cerrado).
-- En logística: definir estándar mínimo de almacenamiento para esa familia de cerveza.
+- En logÃ­stica: definir estÃ¡ndar mÃ­nimo de almacenamiento para esa familia de cerveza.
 
 ---
 
-## 4) Síntoma: falta de carbonatación (botella)
+## 4) SÃ­ntoma: falta de carbonataciÃ³n (botella)
 ### Causas probables
-- Priming mal calculado (temperatura/CO₂ residual).
+- Priming mal calculado (temperatura/COâ‚‚ residual).
 - Temperatura de acondicionamiento insuficiente o variable.
-- Levadura debilitada o dañada.
-- Sanitizante usado fuera de concentración (residuo que daña levadura). :contentReference[oaicite:1]{index=1}
+- Levadura debilitada o daÃ±ada.
+- Sanitizante usado fuera de concentraciÃ³n (residuo que daÃ±a levadura).
 
 ### Acciones
-- Verificar cálculo vs temperatura de cerveza y objetivo CO₂.
+- Verificar cÃ¡lculo vs temperatura de cerveza y objetivo COâ‚‚.
 - Asegurar acondicionamiento templado estable y tiempo suficiente.
-- Estandarizar sanitización (medición de concentración, drenaje).
+- Estandarizar sanitizaciÃ³n (mediciÃ³n de concentraciÃ³n, drenaje).
 
 ---
 
-## 5) Síntoma: sobrecarbonatación / “botellas explosivas”
+## 5) SÃ­ntoma: sobrecarbonataciÃ³n / â€œbotellas explosivasâ€
 ### Causas probables
-- Exceso de azúcar.
+- Exceso de azÃºcar.
 - Cerveza no completamente atenuada.
-- Contaminación con organismo que consume carbohidratos complejos → gas + deriva sensorial. :contentReference[oaicite:2]{index=2}
+- ContaminaciÃ³n con organismo que consume carbohidratos complejos â†’ gas + deriva sensorial.
 
 ### Acciones
-- Gate previo estricto: densidad estable + (si aplica) fermentación forzada como verificación.
+- Gate previo estricto: densidad estable + (si aplica) fermentaciÃ³n forzada como verificaciÃ³n.
 - Auditar higiene y proceso de envasado (micro).
-- Si hay evidencia de contaminación: disparar protocolo QA/QC (aislar lote, revisar limpieza/sanitización).
+- Si hay evidencia de contaminaciÃ³n: disparar protocolo QA/QC (aislar lote, revisar limpieza/sanitizaciÃ³n).
 
 ---
 
-## 6) Síntoma: “haze” en frío / estabilidad visual inconsistente
+## 6) SÃ­ntoma: â€œhazeâ€ en frÃ­o / estabilidad visual inconsistente
 ### Lectura
-La bruma en frío (chill haze) no da sabor, pero se relaciona con estabilidad de largo plazo: cervezas con haze tienden a deteriorar sabor antes que cervezas sin haze. :contentReference[oaicite:3]{index=3}
+La bruma en frÃ­o (chill haze) no da sabor, pero se relaciona con estabilidad de largo plazo: cervezas con haze tienden a deteriorar sabor antes que cervezas sin haze.
 
 ### Acciones
-- Revisar proceso de clarificación/frío (en 07 y 03).
+- Revisar proceso de clarificaciÃ³n/frÃ­o (en 07 y 03).
 - Definir objetivo por estilo (turbidez intencional vs claridad).
 
 ---
 
-## 7) Registro mínimo (obligatorio)
+## 7) Registro mÃ­nimo (obligatorio)
 Por corrida de envasado:
 - Fecha/hora, lote, tipo de envase
-- Procedimiento de purga/transferencia (sí/no; método)
+- Procedimiento de purga/transferencia (sÃ­/no; mÃ©todo)
 - Incidentes (paradas, desconexiones, envase abierto)
-- Condición de almacenamiento (ambiente/frío) + temperatura
-- Checkpoints sensoriales: 7/14/30/60 días
-- Resultados de carbonatación (si aplica)
+- CondiciÃ³n de almacenamiento (ambiente/frÃ­o) + temperatura
+- Checkpoints sensoriales: 7/14/30/60 dÃ­as
+- Resultados de carbonataciÃ³n (si aplica)
 
 ---
 
 ## Puentes
 - Priming/botella: ver Bloque 10
-- Oxígeno (DO/TPO, purga, transferencias): ver Bloque 20 + `../Oxidacion_y_DO.md`
+- OxÃ­geno (DO/TPO, purga, transferencias): ver Bloque 20 + `../Oxidacion_y_DO.md`
 - Almacenamiento: ver Bloque 30
-- Fermentación “listo para empaque”: ver 07_Fermentacion_Maduracion/DEEP
+- FermentaciÃ³n â€œlisto para empaqueâ€: ver 07_Fermentacion_Maduracion/DEEP
+

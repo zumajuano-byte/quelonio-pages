@@ -1,84 +1,111 @@
----
-status: draft
-scope: proceso
-sources:
-  - "PENDIENTE_BIBLIO — White & Zainasheff — Yeast (monitoreo y control; oxígeno/pitch como fundamentos)"
-  - "PENDIENTE_BIBLIO — Palmer — How to Brew (efecto de temperatura; riesgos por fermentación caliente)"
----
+# 10 — Targets y control mínimo (Fermentación + Maduración)
 
-# 10 — Targets y control mínimo de fermentación (DEEP)
+**Objetivo:** definir un set **mínimo pero suficiente** de mediciones y límites para operar fermentación/maduración con repetibilidad.
+Esto no reemplaza specs completas; es el **tablero mínimo** para decidir.
 
-## Objetivo del bloque
-Definir el set mínimo de variables y gates para que Fermentación sea repetible:
-- qué controlar,
-- con qué frecuencia,
-- y con qué criterio se decide avanzar a maduración/transferencias/envasado.
+Puentes:
+- QA/QC (lógica de límites): [Especificaciones vs control limits](../../06_Procesos_QA_QC/Procesos_QAQC_Parte6_DEEP/02_Especificaciones_y_Control_Limits.md)
+- Biología de levadura (pitch/oxígeno/repitch): [Levadura (03)](../../03_Levadura/03_Levadura.md)
 
 ---
 
-## 1) Variables mínimas (orden de prioridad)
-Prioridad típica de control y monitoreo:
-1) Temperatura
-2) Densidad
-3) pH
-4) Oxígeno disuelto
-5) CO₂ (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+## 1) Qué medir sí o sí (MVP de control)
 
-**Regla práctica:** si temperatura y densidad están “bajo control”, el 80% de los problemas se vuelven diagnosticables. (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+### A. Variables “driver” (si se te van, todo se te va)
 
----
+- **Temperatura (°C)** del fermentador (y del líquido, si medís directo).
+- **Densidad / gravedad** (SG/°P) y su **tendencia**.
+- **Presión** (si fermentás presurizado).
+- **Tiempo** (días desde pitch; horas desde cambios térmicos).
 
-## 2) Targets operativos por fase (sin números “mágicos”)
-### Fase A — Arranque (lag → inicio actividad)
-- Objetivo: levadura activa sin stress.
-- Gate: inicio visible y/o caída de densidad dentro del tiempo esperado (según cepa y pitch). (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+### B. Variables “calidad / liberación” (deciden salida)
 
-### Fase B — Fermentación activa
-- Objetivo: caída de densidad sostenida y temperatura estable.
-- Gate: tendencia consistente (no “plana”). (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+- **VDK/diacetilo (pass/fail)** o proxy operable.
+- **pH** (tendencia y anomalías).
+- **Sensorial rápido** (olfato/sabor: azufre, solvente, manzana/acetaldehído, manteca/VDK, astringencia).
+- **Claridad / turbidez** (si aplica al estilo).
+- **CO₂** (si estás capturando o carbonatando en tanque).
 
-### Fase C — Cierre / maduración
-- Objetivo: terminar atenuación + limpieza de subproductos (diacetilo/precursor).
-- Gate: densidad estable + tiempo suficiente en condiciones correctas (y, si aplica, test de diacetilo forzado). (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+### C. Variables “riesgo” (contaminación, oxidación, seguridad)
 
----
-
-## 3) Control térmico: criterio técnico
-Fermentar demasiado caliente incrementa:
-- ésteres,
-- alcoholes superiores (fuseles),
-- y riesgo de diacetilo/residual si el cierre es deficiente. (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+- **Integridad de sello / airlock / válvulas** y riesgo de ingreso de aire.
+- **Purga/CO₂ disponible** para transferencias.
+- **Higiene de conexiones** (mangueras, clamps, juntas).
+- **Micro (si tenés capacidad):** al menos screening en desvíos o por plan.
 
 ---
 
-## 4) Checklist mínimo de registro (QA/QC de proceso)
-Por lote:
-- [ ] Cepa y generación (si aplica)
-- [ ] Volumen y °P/OG
-- [ ] Pitch (tipo y cantidad; si se conoce)
-- [ ] Método de oxigenación (y DO si se mide)
-- [ ] Temperatura real (setpoint + lectura)
-- [ ] Densidad (serie temporal)
-- [ ] pH (opcional pero recomendado)
-- [ ] Observación sensorial rápida (manteca/solvente/frutado/sulfuro)
+## 2) Frecuencia mínima (regla simple por fase)
+
+- **0–48 h post-pitch:** más riesgo → controlar más seguido (temperatura + tendencia de densidad).
+- **Alta fermentación:** foco en mantener curva térmica y detectar desvíos temprano.
+- **Cercanía a FG / diacetilo:** foco en **VDK** + estabilidad de densidad.
+- **Cold crash / transferencias:** foco en **O₂/entrada de aire**, purgas y estabilidad.
 
 ---
 
-## 5) Puentes (no duplicar)
-Para profundidad “biológica” (pitch rate, oxigenación, repitch, floculación), usar el módulo 03_Levadura:
-- [03 — Levadura](../../03_Levadura/03_Levadura.md)
-- allí está el detalle “por qué” y “cómo” desde levadura; acá consolidamos el “control de proceso”.
+## 3) Tabla operable: targets, rangos y acciones
 
+> Nota: los rangos exactos dependen de estilo/cepa. Acá definimos **control limits operativos** (disparadores de acción).
+> Para lógica formal: ver “Especificaciones vs control limits”.
+
+| Variable | Target típico | Control limit (dispara acción) | Frecuencia mínima | Acción inmediata (ejemplos) |
+|---|---:|---:|---|---|
+| Temp. fermentación (°C) | según cepa/estilo | ±1.0 °C sostenido o deriva no planificada | 2–4 veces/día (manual) o continuo | corregir setpoint; verificar sonda; revisar aislamiento/cooling |
+| Densidad / °P | curva esperada | estancamiento temprano (>24h sin caída) | 1 vez/día (mínimo) | revisar pitch/oxígeno/nutrientes; chequear temp; descartar leak de CO₂/medición |
+| Tasa de caída de densidad | tendencia | caída demasiado rápida/lenta vs histórico | 1 vez/día | ajustar temperatura; revisar salud de levadura; evaluar nutrientes |
+| pH | tendencia esperada | pH anómalo o sin descenso inicial | 1–2 veces por lote (mínimo) | revisar contaminación; revisar oxígeno/pitch; chequear calibración |
+| VDK / diacetilo | PASS al final | FAIL al momento de planificar salida | 1 vez cerca de FG y antes de crash | extender tiempo; subir temp (diacetyl rest); esperar “limpieza” |
+| Presión (si aplica) | estrategia definida | sobrepresión / subpresión no planificada | 1–2 veces/día | ajustar spunding; revisar válvulas; evitar suck-back en crash |
+| CO₂ disuelto (si aplica) | objetivo de proceso | fuera de rango antes de transferencia/empaque | al final de maduración | corregir carbonatación o estrategia de transferencia |
+| Sensorial rápido | limpio | aparición de off-flavors marcados | cada medición clave | activar troubleshooting; retener lote; test adicional |
+| Claridad/turbidez (si aplica) | según estilo | fuera de objetivo antes de empaque | antes de transferir | ajustar crash/tiempo; finings/filtrado si aplica |
+| Integridad de purgas/CO₂ | OK | falta de CO₂ / purga insuficiente | antes de transferencias | detener transferencia; asegurar purga; revisar conexiones |
 
 ---
 
-* * *
-## Matriz de afirmaciones (anclaje bibliográfico)
+## 4) Triggers de decisión (si pasa X, hacé Y)
 
-| Afirmación | Tag | Fuente | Métrica/validación | Estado |
-|---|---|---|---|---|
-| Temperatura es la variable #1 por impacto y controlabilidad | HEURÍSTICA OPERATIVA \| PENDIENTE_BIBLIO | — | Overshoot térmico; defectos sensoriales | Pendiente |
-| Densidad (serie temporal) permite gates repetibles de avance de fase | HEURÍSTICA OPERATIVA \| PENDIENTE_BIBLIO | — | Varianza FG; “stalls”; retrabajos | Pendiente |
-| pH agrega capacidad diagnóstica (fermentación desviada/infección) | HEURÍSTICA OPERATIVA \| PENDIENTE_BIBLIO | — | pH vs curva densidad; defectos | Pendiente |
-| DO y/o método de oxigenación condiciona arranque y performance | HEURÍSTICA OPERATIVA \| PENDIENTE_BIBLIO | — | Lag time; atenuación; off-flavors | Pendiente |
-| “Densidad estable + cierre” reduce empaque prematuro e inestabilidad | HEURÍSTICA OPERATIVA \| PENDIENTE_BIBLIO | — | gushing; sobre/infra-carb; diacetilo | Pendiente |
+### 4.1 Densidad no arranca (lag largo)
+- Confirmar **temperatura real** (no solo setpoint).
+- Confirmar **pitch rate** y condición de levadura (viabilidad/vitalidad).
+- Confirmar **oxígeno** (si aplica).
+- Acciones típicas: subir 1–2 °C, agitar suave (si es seguro), nutriente (si aplica), repitch.
+
+### 4.2 Fermentación se “clava” (stuck / very slow)
+- Verificar curva térmica y disponibilidad de nutrientes.
+- Chequear pH, posibles inhibidores, presión (si fermentación presurizada).
+- Acciones: ajuste térmico, rousing controlado, evaluación de repitch, plan de rescate.
+
+### 4.3 VDK/diacetilo falla cerca del final
+- No crash ni transfieras.
+- Subir temperatura (descanso) + tiempo.
+- Re-test hasta PASS.
+
+### 4.4 Se planifica cold crash
+- Riesgo principal: **ingreso de aire (suck-back)**.
+- Asegurar estrategia: spunding/CO₂ blanket, válvulas ok, líneas purgadas, presión controlada.
+
+---
+
+## 5) Checklist mínimo (para imprimir mentalmente)
+
+**Diario / por turno**
+- [ ] Temp. real vs setpoint (¿deriva?).
+- [ ] Densidad (y tendencia vs ayer).
+- [ ] Sensorial rápido (si corresponde).
+- [ ] Observaciones del fermentador (presión, blowoff, actividad).
+
+**Antes de decidir “salida / crash / transferir”**
+- [ ] Densidad estable (criterio definido).
+- [ ] VDK/diacetilo PASS.
+- [ ] Plan de purgas y CO₂ confirmado.
+- [ ] Conexiones, mangueras, juntas: limpias / sanitizadas / listas.
+- [ ] Riesgo O₂ controlado (estrategia definida).
+
+---
+
+## 6) Fuentes (placeholder)
+
+- FUENTE_BIBLIO: completar con bibliografía base de fermentación + prácticas operativas.
+- Notas internas Quelonio: historial de lotes y “curvas esperadas” por cepa/estilo.

@@ -29,4 +29,5 @@ Unificar definiciones mínimas para hablar “igual” y evitar errores por leng
 
 ## Puentes
 - Biología de levadura (pitch rate, oxígeno, repitch, floculación): [03 — Levadura](../03_Levadura/03_Levadura.md)
-- Targets mínimos (operación): [DEEP/10 — Targets y control mínimo](DEEP/10_Targets_y_control_minimo.md)
+- Targets mínimos (operación): [10 — Targets y control mínimo](DEEP/10_Targets_y_control_minimo.md)
+

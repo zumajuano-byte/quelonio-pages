@@ -20,5 +20,6 @@
 - ¿Se puede medir de forma repetible? ¿Está calibrado el equipo?
 
 Links:
-- [[04_Control_Plan_Template]]
-- [[11_CAPA_y_Gestion_de_Desvios]]
+- [04_Control_Plan_Template](04_Control_Plan_Template.md)
+- [11_CAPA_y_Gestion_de_Desvios](11_CAPA_y_Gestion_de_Desvios.md)
+

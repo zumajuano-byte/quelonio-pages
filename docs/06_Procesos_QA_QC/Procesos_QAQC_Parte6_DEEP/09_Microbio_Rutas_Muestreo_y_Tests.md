@@ -35,5 +35,6 @@ En LAB de spoilage, hay diversidad genética y algunos aislados eluden métodos 
 Si se detectan “no spoilers” (p.ej. Cryptococcus/Rhodotorula), aunque no arruinen cerveza, tratarlos con gravedad porque señalan falla de higiene. fileciteturn23file8L13-L17
 
 Links:
-- [[10_Arbol_Decision_Contaminacion]]
-- [[11_CAPA_y_Gestion_de_Desvios]]
+- [10_Arbol_Decision_Contaminacion](10_Arbol_Decision_Contaminacion.md)
+- [11_CAPA_y_Gestion_de_Desvios](11_CAPA_y_Gestion_de_Desvios.md)
+

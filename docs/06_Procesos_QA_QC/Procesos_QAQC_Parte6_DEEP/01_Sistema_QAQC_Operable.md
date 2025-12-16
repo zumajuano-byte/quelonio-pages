@@ -31,6 +31,7 @@ Un QA/QC útil no es “más tests”: es **tests elegidos por riesgo**, con **l
 - Un **árbol de decisión** de contaminación + plan de muestreo.
 
 Links:
-- [[04_Control_Plan_Template]]
-- [[03_Auditorias_QMS]]
-- [[11_CAPA_y_Gestion_de_Desvios]]
+- [04_Control_Plan_Template](04_Control_Plan_Template.md)
+- [03_Auditorias_QMS](03_Auditorias_QMS.md)
+- [11_CAPA_y_Gestion_de_Desvios](11_CAPA_y_Gestion_de_Desvios.md)
+

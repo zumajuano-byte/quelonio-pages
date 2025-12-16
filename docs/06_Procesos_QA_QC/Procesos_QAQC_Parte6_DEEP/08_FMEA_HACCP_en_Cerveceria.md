@@ -22,5 +22,6 @@
 - Evidencia: registros y auditorías.
 
 Links:
-- [[04_Control_Plan_Template]]
-- [[09_Microbio_Rutas_Muestreo_y_Tests]]
+- [04_Control_Plan_Template](04_Control_Plan_Template.md)
+- [09_Microbio_Rutas_Muestreo_y_Tests](09_Microbio_Rutas_Muestreo_y_Tests.md)
+

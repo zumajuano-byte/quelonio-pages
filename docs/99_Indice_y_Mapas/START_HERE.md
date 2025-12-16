@@ -32,17 +32,16 @@ Para evitar cualquier duda, el usuario puede arrancar así:
 
 - **Biblia**
 volvemos
-URL: https://zumajuano-byte.github.io/quelonio-pages/99_Indice_y_Mapas/PROYECTO_BIBLIA/
-
+Proyecto — Biblia: [PROYECTO_BIBLIA](PROYECTO_BIBLIA.md)
 
 - **Web + API**
 volvemos
-URL: https://zumajuano-byte.github.io/quelonio-pages/99_Indice_y_Mapas/PROYECTO_WEB_API/
+Proyecto — Web + API: [PROYECTO_WEB_API](PROYECTO_WEB_API.md)
 
 
 - **Latas**
 volvemos
-URL: https://zumajuano-byte.github.io/quelonio-pages/99_Indice_y_Mapas/PROYECTO_LATAS/
+Proyecto — Latas: [PROYECTO_LATAS](PROYECTO_LATAS.md)
 
 
 ## Protocolo de cierre (para no “manosear” muchos archivos)

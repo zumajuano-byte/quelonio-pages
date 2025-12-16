@@ -32,6 +32,6 @@ Ejemplos de ítems de process assessment:
 - 6 meses post auditoría: follow-up a correcciones. fileciteturn23file6L39-L41
 
 Links:
-- [[06_Packaging_QC_Checklist]]
-- [[07_Calibracion_y_Metrologia]]
-- [[11_CAPA_y_Gestion_de_Desvios]]
+- [06_Packaging_QC_Checklist](06_Packaging_QC_Checklist.md)
+- [07_Calibracion_y_Metrologia](07_Calibracion_y_Metrologia.md)
+- [11_CAPA_y_Gestion_de_Desvios](11_CAPA_y_Gestion_de_Desvios.md)

@@ -26,7 +26,7 @@
    - Agua/aire si corresponde.
 
 5) **Acción**
-   - Si confirmado: ejecutar [[11_CAPA_y_Gestion_de_Desvios]] + acciones de limpieza/cambio de juntas/validación CIP.
+   - Si confirmado: ejecutar - Si confirmado: ejecutar [11_CAPA_y_Gestion_de_Desvios](11_CAPA_y_Gestion_de_Desvios.md) + acciones de limpieza/cambio de juntas/validación CIP. + acciones de limpieza/cambio de juntas/validación CIP.
 
 ## Registro
 - INC-LOG: fecha, lote, síntoma, pruebas, resultado, causa raíz probable, CAPA.

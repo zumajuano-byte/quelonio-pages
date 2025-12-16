@@ -66,7 +66,9 @@ Por lote:
 
 ## 5) Puentes (no duplicar)
 Para profundidad “biológica” (pitch rate, oxigenación, repitch, floculación), usar el módulo 03_Levadura:
+- [03 — Levadura](../../03_Levadura/03_Levadura.md)
 - allí está el detalle “por qué” y “cómo” desde levadura; acá consolidamos el “control de proceso”.
+
 
 ---
 

@@ -1,24 +1,32 @@
-# Fermentación — conceptos base
+---
+status: draft
+scope: operacion
+sources:
+  - "PENDIENTE_BIBLIO — White & Zainasheff — Yeast"
+  - "PENDIENTE_BIBLIO — Palmer — How to Brew"
+---
 
-## Las 5 variables que más cambian el resultado
-1) **Temperatura**: define velocidad y perfil (más limpio vs más frutado).
-2) **Cantidad de levadura**: muy poca = estrés; demasiada = perfil más neutro.
-3) **Oxígeno al inicio**: ayuda a multiplicación (solo al comienzo).
-4) **Nutrientes**: evitan fermentaciones “cansadas”.
-5) **Tiempo**: apurar suele salir caro en sabor/claridad.
+# Conceptos base — Fermentación + Maduración
 
-## Qué significa “fermentación sana”
-- Arranca en tiempo razonable.
-- Baja densidad de forma constante.
-- No genera olores raros persistentes (azufre fuerte por días, solvente, etc.).
-- Termina donde debería (FG esperada) y luego se estabiliza.
+## Objetivo
+Unificar definiciones mínimas para hablar “igual” y evitar errores por lenguaje ambiguo.
 
-## Errores típicos
-- Fermentar demasiado caliente “porque así termina antes”.
-- Embotellar/enlatar sin que la cerveza esté estable.
-- Exponer a oxígeno cuando ya está el alcohol y el lúpulo (oxidación).
+## Glosario mínimo (operable)
+- **OG / °P inicial:** densidad antes de fermentar.
+- **FG / densidad final:** densidad al cierre.
+- **AA% (apparent attenuation):** atenuación aparente.
+- **Lag:** tiempo hasta inicio de actividad.
+- **VDK / diacetilo:** subproducto que requiere gestión (tiempo/temperatura/salud de levadura).
+- **Descanso de diacetilo:** etapa térmica para limpieza de VDK.
+- **Cold crash:** descenso controlado para clarificar; riesgo principal: ingreso de O₂.
+- **Maduración:** etapa post-atenuación para limpieza/estabilidad (no solo “bajar temp”).
 
-## Checklist mínima
-- Definir temperatura objetivo.
-- Registrar: **OG**, temperatura, día 1–2–3, y **FG**.
-- Confirmar estabilidad (dos lecturas iguales) antes de envasar.
+## Variables y por qué importan (sin números mágicos)
+- Temperatura (controlabilidad + impacto)
+- Densidad (gates de fase)
+- pH (diagnóstico)
+- DO (riesgo de oxidación / performance de fermentación)
+
+## Puentes
+- Biología de levadura (pitch rate, oxígeno, repitch, floculación): [03 — Levadura](../03_Levadura/03_Levadura.md)
+- Targets mínimos (operación): [DEEP/10 — Targets y control mínimo](DEEP/10_Targets_y_control_minimo.md)

@@ -68,3 +68,32 @@ Profundización v1 (estructura funcional end-to-end) — Specs → Fermentación
   - 
 - Notas / decisiones:
   - 
+
+---
+
+# CHECKPOINT (sesión de cierre)
+
+**Fecha:** <<<2025/12/16>>>
+**Objetivo de la sesión:** <<<ej: estabilizar Fermentación/Maduración + APB preflight>>>
+
+## Estado técnico (APB)
+- Preflight (`.\preflight.ps1`): OK
+- Build strict (`python -m mkdocs build --strict`): OK
+- Deploy (`python -m mkdocs gh-deploy --clean`): OK
+- Sitio: https://zumajuano-byte.github.io/quelonio-pages/
+
+## Referencias de versión (para no “perderse”)
+- `main` (último commit): <<<18f1a02 (HEAD -> main, origin/main, origin/HEAD) docs: remove contentReference artifacts (preflight clean)>>>
+- `gh-pages` (último deploy): <<<7b4fe15 (origin/gh-pages, gh-pages) Deployed 18f1a02 with MkDocs version: 1.6.1>>>
+
+## Qué quedó hecho (resumen corto)
+- <<<1-5 bullets concretos>>>
+
+## Pendientes inmediatos (próximo bloque lógico)
+1) <<<pendiente 1>>>
+2) <<<pendiente 2>>>
+3) <<<pendiente 3>>>
+
+## Regla APB vigente
+- No commitear ni deployar sin correr `.\preflight.ps1` y que dé **OK**.
+- No tocar `SESSIONS_LOG.md` (solo se usa si explícitamente se decide en una sesión).

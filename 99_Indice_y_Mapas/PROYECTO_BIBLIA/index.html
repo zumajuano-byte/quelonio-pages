@@ -1814,6 +1814,43 @@ Regla: al cerrar una sesión de Biblia, <strong>se reemplaza este archivo comple
 <li>No commitear ni deployar sin correr <code>.\preflight.ps1</code> y que dé <strong>OK</strong>.</li>
 <li>No tocar <code>SESSIONS_LOG.md</code> (solo se usa si explícitamente se decide en una sesión).</li>
 </ul>
+<h1 id="checklist-cierre-de-sesion-biblia-quelonio">CHECKLIST — Cierre de sesión (Biblia Quelonio)<a class="headerlink" href="#checklist-cierre-de-sesion-biblia-quelonio" title="Permanent link">&para;</a></h1>
+<h2 id="1-estado-tecnico-mkdocsgit">1) Estado técnico (MkDocs/Git)<a class="headerlink" href="#1-estado-tecnico-mkdocsgit" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <code>python -m mkdocs build --strict</code> → OK (“built”)</li>
+<li>[ ] <code>git status</code> → working tree clean</li>
+<li>[ ] Cambios subidos a <code>main</code> (último commit relevante: <code>5167d92</code>)</li>
+<li>[ ] Deploy a GitHub Pages ejecutado: <code>python -m mkdocs gh-deploy --clean</code></li>
+<li>[ ] Sitio verificado online: Centro de Incidentes visible y navegable</li>
+</ul>
+<h2 id="2-normalizacion-de-saltos-de-linea-windows">2) Normalización de saltos de línea (Windows)<a class="headerlink" href="#2-normalizacion-de-saltos-de-linea-windows" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] <code>.gitattributes</code> creado y trackeado (<code>git ls-files .gitattributes</code> → OK)</li>
+<li>[ ] <code>git add -A</code> sin warnings LF/CRLF</li>
+</ul>
+<h2 id="3-modulos-cerrados-en-esta-sesion">3) Módulos cerrados en esta sesión<a class="headerlink" href="#3-modulos-cerrados-en-esta-sesion" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] 09 Empaque/Estabilidad: SOP + TP + troubleshooting + links OK</li>
+<li>[ ] 10 Limpieza/CIP: Manual v1 + TP + Kunze nivel 2 + links OK</li>
+<li>[ ] 11 Sensorial: Manual v1 + TP + puente a Spec/Receta + links OK</li>
+<li>[ ] 08 Recetas/Specs: ticket de mejora + puente con Sensorial + links OK</li>
+<li>[ ] 06 QA/QC: Centro de Incidentes + TP CAPA + TP Liberación de Lote + links OK</li>
+<li>[ ] 07 Fermentación/Maduración: TP por lote + hub operativo + links a 09/06 OK</li>
+</ul>
+<h2 id="4-proximo-paso-para-retomar-sin-perder-hilo">4) Próximo paso (para retomar sin perder hilo)<a class="headerlink" href="#4-proximo-paso-para-retomar-sin-perder-hilo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] Continuar con <strong>Módulo 03 — Levadura</strong></li>
+<li>Archivos a abrir/subir:  <ul>
+<li><code>docs/03_Levadura/03_Levadura.md</code>  </li>
+<li><code>docs/03_Levadura/DEEP/00_INDEX.md</code> (si existe)</li>
+</ul>
+</li>
+<li>Objetivo: dejar 03 “operable” como 07/09/10/11 (overview → DEEP → manual v1 → TP + puentes a 07 y 11)</li>
+</ul>
+<h2 id="5-regla-de-arranque-cuando-volvemos">5) Regla de arranque (cuando volvemos)<a class="headerlink" href="#5-regla-de-arranque-cuando-volvemos" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] Al iniciar nueva sesión: confirmar URL pública + abrir el módulo objetivo (03) antes de escribir contenido nuevo</li>
+</ul>
 
 
 

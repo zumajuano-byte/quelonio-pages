@@ -1,5 +1,15 @@
 # 01_Sistema_QAQC_Operable
 
+---
+
+## Ruta rápida (incidentes)
+Si aparece un problema en producción (defecto, oxidación, contaminación, desvío, shelf-life raro):
+
+➡️ [Centro de Incidentes (QA/QC)](../Centro_Incidentes.md)
+➡️ Template: [TP — Liberación de Lote](TP_Liberacion_de_Lote.md)
+
+
+
 ## Principio de diseño
 Un QA/QC útil no es “más tests”: es **tests elegidos por riesgo**, con **límites claros**, **acciones definidas**, y **evidencia trazable**.
 

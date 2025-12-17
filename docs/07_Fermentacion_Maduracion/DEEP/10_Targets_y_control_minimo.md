@@ -6,6 +6,10 @@ Esto no reemplaza specs completas; es el **tablero mínimo** para decidir.
 Puentes:
 - QA/QC (lógica de límites): [Especificaciones vs control limits](../../06_Procesos_QA_QC/Procesos_QAQC_Parte6_DEEP/02_Especificaciones_y_Control_Limits.md)
 - Biología de levadura (pitch/oxígeno/repitch): [Levadura (03)](../../03_Levadura/03_Levadura.md)
+---
+
+## Registro del lote (usar siempre)
+➡️ [TP — Log Fermentación y Maduración](TP_Log_Fermentacion_y_Maduracion.md)
 
 ---
 

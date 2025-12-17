@@ -1,119 +1,73 @@
-# DEEP v1 — Sensorial (protocolo + defectos guía + liberación + feedback al Spec)
+---
+status: active
+scope: sensorial
+type: proceso
+---
 
-> Marco de verdad:
-> - (BIBLIO) = respaldado por bibliografía (a completar cuando esté citado).
-> - (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO) = práctica operativa útil, aún no anclada a tu bibliografía.
+# 01 — Sensorial v1 (protocolo operable + defectos guía + liberación)
 
-## 0) Objetivo operativo
-Estandarizar evaluación sensorial para:
-- Detectar defectos temprano
-- Tomar decisiones (gates y liberación) con criterio repetible
-- Retroalimentar el Spec sin generar caos (versionado controlado)
-
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+## Objetivo
+Catar siempre igual, registrar siempre, y decidir con criterio:
+- OK (liberar),
+- Dudoso (retener y repetir),
+- No OK (investigar causa).
 
 ---
 
-## 1) Protocolo de cata (10 minutos, repetible)
-### 1.1 Preparación
-- Misma copa/vaso siempre que sea posible
-- Mismo volumen (ej.: 100–150 ml)
-- Temperatura similar entre muestras
-- Ambiente sin olores fuertes
-
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-### 1.2 Secuencia
-1) **Visual**
-- Color, claridad/turbidez, espuma (formación y persistencia)
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-2) **Aroma**
-- 3 olfateos cortos + 1 largo
-- Registrar intensidad + descriptores dominantes
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-3) **Boca**
-- Ataque → medio → final → retrogusto
-- Balance (dulzor/amargor/ácido)
-- Cuerpo, astringencia, calentamiento alcohólico
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-4) **Conclusión**
-- “Lote en 7 palabras” (una frase)
-- Decisión: OK / Dudoso / No OK
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+## 1) Setup (30 segundos)
+- Vaso limpio y sin olor.
+- Misma cantidad servida (similar en cada muestra).
+- Temperatura parecida entre muestras.
+- Si comparás 2 lotes: servir A y B, y alternar.
 
 ---
 
-## 2) Registro mínimo (formato estándar)
-- Producto / Estilo:
-- Spec vigente (vX.Y):
-- Lote:
-- Fecha:
-- Etapa: (pre-empaque / día 0 / estabilidad día 7/14/30)
-- 3 cosas que están bien:
-- 3 cosas a mejorar:
-- Defectos sospechados (si aplica):
-- Decisión: Liberar / Retener / Reprocesar
-- Nota final (1 frase):
-
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+## 2) Protocolo 5 minutos (el estándar)
+1) **Mirar** (30s): color, claridad, espuma.
+2) **Oler** (60s): 3 olfateos cortos.
+3) **Probar** (90s): sorbo chico → amargor/dulzor/acidez.
+4) **Final** (60s): retrogusto (qué queda).
+5) **Registrar** (60s): 3 líneas (me gusta / no me gusta / sospecha).
 
 ---
 
-## 3) Defectos guía (mapa rápido para decisiones)
-> No es enciclopedia: es “detección y acción”.
+## 3) Defectos guía (en simple)
+> No buscamos “ser sommeliers”. Buscamos detectar temprano.
 
-### 3.1 Fermentación / maduración
-- **Diacetilo** (manteca/caramelo): sugiere descanso/tiempo (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-- **Acetaldehído** (manzana verde): sugiere fermentación incompleta/estrés (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-- **Azufre** (huevo/cerillo): sugiere tiempo/condiciones de fermentación (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+### Oxidación / envejecimiento
+- Señales: “apagado”, cartón/papel, dulzor raro tipo miel.
+- Qué hacer: cruzar con empaque y almacenamiento.
+➡️ [09/DEEP — Oxígeno (DO/TPO)](../../09_Empaque_Estabilidad/DEEP/20_Control_oxigeno_DO_TPO.md)  
+➡️ [09/DEEP — Almacenamiento](../../09_Empaque_Estabilidad/DEEP/30_Luz_temperatura_almacenamiento.md)
 
-### 3.2 Proceso caliente / enfriado
-- **DMS** (choclo): sugiere hervido/enfriado/evaporación (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+### Contaminación (sospecha)
+- Señales: acidez “fuera de estilo”, fenólico raro, evolución acelerada, sobrecarbonatación inesperada.
+- Qué hacer: activar QA/QC.
+➡️ [06 — Árbol de decisión: contaminación](../../06_Procesos_QA_QC/Procesos_QAQC_Parte6_DEEP/10_Arbol_Decision_Contaminacion.md)
 
-### 3.3 Microbiología / contaminación
-- **Ácido/láctico fuera de estilo**: sugiere contaminación o proceso no controlado (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-- **Fenólico medicinal/plástico**: sugiere contaminación o cepa/agua/limpieza (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-### 3.4 Oxidación / empaque
-- **Cartón/papel** o **miel/dulzor oxidativo**, “lúpulo apagado”: sugiere O2 / manejo / temperatura (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-- **Oscurecimiento anormal** (lupuladas): sugiere oxidación/almacenamiento (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
----
-
-## 4) Reglas de decisión por gates
-### 4.1 Gate B (fin fermentación) — soporte sensorial
-- Si diacetilo marcado: retener y aplicar descanso (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-- Si “verde” pero sin defecto dominante: puede madurar, no liberar a empaque todavía (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-### 4.2 Gate C (pre-empaque)
-- Si hay señal de oxidación antes de envasar: retener y revisar transferencias (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-- Si hay señal micro: retener y disparar revisión de limpieza/sanitización (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-### 4.3 Gate D (liberación)
-- Liberar solo si “defecto dominante fuera de estilo” = NO (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-- Si “Dudoso”: retener y repetir evaluación en 24–72h o con condición controlada (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+### Diacetilo (manteca)
+- Señales: manteca / caramelo mantecoso.
+- Qué hacer: si es pre-empaque, no avanzar.
+➡️ [07 — Curva térmica y diacetilo](../../07_Fermentacion_Maduracion/DEEP/20_Curva_termica_y_diacetilo.md)
 
 ---
 
-## 5) Feedback al Spec (sin caos)
-> Sensorial no cambia recetas “en caliente”. Alimenta el sistema de versionado.
+## 4) Gate sensorial (decisión)
+### OK (liberar)
+- No hay defecto dominante fuera de estilo.
+- Aroma/sabor “en línea” con el spec (aunque tenga pequeñas variaciones).
+➡️ Decisión final del lote (template): [QA/QC — TP Liberación de Lote](../../06_Procesos_QA_QC/Procesos_QAQC_Parte6_DEEP/TP_Liberacion_de_Lote.md)
 
-Cuando surge un hallazgo:
-1) Registrar hallazgo (qué, cuándo, en qué condición) (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-2) Clasificar causa probable (fermentación / limpieza / empaque / storage / materia prima) (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-3) Proponer cambio (mínimo) y decidir versión:
-- Si cambia percepción del producto → v2.0
-- Si es ajuste menor → v1.1
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+
+### Dudoso (retener)
+- Algo no cierra pero no estás seguro.
+- Acción: repetir cata en 48–72 h y comparar con una muestra testigo.
+
+### No OK (investigar)
+- Defecto claro o evolución rápida.
+- Acción: cruzar con empaque (09), limpieza (10) y QA/QC (06).
 
 ---
 
-## 6) Matriz de afirmaciones (para anclaje bibliográfico posterior)
-| Afirmación / decisión operativa | Tag | Fuente | Métrica/validación | Estado |
-|---|---|---|---|---|
-| Protocolo sensorial estándar mejora consistencia de decisiones | HEURÍSTICA | PENDIENTE_BIBLIO | variabilidad entre catas + decisiones coherentes | por citar |
-| Defectos guía permiten acciones correctivas de bajo riesgo | HEURÍSTICA | PENDIENTE_BIBLIO | reducción de reincidencias | por citar |
-| Feedback controlado al Spec evita deriva de recetas | HEURÍSTICA | PENDIENTE_BIBLIO | trazabilidad de cambios + consistencia de producto | por citar |
+## 5) Registro (obligatorio)
+➡️ Usar: [TP — Log de Cata y Defectos](TP_Log_Cata_y_Defectos.md)

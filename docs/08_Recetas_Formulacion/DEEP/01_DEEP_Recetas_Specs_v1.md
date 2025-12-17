@@ -121,6 +121,9 @@ Si el consumidor “percibiría otra cerveza”, es versión mayor.
 ## 5) “Spec Sheet” (referencia a template)
 Usar la plantilla canónica:
 - `docs/00_Templates/TP_SpecSheet_Cerveza.md`
+## Templates
+- [TP — Ticket de mejora (Receta/Spec)](TP_Ticket_Mejora_Receta_Spec.md)
+
 
 (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
 
@@ -134,3 +137,13 @@ Usar la plantilla canónica:
 | Tener spec vigente con targets y gates mejora repetibilidad y liberación | HEURÍSTICA | PENDIENTE_BIBLIO | % lotes dentro de tolerancia + retrabajos | por citar |
 | FG estable (2 lecturas) como condición mínima de fin de fermentación | HEURÍSTICA | PENDIENTE_BIBLIO | evitar sobre/infra carbonatación + defectos | por citar |
 | Versionado simple evita “receta ambigua” y facilita trazabilidad | HEURÍSTICA | PENDIENTE_BIBLIO | auditoría de cambios + consistencia | por citar |
+
+---
+
+## Feedback desde Sensorial (cierra el loop)
+Las recetas y specs se ajustan con evidencia. El método oficial para transformar cata en cambios es:
+
+➡️ [11/DEEP/20 — Pasar sensorial a Spec y Receta](../../11_Sensorial/DEEP/20_Pasar_Sensorial_a_Spec_y_Receta.md)
+
+Registro de cata:
+➡️ [11/DEEP/TP — Log de Cata y Defectos](../../11_Sensorial/DEEP/TP_Log_Cata_y_Defectos.md)

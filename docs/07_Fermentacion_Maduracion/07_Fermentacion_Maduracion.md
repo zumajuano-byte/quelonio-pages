@@ -28,6 +28,8 @@ Está pensado para operar en dos niveles:
 - [20 — Curva térmica y diacetilo](DEEP/20_Curva_termica_y_diacetilo.md)
 - [30 — Transferencias, cold crash y salida](DEEP/30_Transferencias_cold_crash_y_salida.md)
 - [40 — Troubleshooting de proceso](DEEP/40_Troubleshooting_proceso.md)
+- [TP — Log de Fermentación y Maduración](DEEP/TP_Log_Fermentacion_y_Maduracion.md)
+
 
 ## Definiciones mínimas (para hablar “igual”)
 

@@ -1,152 +1,129 @@
-# DEEP v1 — Limpieza y sanitización (SOP + CIP + verificación + registros)
+---
+status: active
+scope: limpieza_sanitizacion
+type: proceso
+---
 
-> Marco de verdad:
-> - (BIBLIO) = respaldado por bibliografía (a completar cuando esté citado).
-> - (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO) = práctica operativa útil, aún no anclada a tu bibliografía.
+# 01 — Limpieza y sanitización (Manual v1, operable)
 
-## 0) Objetivo operativo
-Que el proceso sea repetible y con bajo riesgo micro/oxidativo mediante rutinas estándar de limpieza, sanitización y verificación.
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+## Objetivo (en simple)
+Tener un método repetible para:
+- limpiar (sacar suciedad),
+- sanitizar (bajar microbios),
+- y evitar que el equipo “vuelva a contaminarse” antes de usarlo.
 
 ---
 
-## 1) Regla madre (modelo simple)
-Separar siempre:
-- **Limpieza**: remover suciedad/biofilm (lo visible y lo invisible)
-- **Sanitización**: reducir carga microbiana antes de usar
+## 1) Dos conceptos que no se negocian
+### Limpieza
+Sacar suciedad visible e invisible (grasa, proteína, “película”, restos, piedra de cerveza).
+Si hay suciedad, el sanitizante no llega donde tiene que llegar.
 
-Y operar por parámetros:
-- Concentración + Temperatura + Tiempo + Acción mecánica
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
----
-
-## 2) Mapa de superficies/equipos (prioridad por riesgo)
-Riesgo alto (contacto post-hervor / post-fermentación):
-- Fermentadores, mangueras, válvulas, conexiones, llenadora, líneas de envasado
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-Riesgo medio:
-- Intercambiador/placa, whirlpool, bomba post-hervor
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-Riesgo bajo:
-- Equipos pre-hervor (aunque igual se limpian)
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+### Sanitización
+Bajar la carga microbiana en superficies **ya limpias**.
 
 ---
 
-## 3) SOP general (4 pasos siempre)
-> Este es el “esqueleto” para cualquier equipo. Los detalles se completan por equipo en sección 4.
+## 2) Regla práctica (para que funcione en la vida real)
+Cuando una limpieza falla, casi siempre es por uno de estos motivos:
+- poco tiempo,
+- poca acción mecánica (cepillo/recirculación),
+- químico mal dosificado,
+- temperatura incorrecta,
+- o enjuague mal hecho.
 
-1) **Pre-enjuague**
-- Objetivo: remover sólidos y suciedad gruesa
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-2) **Limpieza química**
-- Objetivo: remover suciedad invisible/biofilm
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-3) **Enjuague (si aplica)**
-- Objetivo: remover restos de químico
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-4) **Sanitización**
-- Objetivo: dejar listo para contacto con cerveza fría
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+> No hace falta “ser perfecto”: hace falta **ser consistente**.
 
 ---
 
-## 4) SOP por equipo (plantilla operable)
-> Copiar/pegar por cada equipo real. Mantener “una receta de limpieza” por equipo.
-
-### 4.1 Plantilla — Equipo: ____________
-**Frecuencia:** (cada uso / semanal / mensual)
-
-**Paso 1: Pre-enjuague**
-- Agua: fría/tibia/caliente (según caso)
-- Tiempo/volumen: ______
-- Criterio de fin: agua sale clara (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-**Paso 2: Limpieza química**
-- Producto: ______
-- Concentración: ______
-- Temperatura: ______
-- Tiempo de contacto: ______
-- Acción mecánica: (circulación/cepillo/recirculación) ______
-- Criterio de fin: sin película/pegajosidad/olor extraño (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-**Paso 3: Enjuague (si aplica)**
-- Método: ______
-- Criterio: sin olor/sabor a químico (HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-**Paso 4: Sanitización**
-- Producto: ______
-- Concentración: ______
-- Tiempo: ______
-- Drenado: sí/no (según sanitizante)
-- Criterio: respetar tiempo de contacto y mantener cerrado hasta uso
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-**Verificación**
-- Visual con luz + olfato
-- (Opcional) test rápido si tenés (ATP, placas, etc.)
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
-
-**Registro mínimo**
-- Fecha/hora
-- Equipo
-- Químicos y parámetros
-- Responsable
-- Observaciones
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+## 3) Seguridad (mínimo)
+- No mezclar químicos.
+- Guantes + protección ocular cuando manipules químicos.
+- Etiquetar recipientes y preparar diluciones con criterio.
+- Tener un balde solo para químicos (no el mismo que usás para otra cosa).
 
 ---
 
-## 5) CIP (si aplica) — principio operativo
-Objetivo: repetir siempre el mismo circuito con parámetros controlados.
-- Confirmar caudal/retorno (acción mecánica)
-- Confirmar temperatura real
-- Confirmar concentración (preparación consistente)
-- Confirmar tiempo de recirculación
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+## 4) Secuencia estándar (la más segura)
+Usala como “base” para casi todo.
+
+1) **Enjuague inicial**
+- Sacar lo grueso (restos visibles).
+
+2) **Lavado (limpieza)**
+- Aplicar detergente/limpiador, respetar concentración.
+- Acción: cepillado o recirculación (según equipo).
+- Tiempo: no apurar.
+
+3) **Enjuague**
+- Quitar limpiador cuando corresponde.
+
+4) **(Opcional) Ciclo ácido**
+- Útil si aparece “piedra” o depósitos minerales.
+
+5) **Sanitización**
+- Aplicar sanitizante.
+- Respetar tiempo de contacto.
+- Drenar como corresponde.
+
+6) **Mantener cerrado**
+- Lo más común: el equipo se contamina de nuevo por dejarlo abierto.
 
 ---
 
-## 6) Verificación mínima (sin laboratorio)
-> No reemplaza microbiología, pero reduce ceguera operativa.
+## 5) SOP mínimo por “familia” de equipo (sin complicarte)
+### 5.1 Fermentador / tanque (frío)
+- Enjuague → limpieza → enjuague → sanitización → cerrar.
+- Evitar salpicado durante armado de mangueras.
+- Si hay olor raro persistente: repetir limpieza, y recién después sanitizar.
 
-Checklist:
-- Visual: sin residuos, sin manchas, sin biofilm
-- Olor: sin rancio, sin ácido, sin “plástico viejo”
-- Tacto (si aplica en partes desmontadas): no pegajoso
-- Consistencia: mismo procedimiento siempre
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+### 5.2 Mangueras, válvulas y conexiones
+- Son “zonas trampa”.
+- Mejor tener rutina fija: desarmar cada X usos (definirlo) y limpiar manual.
 
----
-
-## 7) Gate de higiene (previo a contacto con cerveza fría)
-Antes de transferir / envasar:
-- Equipo y líneas sanitizadas dentro de ventana definida
-- Circuito cerrado hasta uso
-- Registro completado
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+### 5.3 Línea de envasado / llenado
+- Es crítica: cualquier falla se multiplica en todo el lote.
+- Si hay paradas largas: tratar como re-sanitización antes de seguir.
 
 ---
 
-## 8) Registro de incidentes (para mejora posterior)
-Registrar como “incidente de higiene” si:
-- Olor extraño en línea/equipo
-- Residuos visibles post-limpieza
-- Repetición de defectos micro/sensoriales sin causa clara
-- Dudas de sanitización (tiempo/concentración)
-(HEURÍSTICA OPERATIVA | PENDIENTE_BIBLIO)
+## 6) Cómo verificar (sin equipos raros)
+Checklist simple:
+- Visual: ¿hay película, puntos, manchas, “pegote”?
+- Olfato: ¿hay olor extraño en válvulas o mangueras?
+- Agua de enjuague: ¿sale limpia, sin espuma rara?
+- Registro: ¿se hizo siempre igual?
+
+Si querés sumar “nivel 2” más adelante: ATP o placas, pero no hace falta para arrancar sólido.
 
 ---
 
-## 9) Matriz de afirmaciones (para anclaje bibliográfico posterior)
-| Afirmación / decisión operativa | Tag | Fuente | Métrica/validación | Estado |
-|---|---|---|---|---|
-| Limpieza y sanitización consistentes reducen variabilidad y riesgo micro | HEURÍSTICA | PENDIENTE_BIBLIO | defectos micro/sensoriales + reincidencias | por citar |
-| Parámetros (conc/temp/tiempo/acción) explican efectividad más que “marca” | HEURÍSTICA | PENDIENTE_BIBLIO | resultados de verificación + incidencias | por citar |
-| Gate de higiene previo a empaque reduce fallas en estabilidad | HEURÍSTICA | PENDIENTE_BIBLIO | shelf-life + off-flavors | por citar |
+### “Sigue saliendo olor raro”
+> Si el problema se repite (aunque “parezca limpio”), usar: [20 — Troubleshooting CIP (Nivel 2, Kunze)](20_Troubleshooting_CIP_Kunze_Nivel2.md)
+
+- Causa típica: suciedad atrapada (válvula/manguera/rosca).
+- Acción: desarmar, limpiar manual, volver a sanitizar.
+
+
+### “Sobrecabonatación” o “deriva rara” en botellas
+- Puede ser contaminación.
+- Acción: activar QA/QC y revisar higiene de embotellado.
+➡️ [QA/QC — Árbol de decisión](../../06_Procesos_QA_QC/Procesos_QAQC_Parte6_DEEP/10_Arbol_Decision_Contaminacion.md)
+
+### “La cerveza se cae rápido / vida útil corta”
+- A veces es oxígeno, a veces es micro, a veces ambos.
+- Acción: cruzar con módulo 09.
+➡️ [09/DEEP — Troubleshooting empaque](../../09_Empaque_Estabilidad/DEEP/40_Shelflife_y_troubleshooting_empaque.md)
+
+---
+
+## 8) Registro mínimo (para que el sistema aprenda)
+Por limpieza importante, anotar:
+- equipo/línea,
+- fecha,
+- qué químico usaste (y concentración si la sabés),
+- tiempo aproximado,
+- observación (olor/visual),
+- y si quedó “listo para usar” o no.
+
+> Si no se registra, se pierde el aprendizaje.

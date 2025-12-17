@@ -1,5 +1,17 @@
 # Empaque y estabilidad
 
+---
+
+## Si venís desde Fermentación/Maduración (07)
+Antes de entrar a empaque, asegurate de haber cerrado el final del proceso:
+
+- diacetilo resuelto (ideal: prueba forzada)
+- transferencias sin oxígeno
+- cerveza fría/estable (si aplica)
+
+➡️ Volver a: [07/30 — Transferencias, cold crash y salida](../07_Fermentacion_Maduracion/DEEP/30_Transferencias_cold_crash_y_salida.md)
+
+
 ## Qué es
 Todo lo que pasa desde “cerveza lista” hasta “cerveza en mano del cliente”: enlatado/embotellado, carbonatación, oxígeno, frío y vida útil.
 

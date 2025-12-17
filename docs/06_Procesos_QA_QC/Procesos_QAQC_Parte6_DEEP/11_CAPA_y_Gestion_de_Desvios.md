@@ -1,5 +1,7 @@
 # 11_CAPA_y_Gestion_de_Desvios
 
+➡️ Template rápido: [TP — Registro de Desvío + CAPA](TP_Registro_Desvio_CAPA.md)
+
 ## Principio
 Definir qué hacer ante breach evita reacción improvisada y costosa. fileciteturn23file1L37-L39
 

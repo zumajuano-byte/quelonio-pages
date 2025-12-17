@@ -1,4 +1,4 @@
-﻿---
+---
 status: draft
 scope: proceso
 sources:
@@ -7,6 +7,12 @@ sources:
 ---
 
 # 30 â€” Transferencias, cold crash y criterios de â€œlisto para envasarâ€ (DEEP)
+
+> Este bloque depende del **20 — Curva térmica y diacetilo**.  
+> Si no está cerrado el diacetilo, no se transfiere ni se enfría.
+>
+> [Volver al bloque 20](20_Curva_termica_y_diacetilo.md)
+
 
 ## Objetivo del bloque
 Definir **cuÃ¡ndo** y **cÃ³mo**:
@@ -61,13 +67,28 @@ Referencia operativa: cold crash puede prevenir/prolongar estabilidad frente a t
 ## 4) Criterio de salida (salida a Empaque)
 Declarar â€œListo para Empaqueâ€ solo si:
 - [ ] Densidad estable confirmada (2â€“3 lecturas consistentes o criterio equivalente).
-- [ ] Gate de diacetilo resuelto (prueba forzada o criterio sensorial consistente).
+- [ ] Gate de diacetilo resuelto (preferible: prueba forzada; si no, criterio sensorial consistente y repetible).
 - [ ] Temperatura y tiempos de maduraciÃ³n registrados.
 - [ ] Si hubo trasiego: evento ejecutado con control de oxÃ­geno y headspace mÃ­nimo.
 - [ ] Claridad/estabilidad acorde al estilo (incluye decisiÃ³n consciente si la turbidez es intencional).
 
 Notas de estabilidad:
 - El oxÃ­geno en etapas finales/envasado es un factor crÃ­tico para conservaciÃ³n/shelf-life; por eso, el â€œListo para Empaqueâ€ incluye control de oxÃ­geno en transferencias y preparaciÃ³n del empaque.
+
+---
+
+
+## Siguiente paso (salida del módulo 07 → entrada al 09)
+Si llegaste acá con:
+- diacetilo resuelto,
+- transferencias sin oxígeno,
+- cerveza fría/estable,
+
+entonces el trabajo sigue en **09 — Empaque y estabilidad**:
+
+➡️ [Ir al módulo 09 (hub)](../../09_Empaque_Estabilidad/09_Empaque_Estabilidad.md)
+
+Recomendación: entrar por el índice DEEP de 09 y seguir el orden “preparar → envasar → chequear”.
 
 ---
 

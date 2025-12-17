@@ -97,3 +97,36 @@ Profundización v1 (estructura funcional end-to-end) — Specs → Fermentación
 ## Regla APB vigente
 - No commitear ni deployar sin correr `.\preflight.ps1` y que dé **OK**.
 - No tocar `SESSIONS_LOG.md` (solo se usa si explícitamente se decide en una sesión).
+
+
+# CHECKLIST — Cierre de sesión (Biblia Quelonio)
+
+## 1) Estado técnico (MkDocs/Git)
+- [ ] `python -m mkdocs build --strict` → OK (“built”)
+- [ ] `git status` → working tree clean
+- [ ] Cambios subidos a `main` (último commit relevante: `5167d92`)
+- [ ] Deploy a GitHub Pages ejecutado: `python -m mkdocs gh-deploy --clean`
+- [ ] Sitio verificado online: Centro de Incidentes visible y navegable
+
+## 2) Normalización de saltos de línea (Windows)
+- [ ] `.gitattributes` creado y trackeado (`git ls-files .gitattributes` → OK)
+- [ ] `git add -A` sin warnings LF/CRLF
+
+## 3) Módulos cerrados en esta sesión
+- [ ] 09 Empaque/Estabilidad: SOP + TP + troubleshooting + links OK
+- [ ] 10 Limpieza/CIP: Manual v1 + TP + Kunze nivel 2 + links OK
+- [ ] 11 Sensorial: Manual v1 + TP + puente a Spec/Receta + links OK
+- [ ] 08 Recetas/Specs: ticket de mejora + puente con Sensorial + links OK
+- [ ] 06 QA/QC: Centro de Incidentes + TP CAPA + TP Liberación de Lote + links OK
+- [ ] 07 Fermentación/Maduración: TP por lote + hub operativo + links a 09/06 OK
+
+## 4) Próximo paso (para retomar sin perder hilo)
+- [ ] Continuar con **Módulo 03 — Levadura**
+  - Archivos a abrir/subir:  
+    - `docs/03_Levadura/03_Levadura.md`  
+    - `docs/03_Levadura/DEEP/00_INDEX.md` (si existe)
+  - Objetivo: dejar 03 “operable” como 07/09/10/11 (overview → DEEP → manual v1 → TP + puentes a 07 y 11)
+
+## 5) Regla de arranque (cuando volvemos)
+- [ ] Al iniciar nueva sesión: confirmar URL pública + abrir el módulo objetivo (03) antes de escribir contenido nuevo
+

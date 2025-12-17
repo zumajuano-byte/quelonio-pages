@@ -1,86 +1,87 @@
----
+﻿---
 status: active
 module: 07_Fermentacion_Maduracion
 topic: curva_termica_y_diacetilo
-source_primary: YEAST (White & Zainasheff) — traducido ES
+source_primary: YEAST (White & Zainasheff) â€” traducido ES
 ---
 
-# 20 — Curva térmica, rampas y descanso de diacetilo
+# 20 â€” Curva tÃ©rmica, rampas y descanso de diacetilo
 
-## Para qué sirve (en simple)
-Este documento es para una sola cosa: **evitar que la cerveza quede “manteca” (diacetilo)** y asegurar que la fermentación termine **limpia**, sin apurarnos con el frío o la transferencia. :contentReference[oaicite:1]{index=1}
-
----
-
-## Regla de oro (la más importante)
-**No bajes la temperatura al final “porque ya llegó a densidad final”.**  
-Ese es el error típico: si enfriás al final, la limpieza del diacetilo se frena o se detiene. :contentReference[oaicite:2]{index=2}
+## Para quÃ© sirve (en simple)
+Este documento es para una sola cosa: **evitar que la cerveza quede â€œmantecaâ€ (diacetilo)** y asegurar que la fermentaciÃ³n termine **limpia**, sin apurarnos con el frÃ­o o la transferencia.
 
 ---
 
-## Cuándo hacer el descanso de diacetilo
+## Regla de oro (la mÃ¡s importante)
+**No bajes la temperatura al final â€œporque ya llegÃ³ a densidad finalâ€.**  
+Ese es el error tÃ­pico: si enfriÃ¡s al final, la limpieza del diacetilo se frena o se detiene.
+
+---
+
+## CuÃ¡ndo hacer el descanso de diacetilo
 ### Momento correcto (recomendado)
 Hacerlo **antes** de llegar a densidad final:  
-**cuando falten 2 a 5 puntos de densidad** (aprox. 0,5 a 1°P) para llegar al final. :contentReference[oaicite:3]{index=3}
+**cuando falten 2 a 5 puntos de densidad** (aprox. 0,5 a 1Â°P) para llegar al final.
 
 ### Si ya llegaste a densidad final
-Igual puede ayudar dejar **2 días** a temperatura de fermentación, pero el “timing” ideal es antes del final. :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}
+Igual puede ayudar dejar **2 dÃ­as** a temperatura de fermentaciÃ³n, pero el â€œtimingâ€ ideal es antes del final.
 
 ---
 
-## Procedimiento estándar (lo que haría siempre)
+## Procedimiento estÃ¡ndar (lo que harÃ­a siempre)
 
-### A) Si es lager (fermentación fría)
-1) Cerca del final (faltan 2–5 puntos), **subí a 18–20 °C**  
-2) Mantené **2 días**  
-3) Recién después evaluás frío / crash / transferencia :contentReference[oaicite:6]{index=6} :contentReference[oaicite:7]{index=7}
+### A) Si es lager (fermentaciÃ³n frÃ­a)
+1) Cerca del final (faltan 2â€“5 puntos), **subÃ­ a 18â€“20 Â°C**  
+2) MantenÃ© **2 dÃ­as**  
+3) ReciÃ©n despuÃ©s evaluÃ¡s frÃ­o / crash / transferencia
 
-### B) Si es ale (fermentación “cálida”)
-1) Cuando llega al final, dejá **2 días más** a temperatura de fermentación  
-2) Si la fermentación vino lenta, podés **subir ~3 °C** para acelerar la reducción de diacetilo :contentReference[oaicite:8]{index=8}
+### B) Si es ale (fermentaciÃ³n â€œcÃ¡lidaâ€)
+1) Cuando llega al final, dejÃ¡ **2 dÃ­as mÃ¡s** a temperatura de fermentaciÃ³n  
+2) Si la fermentaciÃ³n vino lenta, podÃ©s **subir ~3 Â°C** para acelerar la reducciÃ³n de diacetilo
 
 ---
 
 ## Antes de enfriar o transferir: chequeo simple (Prueba de diacetilo forzado)
-Esto sirve para saber si tu cerveza tiene **precursor** de diacetilo, aunque todavía no lo sientas. :contentReference[oaicite:9]{index=9}
+Esto sirve para saber si tu cerveza tiene **precursor** de diacetilo, aunque todavÃ­a no lo sientas.
 
-**Cómo hacerlo (versión práctica):**
-1) Tomá dos muestras iguales en vasos y tapalas (por ejemplo con aluminio). :contentReference[oaicite:10]{index=10}  
-2) Una la dejás a temperatura ambiente.  
-3) La otra la calentás en baño de agua caliente (aprox. 50–71 °C) por 10–20 min. :contentReference[oaicite:11]{index=11}  
-4) Enfriás la muestra caliente para que queden a la misma temperatura. :contentReference[oaicite:12]{index=12}  
-5) Oler ambas: si aparece “manteca”, **no transfieras ni envases** todavía. :contentReference[oaicite:13]{index=13} :contentReference[oaicite:14]{index=14}
+**CÃ³mo hacerlo (versiÃ³n prÃ¡ctica):**
+1) TomÃ¡ dos muestras iguales en vasos y tapalas (por ejemplo con aluminio).  
+2) Una la dejÃ¡s a temperatura ambiente.  
+3) La otra la calentÃ¡s en baÃ±o de agua caliente (aprox. 50â€“71 Â°C) por 10â€“20 min.  
+4) EnfriÃ¡s la muestra caliente para que queden a la misma temperatura.  
+5) Oler ambas: si aparece â€œmantecaâ€, **no transfieras ni envases** todavÃ­a.
 
-**Qué hacer si da positivo:**
-- Dejála sobre la levadura y seguí revisando (idealmente a diario).  
-- Subir “unos pocos grados” ayuda a que se reduzca más rápido. :contentReference[oaicite:15]{index=15}
+**QuÃ© hacer si da positivo:**
+- DejÃ¡la sobre la levadura y seguÃ­ revisando (idealmente a diario).  
+- Subir â€œunos pocos gradosâ€ ayuda a que se reduzca mÃ¡s rÃ¡pido.
 
 ---
 
-## Dos cosas que arruinan todo (y por eso van acá)
+## Dos cosas que arruinan todo (y por eso van acÃ¡)
 ### 1) Separar cerveza de levadura demasiado pronto
-Si transferís/enfriás temprano, podés dejar precursores adentro y después reaparece el diacetilo. :contentReference[oaicite:16]{index=16}
+Si transferÃ­s/enfriÃ¡s temprano, podÃ©s dejar precursores adentro y despuÃ©s reaparece el diacetilo.
 
-### 2) Meter oxígeno en transferencias o envasado
-Si entra oxígeno, el precursor se puede convertir a diacetilo y, si ya sacaste la levadura, después no es fácil arreglarlo. :contentReference[oaicite:17]{index=17}
-
----
-
-## Checklist rápido (para operar sin pensar)
-- [ ] Estoy a 2–5 puntos de densidad del final → preparo descanso :contentReference[oaicite:18]{index=18}
-- [ ] Lager: 18–20 °C por 2 días :contentReference[oaicite:19]{index=19}
-- [ ] Ale: 2 días a temp de fermentación; si vino lenta, +3 °C :contentReference[oaicite:20]{index=20}
-- [ ] NO enfrío al llegar a densidad final :contentReference[oaicite:21]{index=21}
-- [ ] Antes de transferir/envasar: prueba diacetilo forzado :contentReference[oaicite:22]{index=22}
-- [ ] Transferencias: objetivo #1 = no oxígeno :contentReference[oaicite:23]{index=23}
-
+### 2) Meter oxÃ­geno en transferencias o envasado
+Si entra oxÃ­geno, el precursor se puede convertir a diacetilo y, si ya sacaste la levadura, despuÃ©s no es fÃ¡cil arreglarlo.
 
 ---
 
-## Conexión con el siguiente paso (bloque 30)
-Si el diacetilo está resuelto (gate OK), el siguiente paso es:
+## Checklist rÃ¡pido (para operar sin pensar)
+- [ ] Estoy a 2â€“5 puntos de densidad del final â†’ preparo descanso
+- [ ] Lager: 18â€“20 Â°C por 2 dÃ­as
+- [ ] Ale: 2 dÃ­as a temp de fermentaciÃ³n; si vino lenta, +3 Â°C
+- [ ] NO enfrÃ­o al llegar a densidad final
+- [ ] Antes de transferir/envasar: prueba diacetilo forzado
+- [ ] Transferencias: objetivo #1 = no oxÃ­geno
 
-➡️ **30 — Transferencias, cold crash y salida**  
+
+---
+
+## ConexiÃ³n con el siguiente paso (bloque 30)
+Si el diacetilo estÃ¡ resuelto (gate OK), el siguiente paso es:
+
+âž¡ï¸ **30 â€” Transferencias, cold crash y salida**  
 - [Ir al bloque 30](30_Transferencias_cold_crash_y_salida.md)
 
-Si el gate falla (sale manteca), **no** sigas al 30: repetí tiempo/temperatura y volvé a testear.
+Si el gate falla (sale manteca), **no** sigas al 30: repetÃ­ tiempo/temperatura y volvÃ© a testear.
+

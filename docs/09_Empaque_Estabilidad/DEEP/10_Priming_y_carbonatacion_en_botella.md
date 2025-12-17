@@ -13,7 +13,7 @@ sources:
 Estandarizar el embotellado con priming para lograr:
 - carbonatación consistente,
 - seguridad (evitar sobrecarbonatación),
-- y buena estabilidad (no arruinar el lote por oxígeno o sanitización mal aplicada). :contentReference[oaicite:2]{index=2}
+- y buena estabilidad (no arruinar el lote por oxígeno o sanitización mal aplicada).
 
 ---
 
@@ -32,20 +32,20 @@ No embotellar si no se cumple:
 - Densidad estable (2 lecturas separadas 24–48 h).
 - Sin diacetilo evidente (ideal: prueba forzada o criterio sensorial firme).
 - Claridad/turbidez aceptada según estilo (decisión explícita).
-- Plan de manejo de oxígeno definido (aunque sea “práctico”). :contentReference[oaicite:3]{index=3}
+- Plan de manejo de oxígeno definido (aunque sea “práctico”).
 
-> Nota: el acondicionamiento en botella suma carbonatación y también “tiempo de balance”; y la vida útil depende mucho de cuánto oxígeno metés en la etapa final. :contentReference[oaicite:4]{index=4}
+> Nota: el acondicionamiento en botella suma carbonatación y también “tiempo de balance”; y la vida útil depende mucho de cuánto oxígeno metés en la etapa final.
 
 ---
 
 ## 2) Levadura para carbonatar: “mínimo viable”
-En general, **no hace falta mucha levadura** para carbonatar: con levadura saludable y temperatura estable alcanza. :contentReference[oaicite:5]{index=5}  
-Regla práctica: se usa del orden de **1 millón de células por mL** para carbonatar; más que eso, con el tiempo puede subir el riesgo de sabores por autólisis. :contentReference[oaicite:6]{index=6} :contentReference[oaicite:7]{index=7}
+En general, **no hace falta mucha levadura** para carbonatar: con levadura saludable y temperatura estable alcanza.  
+Regla práctica: se usa del orden de **1 millón de células por mL** para carbonatar; más que eso, con el tiempo puede subir el riesgo de sabores por autólisis.
 
 Cuándo sí pensar en agregar levadura fresca:
 - si la cerveza estuvo mucho tiempo parada antes de embotellar, o
 - si clarificaste fuerte y quedó “pelada” de levadura,
-- o si es cerveza de alta graduación. :contentReference[oaicite:8]{index=8} :contentReference[oaicite:9]{index=9}
+- o si es cerveza de alta graduación.
 
 ---
 
@@ -106,18 +106,18 @@ Necesitás 3 datos:
 - Trasvasar la cerveza **encima** del jarabe, suave, sin salpicar.
 - Evitar “revolver con cuchara” como si fuera sopa.
 
-Oxígeno: en embotellado, lo que más te mata la estabilidad es **salpicado + envase abierto mucho tiempo**. Apoyate en el estándar del Bloque 20. :contentReference[oaicite:10]{index=10} :contentReference[oaicite:11]{index=11}
+Oxígeno: en embotellado, lo que más te mata la estabilidad es **salpicado + envase abierto mucho tiempo**. Apoyate en el estándar del Bloque 20.
 
 ### 5.3 Llenado y cierre
 - Llenar parejo, headspace razonable y **cerrar sin demoras**.
-- Si tu sanitización es química: **medir concentración**, no “a ojo”; excesos pueden afectar la levadura y la carbonatación. :contentReference[oaicite:12]{index=12}
+- Si tu sanitización es química: **medir concentración**, no “a ojo”; excesos pueden afectar la levadura y la carbonatación.
 
 ---
 
 ## 6) Acondicionamiento (dónde y cuánto tiempo)
 - Guardar botellas en lugar oscuro y templado.
-- Base operativa: **~2 semanas** para carbonatar (puede ser más si la cerveza es fuerte o si está frío). :contentReference[oaicite:13]{index=13}
-- Después, mover a guarda más fría/estable si tu objetivo es shelf-life. (Ver Bloque 30). :contentReference[oaicite:14]{index=14}
+- Base operativa: **~2 semanas** para carbonatar (puede ser más si la cerveza es fuerte o si está frío).
+- Después, mover a guarda más fría/estable si tu objetivo es shelf-life. (Ver Bloque 30).
 
 Tip simple: dejá 1 botella “testigo” (PET si tenés) para ir apretando y saber cómo viene la presión.
 
@@ -130,24 +130,24 @@ Causas frecuentes:
 - poco tiempo,
 - levadura débil,
 - cálculo mal hecho (especialmente si ignoraste temperatura/CO₂ residual),
-- sanitizante demasiado fuerte/residuo que dañó levadura. :contentReference[oaicite:15]{index=15} :contentReference[oaicite:16]{index=16}
+- sanitizante demasiado fuerte/residuo que dañó levadura.
 
 Acciones:
 - subir a temperatura templada estable y esperar 7–10 días más,
 - revisar cierres (chapita mal cerrada = fuga),
-- comparar cálculo vs temperatura real. :contentReference[oaicite:17]{index=17}
+- comparar cálculo vs temperatura real.
 
 ### 7.2 Sobrecabonatación (riesgo seguridad)
 Causas frecuentes:
 - exceso de azúcar,
 - cerveza no terminó de fermentar,
-- contaminación que sigue comiendo azúcares y genera gas. :contentReference[oaicite:18]{index=18} :contentReference[oaicite:19]{index=19}
+- contaminación que sigue comiendo azúcares y genera gas.
 
 Acciones inmediatas:
 - enfriar el lote (baja presión),
 - aislar cajas,
 - abrir con cuidado muestras controladas,
-- activar investigación (ver Bloque 40). :contentReference[oaicite:20]{index=20}
+- activar investigación (ver Bloque 40).
 
 ---
 
@@ -158,7 +158,7 @@ Anotar por lote:
 - litros reales,
 - temperatura y lugar de acondicionamiento,
 - días hasta carbonatación,
-- resultado sensorial a 7/14/30 días. :contentReference[oaicite:21]{index=21}
+- resultado sensorial a 7/14/30 días.
 
 ➡️ Registrar acá: [TP — Log de envasado y estabilidad](TP_Log_Envasado_y_Estabilidad.md)
 
@@ -169,3 +169,4 @@ Anotar por lote:
 - Almacenamiento: [30 — Luz/temperatura/almacenamiento](30_Luz_temperatura_almacenamiento.md)
 - Fallas (matriz síntoma→causa→acción): [40 — Troubleshooting](40_Shelflife_y_troubleshooting_empaque.md)
 - Nota base: [Oxidación y DO](../Oxidacion_y_DO.md)
+

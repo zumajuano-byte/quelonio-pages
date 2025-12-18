@@ -1,12 +1,19 @@
-# Late hopping
+# 20 — Late hopping
 
-Adiciones tardías (10–0 min):
-- Menor isomerización
-- Mayor retención aromática
+## 1) Cuándo usarlo
 
-Aporta:
-- sabor a lúpulo
-- amargor más suave
+Late hopping sirve si querés:
+- “puente” entre amargor y aroma
+- un perfil más redondeado sin cargar tanto dry hop
 
-Trade-off:
-Mayor consumo de lúpulo.
+## 2) Riesgos
+
+- Volatilidad: parte del aroma se va igual
+- Arrastre de material vegetal si no separás bien
+- Variabilidad alta si el hervor real cambia
+
+## 3) Regla práctica
+
+Si tu cervecería ya hace whirlpool/hopstand:
+- late hopping suele ser prescindible
+- o se usa solo como ajuste fino.

@@ -1,19 +1,45 @@
-# Sensibilidad al pH y Sulfatos
+﻿# Sensibilidad al pH y Sulfatos (impacto sensorial)
 
-## 1. Sulfatos en agua cervecera
-El sulfato tiene un impacto directo sobre la **sensación de amargor** y la **sequedad** en cervezas como las IPA.
+## 1) QuÃ© aporta el sulfato (SOâ‚„Â²â»)
+En general, el sulfato:
+- acentÃºa percepciÃ³n de amargor
+- aumenta sensaciÃ³n de sequedad
+- si se excede, puede volverse Ã¡spero/astringente
 
-### Efectos del sulfato
-- Sulfatos elevados aumentan la percepción de amargor.
-- Si los sulfatos son demasiado altos, pueden producir un sabor **astringente**.
+---
 
-## 2. Sensibilidad al pH
-Cuando el pH es bajo, la **percepción del sulfato** es más acentuada.
+## 2) La interacciÃ³n clave: pH â†” sulfato
+La percepciÃ³n del sulfato cambia con el pH:
+- pH mÃ¡s bajo puede intensificar sequedad/â€œfiloâ€
+- pH mÃ¡s alto tiende a suavizar (segÃºn contexto)
 
-### Interacción pH-sulfato
-- pH > 5.8 favorece la percepción de suavidad.
-- pH < 5.2 intensifica la sequedad.
+Puente prÃ¡ctico:
+- pH objetivo se define y valida en mash: [50 â€” pH en el Mash](50_pH_en_el_Mash.md)
 
-## 3. Resumen operativo
-- Mantén sulfatos entre 50-150 ppm.
-- Ajusta pH con ácidos lácticos y fosfóricos para mejorar equilibrio.
+---
+
+## 3) Guardrails sugeridos (operaciÃ³n)
+Rango sugerido (general, no dogma):
+- sulfatos: **50â€“150 ppm** para empezar y calibrar por estilo
+
+InterpretaciÃ³n prÃ¡ctica:
+- si tu cerveza sale â€œafiladaâ€, revisÃ¡ **pH + sulfatos juntos** (no por separado)
+- si sale â€œdulzona/blandaâ€ y querÃ©s mÃ¡s â€œcrispâ€, subÃ­s sulfato o bajÃ¡s cloruro (segÃºn estilo)
+
+---
+
+## 4) QuÃ© registrar (mÃ­nimo)
+- sulfatos target y estimados (por adiciones)
+- pH real del mash (medido consistente)
+- resultado sensorial (sequedad/aspereza/balance)
+
+TP:
+- [TP â€” Log de Ajuste de Agua](../Agua_Parte1_DEEP/90_TP_Log_Ajuste_Agua.md)
+
+---
+
+## 5) Resumen operativo
+- El sulfato es una palanca sensorial potente.
+- No se decide â€œa ciegasâ€: se decide junto con pH.
+- Para IPA, ver perfiles tÃ­picos: [70 â€” Perfiles Agua para IPA](70_Perfiles_Agua_para_IPA.md)
+

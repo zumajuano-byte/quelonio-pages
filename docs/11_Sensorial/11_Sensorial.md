@@ -11,6 +11,19 @@ Tener un método **corto y repetible** para:
 
 ---
 
+## Por dónde empezar (orden recomendado)
+1) Índice operativo (DEEP): [DEEP/00 — Índice Sensorial](DEEP/00_INDEX.md)
+2) Manual principal (v1): [DEEP/01 — Sensorial v1 (protocolo + defectos guía + liberación)](DEEP/01_DEEP_Sensorial_v1.md)
+3) Registro por lote (TP): [TP — Log de Cata y Defectos (por lote)](DEEP/TP_Log_Cata_y_Defectos.md)
+4) Convertir hallazgos en cambios: [DEEP/20 — Pasar sensorial a Spec y Receta](DEEP/20_Pasar_Sensorial_a_Spec_y_Receta.md)
+
+## Gate sensorial (decisión)
+- **OK (liberar):** sin defecto dominante fuera de estilo; “en línea” con el spec.
+- **Dudoso (retener):** repetir cata en 48–72 h y comparar con muestra testigo/retención.
+- **No OK (investigar):** activar cruce con 07 (fermentación), 09 (empaque/oxígeno), 10 (limpieza) y 06 (QA/QC).
+
+---
+
 ## Método mínimo (5 minutos)
 1) Mirar: color, claridad, espuma.
 2) Oler: 3 olfateos cortos (sin apurarse).

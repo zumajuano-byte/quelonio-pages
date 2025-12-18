@@ -2,7 +2,16 @@
 
 Este módulo cubre: **selección de cepa**, **preparación/pitch**, **oxigenación**, **curva térmica**, **nutrición**, **control de defectos**, y **post-fermentación** (diacetilo, floculación, cosecha y reuso).
 
+## Hub operativo (entrada rápida)
+- **Levadura (DEEP) — Hub operativo:** [00_INDEX](Levadura_Parte3_DEEP/00_INDEX.md)
+
+---
+
 ## Orden de lectura recomendado (modo operativo)
+
+0) **Hub operativo (Levadura DEEP)**  
+   - Objetivo: tener un “mapa” rápido con atajos por problema + checklists + puentes.  
+   - Link: [Levadura (DEEP) — Hub operativo](Levadura_Parte3_DEEP/00_INDEX.md)
 
 1) **Control fino y ejecución en lote (Parte 3)**  
    - Objetivo: que el lote “fermente como debe” (targets y control).  
@@ -53,6 +62,7 @@ Este módulo cubre: **selección de cepa**, **preparación/pitch**, **oxigenaci�
 ---
 
 ## Partes disponibles (índices)
+- [Levadura (DEEP) — Hub operativo](Levadura_Parte3_DEEP/00_INDEX.md)
 - [Levadura Parte1 DEEP](Levadura_Parte1_DEEP/00_Indice_Levadura_Parte1.md)
 - [Levadura Parte2 DEEP](Levadura_Parte2_DEEP/00_Indice_Levadura_Parte2.md)
 - [Levadura Parte3 DEEP](Levadura_Parte3_DEEP/00_Indice_Levadura_Parte3.md)

@@ -1,12 +1,21 @@
-# Timing de adición del lúpulo
+# 30 — Timing de adición
 
-Ventanas críticas:
-- Fermentación temprana (high kräusen)
-- Fermentación media
+## Dos estrategias claras (no mezclar sin razón)
 
-Efectos:
-- Mayor interacción con levadura
-- Riesgo de pérdida por CO₂
+### A) Dry hop durante fermentación (busca biotransformación)
+Pros:
+- potencial “juice”
+Contras:
+- hop creep y diacetilo más probables
+- más sensibilidad a proceso
 
-Trade-off:
-Más biotransformación ↔ menor retención total.
+### B) Dry hop post-fermentación (busca aroma estable)
+Pros:
+- control y repetibilidad
+Contras:
+- menos biotransformación
+
+## Criterio de decisión (simple)
+
+Si tu cervecería no tiene control fino de diacetilo/temperatura/DO:
+- preferí post-fermentación.

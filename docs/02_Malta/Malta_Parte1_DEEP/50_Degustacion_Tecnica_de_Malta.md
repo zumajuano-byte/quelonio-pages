@@ -1,17 +1,7 @@
-# Degustación técnica de malta
+﻿# Degustación técnica de malta (alias)
 
-Masticar malta es una herramienta técnica, no una curiosidad.
+Compatibilidad con links antiguos.
 
-Permite detectar:
-- nivel de modificación
-- friabilidad
-- humedad residual
-- carácter base
-
-Una malta bien modificada:
-- se quiebra fácil
-- es harinosa
-- libera dulzor rápidamente
-
-Lectura clave:
-> Antes de leer un COA, entendé la malta con los sentidos.
+Puente recomendado:
+- [30 — Familias de maltas y aporte sensorial](30_Familias_de_Maltas_y_Aporte_Sensorial.md)
+- [11 — Sensorial (protocolo de cata)](../../11_Sensorial/11_Sensorial.md)

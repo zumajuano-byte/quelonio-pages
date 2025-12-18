@@ -1,4 +1,10 @@
-﻿# 00 — Índice (DEEP) Limpieza y Sanitización
+﻿---
+status: canonical
+entrypoint: true
+scope: limpieza_sanitizacion
+---
+
+# 00 — Índice (DEEP) Limpieza y Sanitización
 
 ## Entradas rápidas (orden recomendado)
 1) [01 — Manual principal Limpieza/Sanitización v1](01_DEEP_Limpieza_Sanitizacion_v1.md)
@@ -24,5 +30,5 @@ Cómo dejar equipos y líneas **limpios y seguros** para producir cerveza establ
 
 ---
 
-## Nota
-Este módulo está pensado para ser “operable”: menos teoría, más pasos claros.
+## Nota operativa
+Este módulo está pensado para ser “operable”: menos teoría, más pasos claros y logs mínimos.

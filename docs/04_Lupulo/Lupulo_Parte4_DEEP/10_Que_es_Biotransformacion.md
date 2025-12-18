@@ -1,11 +1,19 @@
-# ¿Qué es la biotransformación?
+# 10 — Qué es biotransformación
 
-La biotransformación es la conversión de compuestos del lúpulo
-por acción enzimática de la levadura durante la fermentación.
+## Definición operativa
 
-No crea aroma de la nada:
-- libera compuestos ligados
-- transforma precursores
+Biotransformación = cambios en compuestos del lúpulo durante fermentación por acción de:
+- levadura,
+- enzimas,
+- y condiciones de proceso.
 
-Resultado:
-> Cambia la calidad del aroma, no solo su cantidad.
+## Por qué importa
+
+- Puede aumentar notas “tropicales/cítricas”
+- Puede cambiar balance aroma/amargor percibido
+- Puede volver inestable el sistema si no controlás tiempos y DO
+
+## Cuándo vale la pena
+
+- Cuando tu objetivo es perfil moderno (NEIPA / IPA moderna)
+- Cuando tenés control de fermentación y podés sostener limpieza de proceso

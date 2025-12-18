@@ -42,11 +42,6 @@ Este índice lista todas las páginas disponibles en /docs para garantizar acces
 - [01_Agua/Agua_Parte7_DEEP/340_Checklist_Casos_Completos.md](../01_Agua/Agua_Parte7_DEEP/340_Checklist_Casos_Completos.md)
 - [02_Malta/02_Malta.md](../02_Malta/02_Malta.md)
 - [02_Malta/Malta_Parte1_DEEP/00_Indice_Malta_Parte1.md](../02_Malta/Malta_Parte1_DEEP/00_Indice_Malta_Parte1.md)
-- [02_Malta/Malta_Parte1_DEEP/10_Rol_Estructural_de_la_Malta.md](../02_Malta/Malta_Parte1_DEEP/10_Rol_Estructural_de_la_Malta.md)
-- [02_Malta/Malta_Parte1_DEEP/20_La_Malta_como_Sistema.md](../02_Malta/Malta_Parte1_DEEP/20_La_Malta_como_Sistema.md)
-- [02_Malta/Malta_Parte1_DEEP/30_Extracto_Fermentable_vs_No_Fermentable.md](../02_Malta/Malta_Parte1_DEEP/30_Extracto_Fermentable_vs_No_Fermentable.md)
-- [02_Malta/Malta_Parte1_DEEP/40_Malta_Base_vs_Especial.md](../02_Malta/Malta_Parte1_DEEP/40_Malta_Base_vs_Especial.md)
-- [02_Malta/Malta_Parte1_DEEP/50_Degustacion_Tecnica_de_Malta.md](../02_Malta/Malta_Parte1_DEEP/50_Degustacion_Tecnica_de_Malta.md)
 - [02_Malta/Malta_Parte1_DEEP/60_Implicancias_en_Diseño_de_Recetas.md](../02_Malta/Malta_Parte1_DEEP/60_Implicancias_en_Diseño_de_Recetas.md)
 - [02_Malta/Malta_Parte1_DEEP/70_Puentes_Internos_Obsidian.md](../02_Malta/Malta_Parte1_DEEP/70_Puentes_Internos_Obsidian.md)
 - [02_Malta/Malta_Parte2_DEEP/00_Indice_Malta_Parte2.md](../02_Malta/Malta_Parte2_DEEP/00_Indice_Malta_Parte2.md)
@@ -158,11 +153,11 @@ Este índice lista todas las páginas disponibles en /docs para garantizar acces
 - [04_Lupulo/Lupulo_Parte5_DEEP/70_Puentes_Obsidian_Lupulo_Parte5.md](../04_Lupulo/Lupulo_Parte5_DEEP/70_Puentes_Obsidian_Lupulo_Parte5.md)
 - [05_Sistemas_IPA_Moderna/05_Sistemas_IPA_Moderna.md](../05_Sistemas_IPA_Moderna/05_Sistemas_IPA_Moderna.md)
 - [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/00_Indice_IPA_NewIPA_Parte1.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/00_Indice_IPA_NewIPA_Parte1.md)
-- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/01_TIOLES — potencias, precursores y liberación.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/01_TIOLES%20—%20potencias,%20precursores%20y%20liberación.md)
-- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/02_Temperatura de fermentación y retención aromática.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/02_Temperatura%20de%20fermentación%20y%20retención%20aromática.md)
-- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/03_Polifenoles, mirceno y “hop bite” en cervezas turbias.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/03_Polifenoles,%20mirceno%20y%20“hop%20bite”%20en%20cervezas%20turbias.md)
-- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/04_Variabilidad de lotes y trazabilidad de lúpulos.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/04_Variabilidad%20de%20lotes%20y%20trazabilidad%20de%20lúpulos.md)
-- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/05_Checklist de diseño y producción — IPA moderna.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/05_Checklist%20de%20diseño%20y%20producción%20—%20IPA%20moderna.md)
+- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/01_TIOLES — potencias, precursores y liberación.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/01_TIOLES_potencias_precursores_y_liberacion.md)
+- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/02_Temperatura de fermentación y retención aromática.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/02_Temperatura_de_fermentacion_y_retencion_aromatica.md)
+- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/03_Polifenoles, mirceno y “hop bite” en cervezas turbias.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/03_Polifenoles_mirceno_y_hop_bite_en_cervezas_turbias.md)
+- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/04_Variabilidad de lotes y trazabilidad de lúpulos.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/04_Variabilidad_de_lotes_y_trazabilidad_de_lupulos.md)
+- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/05_Checklist de diseño y producción — IPA moderna.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte1_DEEP/05_Checklist_de_diseno_y_produccion_IPA_moderna.md)
 - [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte2_DEEP/00_Indice_IPA_NewIPA_Parte2.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte2_DEEP/00_Indice_IPA_NewIPA_Parte2.md)
 - [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte2_DEEP/10_Biotransformacion_Terpenos.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte2_DEEP/10_Biotransformacion_Terpenos.md)
 - [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte2_DEEP/20_Timing_Dry_Hop.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte2_DEEP/20_Timing_Dry_Hop.md)
@@ -178,7 +173,7 @@ Este índice lista todas las páginas disponibles en /docs para garantizar acces
 - [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte3_DEEP/50_Implicancias_Receta_y_Proceso.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte3_DEEP/50_Implicancias_Receta_y_Proceso.md)
 - [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte3_DEEP/60_Puentes_Obsidian_IPA_Parte3.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte3_DEEP/60_Puentes_Obsidian_IPA_Parte3.md)
 - [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/00_Indice_IPA_NewIPA_Parte4.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/00_Indice_IPA_NewIPA_Parte4.md)
-- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/10_Diseño_De_Receta_Lupulada.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/10_Diseño_De_Receta_Lupulada.md)
+- [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/10_Diseno_De_Receta_Lupulada.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/10_Diseno_De_Receta_Lupulada.md)
 - [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/20_Estrategias_para_Balance_Sensory.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/20_Estrategias_para_Balance_Sensory.md)
 - [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/30_Planificacion_Dry_Hopping.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/30_Planificacion_Dry_Hopping.md)
 - [05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/40_Control_Alcohol_y_Mas_Amargor.md](../05_Sistemas_IPA_Moderna/IPA_NewIPA_Parte4_DEEP/40_Control_Alcohol_y_Mas_Amargor.md)
@@ -254,6 +249,11 @@ Este índice lista todas las páginas disponibles en /docs para garantizar acces
 - [06_Procesos_QA_QC/Procesos_QAQC_Parte6_DEEP/README.md](../06_Procesos_QA_QC/Procesos_QAQC_Parte6_DEEP/README.md)
 - [99_Indice_y_Mapas/Home.md](Home.md)
 - [99_Indice_y_Mapas/Mapa_General_Quelonio.md](Mapa_General_Quelonio.md)
+
+
+
+
+
 
 
 

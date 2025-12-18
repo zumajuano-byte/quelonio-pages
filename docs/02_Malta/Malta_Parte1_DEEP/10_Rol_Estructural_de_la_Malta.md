@@ -1,17 +1,6 @@
-# Rol estructural de la malta en la cerveza
+﻿# Rol estructural de la malta (alias)
 
-La malta no es un ingrediente más: es el **andamiaje completo** de la cerveza.
+Este archivo existe por compatibilidad con links antiguos.
 
-Define:
-- qué se puede fermentar
-- qué no se puede fermentar
-- cuánto cuerpo tendrá la cerveza
-- cómo se percibirá el alcohol
-- qué rango sensorial es posible
-
-Sin malta:
-- no hay extracto fermentable
-- no hay dextrinas
-- no hay estructura sensorial estable
-
-Por eso, cualquier decisión posterior (agua, lúpulo, levadura) opera **dentro de los límites que fija la malta**.
+Ir al contenido actual:
+- [10 — Proceso de malteado](10_Proceso_de_Malteado.md)

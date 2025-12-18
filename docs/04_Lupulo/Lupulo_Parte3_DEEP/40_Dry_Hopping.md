@@ -1,12 +1,22 @@
-# Dry hopping
+# 40 — Dry hopping
 
-Adición en fermentación o post-fermentación.
+## 1) Qué controla dry hop
 
-Aporta:
-- aroma intenso
-- polifenoles
-- posible biotransformación
+- Intensidad aromática (nariz)
+- Parte de la percepción de amargor (por interacción aroma-amargor)
+- Textura (según polifenoles y carga)
 
-Riesgos:
-- oxígeno
-- astringencia vegetal
+## 2) Variables que más mueven la aguja
+
+- g/L total
+- Temperatura
+- Tiempo de contacto
+- Etapa: durante fermentación vs post-fermentación
+- Manejo de oxígeno (la variable “mata-aroma”)
+
+## 3) Checklist mínimo (antes de tirar lúpulo)
+
+- ¿Buscás biotransformación? (si/no)
+- ¿Cómo vas a purgar? (CO2, cerrado, sin salpicado)
+- ¿Cómo vas a retirar lúpulo? (crash, filtración, transferencia)
+- ¿Riesgo hop creep? (si/no) → plan de diacetilo

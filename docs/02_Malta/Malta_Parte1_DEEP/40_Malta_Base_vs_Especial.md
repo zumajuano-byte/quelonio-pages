@@ -1,16 +1,7 @@
-# Malta base vs malta especial (conceptual)
+﻿# Malta base vs especial (alias)
 
-## Malta base
-Función:
-- aportar la mayoría del extracto
-- sostener la conversión enzimática
-- definir el perfil neutro o base
+Compatibilidad con links antiguos.
 
-## Malta especial
-Función:
-- ajustar color
-- ajustar perfil sensorial
-- modular cuerpo y dulzor
-
-Regla estructural:
-> La malta base construye, la especial corrige.
+Ir al contenido actual:
+- [30 — Familias de maltas y aporte sensorial](30_Familias_de_Maltas_y_Aporte_Sensorial.md)
+- [40 — COA y control de calidad](40_COA_y_Control_de_Calidad.md)

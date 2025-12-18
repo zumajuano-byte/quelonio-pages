@@ -77,6 +77,8 @@ Link: [Estrés celular y defectos](50_Estres_Celular_y_Defectos.md)
 - [ ] Notas: qué funcionó / qué falló / qué se ajusta en el próximo lote
 - [ ] Links usados en decisiones (para trazabilidad interna)
 
+> Registro recomendado: [TP — Log Pitch/O2/Temp/Nutrientes](TP_Log_Pitch_O2_Temp_Nutrientes.md)
+
 ---
 
 ## Links internos
@@ -86,3 +88,5 @@ Link: [Estrés celular y defectos](50_Estres_Celular_y_Defectos.md)
 - [Nutrientes y minerales](40_Nutrientes_y_Minerales.md)
 - [Estrés celular y defectos](50_Estres_Celular_y_Defectos.md)
 - [Fermentación DEEP (pipeline)](../Fermentacion_DEEP/00_INDEX.md)
+
+

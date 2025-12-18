@@ -13,6 +13,7 @@ de forma repetible y registrada.
 ## Por dónde empezar (orden recomendado)
 1) Índice operativo del módulo: [DEEP/00 — Índice](DEEP/00_INDEX.md)
 2) Manual principal (v1): [DEEP/01 — Manual Limpieza/Sanitización](DEEP/01_DEEP_Limpieza_Sanitizacion_v1.md)
+3) Registro por ejecución (TP): [TP — Log Limpieza y CIP](DEEP/TP_Log_Limpieza_y_CIP.md)
 
 ---
 

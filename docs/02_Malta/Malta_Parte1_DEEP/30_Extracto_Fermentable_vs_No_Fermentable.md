@@ -1,26 +1,7 @@
-# Extracto fermentable vs no fermentable
+﻿# Extracto fermentable vs no fermentable (alias)
 
-La malta aporta dos grandes fracciones:
+Compatibilidad con links antiguos.
 
-## Fermentable
-- azúcares simples
-- maltosa
-- maltotriosa
-
-Controlan:
-- ABV
-- atenuación
-- sequedad final
-
-## No fermentable
-- dextrinas
-- proteínas solubles
-
-Controlan:
-- cuerpo
-- mouthfeel
-- retención de espuma
-
-Error típico:
-> Subir OG para ganar cuerpo.
-El cuerpo se diseña **en la fracción no fermentable**, no solo en el alcohol.
+Contenido relacionado hoy:
+- [20 — Química de malta para cerveceros](20_Quimica_de_Malta_para_Cerveceros.md)
+- [30 — Familias de maltas y aporte sensorial](30_Familias_de_Maltas_y_Aporte_Sensorial.md)

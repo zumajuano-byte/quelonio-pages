@@ -61,7 +61,8 @@ nav:
       - Specs recetas: 98_Verdad_Negocio/03_Specs_Recetas.md
       - QA/QC: 98_Verdad_Negocio/04_QAQC.md
       - Branding & comms: 98_Verdad_Negocio/05_Branding_Comms.md
-
+  - Soporte bibliográfico: 97_Soporte_Bibliografico/index.md
+  
 # Archivos que existen "a propósito" fuera del menú (por diseño).
 # Sigue el patrón .gitignore.
 not_in_nav: |

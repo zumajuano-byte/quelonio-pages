@@ -2130,6 +2130,35 @@ Regla: al cerrar una sesión de Biblia, <strong>se reemplaza este archivo comple
 - Todo procedimiento tiene un checklist.
 - Toda decisión crítica se conecta a BIBLIO.</p>
 <p>Estado: APROBADO (a implementar cuando arranque PROYECTO_WEB_API).</p>
+<h1 id="checkpoint-sesion-de-cierre_1">CHECKPOINT (sesión de cierre)<a class="headerlink" href="#checkpoint-sesion-de-cierre_1" title="Permanent link">&para;</a></h1>
+<p>Fecha: 2025-12-22
+Objetivo de la sesión: Consolidar “Docs P0” (datos duros) para habilitar el Asistente + corregir rutas/links para build strict.</p>
+<h2 id="estado-tecnico-apb_1">Estado técnico (APB)<a class="headerlink" href="#estado-tecnico-apb_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Build strict (<code>python -m mkdocs build --strict</code>): OK</li>
+<li>Deploy (<code>python -m mkdocs gh-deploy --clean</code>): OK</li>
+<li>Sitio: https://zumajuano-byte.github.io/quelonio-pages/</li>
+</ul>
+<h2 id="referencias-de-version">Referencias de versión<a class="headerlink" href="#referencias-de-version" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>main</code> (commit): <code>6f9fb13</code> docs: add P0 hard-data docs and fix assistant links (water/oxygenation/packaging/shelf-life)</li>
+<li><code>gh-pages</code> (deploy): <code>e3fd2c2</code> (último push de gh-deploy)</li>
+</ul>
+<h2 id="que-quedo-hecho-resumen-corto_1">Qué quedó hecho (resumen corto)<a class="headerlink" href="#que-quedo-hecho-resumen-corto_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>“Docs P0” creados y ubicados por módulo:</li>
+<li>01_Agua/DEEP/AGUA_CALCULOS_Y_LIMITES.md</li>
+<li>03_Levadura/Fermentacion_DEEP/PITCH_RATE_Y_OXIGENACION.md</li>
+<li>09_Empaque_Estabilidad/DEEP/{DO_TPO_OBJETIVOS_Y_METODO, CO2_CARBONATACION_TABLAS, SHELF_LIFE_PLAN_Y_CRITERIOS}.md</li>
+<li>99_Indice_y_Mapas/TABLAS_TARGETS_POR_ESTILO.md</li>
+<li>Links del Asistente corregidos para strict (sin warnings).</li>
+</ul>
+<h2 id="pendientes-inmediatos-max-5">Pendientes inmediatos (máx 5)<a class="headerlink" href="#pendientes-inmediatos-max-5" title="Permanent link">&para;</a></h2>
+<p>1) Pasada 2 (BIBLIO) en 07 + 09: convertir 3–5 afirmaciones críticas a citas completas.
+2) Definir plantilla canónica de cita (1 bloque) y dejar 1 ejemplo completo (“Matriz de afirmaciones”).
+3) Preparar el MVP Asistente v1 en PROYECTO_WEB_API (scope + endpoints + formato respuesta + fallback).</p>
+<h2 id="proximo-paso-recomendado-1">Próximo paso recomendado (1)<a class="headerlink" href="#proximo-paso-recomendado-1" title="Permanent link">&para;</a></h2>
+<p>Arrancar PROYECTO_WEB_API definiendo MVP v1 del asistente: “preguntas sobre cerveza + sobre el sistema”, usando los Docs P0 como fuentes preferidas.</p>
 
 
 

@@ -69,3 +69,6 @@ Este m처dulo cubre: **selecci처n de cepa**, **preparaci처n/pitch**, **oxigenaci�
 - [Levadura Parte4 DEEP](Levadura_Parte4_DEEP/00_Indice_Levadura_Parte4.md)
 - [Levadura Parte5 DEEP](Levadura_Parte5_DEEP/00_Indice_Levadura_Parte5.md)
 - [Fermentaci처n (DEEP)](Fermentacion_DEEP/00_INDEX.md)
+- [Pitch rate y oxigenaci처n (P0)](Fermentacion_DEEP/PITCH_RATE_Y_OXIGENACION.md)
+
+

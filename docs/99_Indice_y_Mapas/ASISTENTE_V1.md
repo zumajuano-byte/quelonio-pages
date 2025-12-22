@@ -47,3 +47,6 @@ Este hub define el comportamiento del Asistente v1 y centraliza los links canón
 
 ## Regla de salida (mínima)
 - Siempre incluir al final: **Inputs usados** y **Datos faltantes**.
+
+
+- Glosario operativo: [GLOSARIO_OPERATIVO](GLOSARIO_OPERATIVO.md)

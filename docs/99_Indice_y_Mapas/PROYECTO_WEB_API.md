@@ -1,268 +1,150 @@
-# PROYECTO — Quelonio Brew OS (Excel + SaaS)
+# PROYECTO_WEB_API — Quelonio SaaS (Web App + API + DB)
 
-Este archivo reemplaza el proyecto anterior “PROYECTO_WEB_API” por la idea vigente:
-**Quelonio Brew OS** como producto comercializable (Excel prototipo → SaaS multiusuario).
-
-Referencia conceptual / base de conocimiento:
-- https://zumajuano-byte.github.io/quelonio-pages
+**Última actualización:** 2025-12-22  
+**Estado:** Sprint 1 en curso — Infra OK (PostgreSQL + Prisma + Next)  
+**Regla de trabajo:** micro-pasos (1 paso por vez). Si un paso requiere admin, se aclara explícitamente.
 
 ---
 
-## CURRENT_STATE — Quelonio Brew OS
+## 0) Objetivo
 
-- last_updated: 2025-12-22
-- project: Quelonio Brew OS (Excel + SaaS)
-- mode_default: Validación operativa (Excel) + Blueprint SaaS + Ejecución por sprints
+Construir un **MVP tipo SaaS** para operación cervecera (recetas, lotes, stock, ventas, finanzas) + base para incorporar un **asistente IA** que responda en base a la Biblia (Quelonio Pages).
 
-### objective_now (1 frase)
-Consolidar un Excel “modelo” (prototipo operativo) para validar flujo completo con datos reales y luego convertirlo a SaaS multiusuario (login + multi-tenant + roles + auditoría + alertas + exports), incorporando un **Asistente v1** conectado a la Biblia.
-
-### Estado del Excel (prototipo operativo)
-Archivos generados y validados:
-- Quelonio_Dashboard_Cervecero_v0.2_camino1_validaciones.xlsx (IDs/estados/validaciones)
-- Quelonio_Dashboard_Cervecero_v0.3_parte3.xlsx (Compras/AP + stock SKU + rentabilidad canal)
-- Quelonio_Dashboard_Cervecero_v0.4_parte4A.xlsx (USERS/roles + auditoría + trazabilidad lote→SKU→venta)
-- Quelonio_Dashboard_Cervecero_v0.5_parte4B.xlsx (Plan producción, calendario, alertas, vencimientos AP/AR, capacidad)
-
-Situación:
-- El Excel “se ve todo bien” y “trabaja” (validado).
-- IDs: en Excel conviene “Secuencia + ID derivado” (semi-automático estable); en SaaS IDs 100% automáticos.
+Arquitectura recomendada (MVP):
+- **Next.js (App Router) + TypeScript**
+- **PostgreSQL**
+- **Prisma**
+- Endpoints API dentro de Next (`app/api/*`)
+- Más adelante: auth/RBAC, auditoría, exports, jobs/alertas
 
 ---
 
-## Links canónicos (Biblia + Asistente)
+## 1) Repos / Ubicaciones
 
-Fuente de verdad de conocimiento (SOT):
-- Biblia (sitio): https://zumajuano-byte.github.io/quelonio-pages/
+- **Repo Web App:** `C:\Users\flore\Documents\quelonio-saas`
+- **Repo Biblia / Docs (GitHub Pages):** `C:\Users\flore\Documents\quelonio-pages`
 
-Documentos canónicos del asistente (dentro de la Biblia):
-- 99_Indice_y_Mapas/ASISTENTE_KNOWLEDGE_MAP.md
-- 99_Indice_y_Mapas/ASISTENTE_CONTRATOS.md
-- 99_Indice_y_Mapas/ASISTENTE_DATA_CONTRACT.md
-
-Docs P0 (datos duros para respuestas operativas):
-- 99_Indice_y_Mapas/TABLAS_TARGETS_POR_ESTILO.md
-- 01_Agua/DEEP/AGUA_CALCULOS_Y_LIMITES.md
-- 03_Levadura/Fermentacion_DEEP/PITCH_RATE_Y_OXIGENACION.md
-- 09_Empaque_Estabilidad/DEEP/DO_TPO_OBJETIVOS_Y_METODO.md
-- 09_Empaque_Estabilidad/DEEP/CO2_CARBONATACION_TABLAS.md
-- 09_Empaque_Estabilidad/DEEP/SHELF_LIFE_PLAN_Y_CRITERIOS.md
+Este archivo vive en **quelonio-pages** para que el “asistente” y el “método” queden publicados y versionados.
 
 ---
 
-## Blueprint SaaS (aprobado)
+## 2) Estado técnico actual (CHECKPOINT REAL)
 
-Decisión:
-Ruta: prototipo Excel validado → blueprint SaaS → ejecución por sprints.
+### 2.1 Node / NPM
+- Node: **v20.19.0** (nvm4w)
+- npm: **10.8.2**
+- Señal importante: en tu máquina aparecen rutas duplicadas (`C:\nvm4w\nodejs\...` y `C:\Program Files\nodejs\...`). Funciona, pero conviene mantener consistencia (ver “Riesgos”).
 
-Arquitectura recomendada:
-- Next.js + PostgreSQL + Prisma
-- Auth + RBAC
-- Auditoría (audit_log)
-- Jobs (alertas)
-- Exports (PDF/CSV)
+### 2.2 Next.js
+- Next: **16.1.0**
+- `npm run dev` inicia el servidor local en `http://localhost:3000` **cuando está corriendo**.
+- Importante: si el servidor no está corriendo, `curl http://localhost:3000/...` falla (normal).
 
-Multi-tenant:
-- `org_id` en todas las tablas.
+### 2.3 PostgreSQL (Local Windows)
+- Servicio: `postgresql-x64-18` **Running**
+- Puerto: `localhost:5432`
+- Base: `quelonio_saas`
+- Usuario app: `quelonio`
+- Password: `1204` (por ahora; si esto es sensible, cambialo luego y actualizá `.env`)
 
-Roles:
-- Owner / Admin / Producción / Ventas / Lectura
+Prueba de conexión OK (ejemplo ya validado):
+- `select current_database(), current_user;` devolvió `quelonio_saas | quelonio`
 
-Módulos MVP:
-- recetas + BOM
-- lotes + consumos + empaque
-- inventario insumos + stock SKU
-- ventas + cobros (AR)
-- compras + pagos (AP)
-- opex
-- planificación + alertas
-- dashboard + exports
-- settings
+### 2.4 Prisma
+- `npx prisma validate` OK
+- `npx prisma generate` OK
+- `npx prisma migrate dev --name init` quedó **“Already in sync”** (no hay migraciones pendientes)
 
----
-
-# MVP ASISTENTE v1 (definición funcional)
-
-## Objetivo del Asistente v1
-Un asistente que:
-1) Responde preguntas cerveceras usando Biblia + Docs P0 (targets, límites, criterios).
-2) Guía el uso del sistema Brew OS (cómo registrar/validar) sin ejecutar cambios.
-3) Produce outputs estandarizados (SPEC / Plan / Checklist / Troubleshooting) listos para usar.
-
-## Qué responde (IN SCOPE v1)
-### A) Técnico cerveza (Biblia-first)
-- Proponer targets por estilo (OG/FG/ABV/IBU/CO2/pH) usando TABLAS_TARGETS_POR_ESTILO (marcando DEFAULT).
-- Planear receta baseline (SPEC v1.0) con BOM + proceso alto nivel + gates.
-- Ajustar receta por restricciones (volumen, insumos, perfil: más seco/cuerpo/amargor).
-- Plan de proceso por lote: cronograma + puntos de control (pH, densidad, temp).
-- QA/QC y gates: diacetilo/VDK (07), DO/TPO + empaque (09), estabilidad (shelf-life).
-- Shelf-life: plan D+7/D+14/D+30 y criterio liberar/retener/investigar.
-
-### B) Sistema (Brew OS)
-- “Cómo hago X”: guía paso a paso por módulos (recetas/lotes/stock/ventas/compras/settings).
-- Validación: “qué dato falta / por qué no cierra” contra el contrato de datos.
-
-### C) Salidas canónicas (obligatorio)
-Cada respuesta técnica o mixta debe devolver, cuando aplique:
-- SPEC v1.0 (ASISTENTE_CONTRATOS)
-- Checklist/Gates (ASISTENTE_CONTRATOS)
-- Plan de producción (ASISTENTE_CONTRATOS)
-- Troubleshooting (ASISTENTE_CONTRATOS)
-
-## Qué NO responde (OUT OF SCOPE v1)
-- No ejecuta acciones en DB (no crea/edita entidades). Solo propone y guía.
-- No inventa números dependientes de tu equipo:
-  - DO/TPO exacto por tu línea: propone benchmark inicial y pide medición si existe.
-  - eficiencia real del equipo: pide input o asume DEFAULT declarado.
-- No sustituye mediciones: si faltan datos críticos, pide el dato y sugiere cómo medir/registrar.
-- No “garantiza” seguridad/calidad: recomienda SOP y detener/verificar si hay riesgo.
-
-## Contrato mínimo de datos (para integrar Brew OS con Asistente v1)
-El asistente puede funcionar en “modo Biblia” sin DB, pero para “modo mixto” requiere:
-
-### Identidad y permisos
-- org_id
-- user_id
-- role (Owner/Admin/Producción/Ventas/Lectura)
-
-### Entidades mínimas (v1)
-**Recipe**
-- recipe_id, name, style, target_volume
-- targets: OG/FG/ABV/IBU/color/CO2
-- items[]: ingredient_id, type, amount, unit, timing, notes
-
-**Batch**
-- batch_id, recipe_id, status, planned_volume, actual_volume, start_date
-
-**Measurements (mínimo)**
-- gravity, temp, pH (timestamp, value, unit)
-
-**Opcionales v1 (mejoran mucho)**
-- Inventory (ingredient_id, qty_on_hand, unit)
-- PackagingRun (date, qty_produced, losses, notes, o2_controls)
-
-### Reglas de no-invención (v1)
-- Si targets faltan -> baseline desde TABLAS_TARGETS_POR_ESTILO marcado DEFAULT.
-- Si mediciones faltan -> pedir dato o disparar checklist.
-- Si stock faltante -> no confirma compras, propone BOM y lista “a validar”.
-
-## DoD del Asistente v1 (resultado esperado)
-- Responde con contratos (SPEC/Plan/Checklist/Troubleshooting) sin formatos libres.
-- Pide datos faltantes (no inventa) y marca DEFAULT cuando aplica.
-- Referencia docs canónicos (links internos de Biblia).
-- Puede funcionar en 2 modos:
-  - Biblia-only (sin DB)
-  - Mixto (Biblia + entidades mínimas vía API)
+Se resolvieron errores previos:
+- P1000 credenciales: se corrigió creando/ajustando usuario/credenciales
+- Permisos `_prisma_migrations`: se ajustaron owners/permisos
+- Shadow DB (P3014): se resolvió dando `CREATEDB` al rol `quelonio`
 
 ---
 
-## Sprint plan (ruta de ejecución)
+## 3) Riesgos / alertas detectadas
 
-Sprint 0.5 (Asistente v1 — Especificación y contratos)
-- Congelar alcance IN/OUT (este bloque).
-- Congelar formatos de salida (ASISTENTE_CONTRATOS).
-- Congelar data contract mínimo (ASISTENTE_DATA_CONTRACT + sección de arriba).
-- Definir endpoints “read-only” para contexto (ver Sprint 2/3).
+### 3.1 Warning de Next: “multiple lockfiles”
+Te apareció este warning:
+- Next detectó un `package-lock.json` en `C:\Users\flore\package-lock.json` y lo tomó como “workspace root”.
 
-Sprint 1: Fundación (Identity + multi-tenant + RBAC + Settings + invitaciones + auditoría mínima).
-Sprint 2: Maestros (ingredientes, productos, recetas+BOM).
-Sprint 3: Operación (lotes/consumos/empaque + stock).
-Sprint 4: Comercial/finanzas (ventas/cobros AR + compras/pagos AP).
-Sprint 5: Planificación + alertas + dashboard + exports.
+Esto NO es bloqueante, pero ensucia y puede traer problemas de tooling.
 
-Nota: El Asistente v1 se integra incrementalmente:
-- Primero Biblia-only (sin DB).
-- Luego Mixto cuando existan entidades mínimas y endpoints read-only.
+Opciones (elige una, cuando estemos en “limpieza”):
+1) **Eliminar/renombrar** `C:\Users\flore\package-lock.json` si no pertenece a nada importante.
+2) Configurar `turbopack.root` en `next.config.ts` apuntando al repo actual.
+3) Dejarlo así por ahora (válido para avanzar).
 
 ---
 
-## Sprint 1 — Estado real (bloqueo actual)
+## 4) Convención de carpetas (importante)
 
-Escenario elegido:
-“Quiero que me guíes mientras lo hacemos” (micro-pasos).
+En Next App Router:
+- No existe `/api` en raíz.  
+- Los endpoints se crean en: `app/api/<ruta>/route.ts`
+- La capa “lib” la creamos nosotros (si queremos): `lib/prisma.ts`, `lib/auth.ts`, etc.
 
-Bloqueo:
-- En PowerShell: Node/Git OK.
-- Docker NO estaba instalado (se descartó Docker para DB local).
-- PostgreSQL en Windows: password desconocida; pgAdmin fallaba `fe_sendauth: no password supplied`.
-- Puerto 5433 observado (posible múltiple instancia/puerto).
-- Hubo intento con `pg_hba.conf (trust)` pero se mezclaron instancias.
-
-Decisión final:
-Desinstalar PostgreSQL/pgAdmin y reinstalar limpio para volver a 5432 con credenciales claras.
+Si hoy “no tenés carpeta lib ni api”, es normal. Se crean en el siguiente paso de implementación.
 
 ---
 
-## Próximo paso exacto al retomar (post-reinicio)
+## 5) Próximo objetivo inmediato (Sprint 1)
 
-### 4.1 Reinstalar PostgreSQL limpio (objetivo: puerto 5432)
-- Desinstalar PostgreSQL + pgAdmin.
-- Borrar `C:\Program Files\PostgreSQL\` si queda residual.
-- Reiniciar.
-- Reinstalar PostgreSQL (incluye pgAdmin), definir password de `postgres`, puerto 5432.
-- Verificar:
-  - Servicio `postgresql-x64-XX` corriendo
-  - `netstat -aon | findstr :5432` muestra LISTENING
+**Siguiente paso funcional mínimo:** un endpoint de salud + conexión DB real.
 
-### 4.2 Crear DB y conectar pgAdmin
-- Registrar server local en pgAdmin:
-  - host localhost / port 5432 / user postgres / password nueva
-- Crear DB `quelonio_saas`
-
-### 4.3 Retomar Prisma en VS Code
-En carpeta del proyecto `...\quelonio-saas\web\`:
-- `npm i prisma @prisma/client`
-- `npx prisma init`
-
-En `.env`:
-- `DATABASE_URL="postgresql://postgres:TU_PASSWORD@localhost:5432/quelonio_saas?schema=public"`
-
-Luego:
-- Pegar `schema.prisma` Sprint 1 (User, Organization, OrgMembership, OrgSettings, AuditLog + enums)
-- `npx prisma migrate dev --name sprint1_init`
-- `npx prisma studio`
-
-Verificación:
-- Prisma Studio muestra tablas base.
+Entregables mínimos:
+1) `GET /api/health` responde JSON `{ ok: true }`
+2) Prisma client centralizado (`lib/prisma.ts`)
+3) Un endpoint que pegue a DB (por ejemplo: `GET /api/db-ping` o listar “usuarios” si el schema ya tiene User)
 
 ---
 
-## DoD Sprint 1 (resultado esperado)
-- Usuario puede registrarse/login.
-- Crear org y quedar como Owner.
-- Invitar usuario y aceptar invitación.
-- RBAC impide acciones no permitidas.
-- Settings por organización persisten.
-- Auditoría registra: create org, invite, change role, update settings.
+## 6) Método operativo (micro-pasos)
+
+**Regla:** 1 comando / 1 cambio por vez.  
+Vos pegás output, yo doy el siguiente paso.
+
+**Cuando hay servidores corriendo:**
+- Abrí **otra terminal** (VS Code: *Terminal → New Terminal*).  
+No hace falta cortar un server para ejecutar comandos en paralelo.
 
 ---
 
-## Regla operativa del proyecto (MODO “1 PASO”)
-- Me guiás SIEMPRE de a **UN SOLO PASO**.
-- No métodos alternativos ni opciones múltiples.
-- Cada paso debe ser: (1) comando/clicks exactos, (2) output esperado, (3) qué te pego yo.
-- No seguimos hasta que yo confirme “OK”.
+## 7) Prompt de reinicio (para retomar en un chat nuevo)
+
+Pegá esto tal cual en un chat nuevo cuando quieras retomar:
+
+---
+**PROMPT CHECKPOINT — Quelonio SaaS (Web/API)**
+
+Contexto:
+- Repo app: `C:\Users\flore\Documents\quelonio-saas`
+- Repo docs: `C:\Users\flore\Documents\quelonio-pages`
+- Stack: Next 16.1 + TS + Prisma 7.2 + PostgreSQL local (Windows service postgresql-x64-18)
+- DB: `quelonio_saas` en `localhost:5432`
+- Usuario DB: `quelonio` (tiene CREATEDB)
+- Prisma: migrate en sync (“Already in sync”)
+- Regla: micro-pasos (1 paso por vez)
+
+Qué quiero ahora:
+- Continuar Sprint 1 creando:
+  1) `app/api/health/route.ts`
+  2) `lib/prisma.ts`
+  3) Endpoint DB ping o primer modelo simple
+
+Restricciones:
+- No avances con 10 pasos juntos.
+- Si un paso requiere Admin, avisar explícitamente.
+- Si hay que tocar archivos, decime exactamente ruta + contenido a pegar.
+---
 
 ---
 
-## PROMPT DE ARRANQUE (RESET TOTAL QUELONIO SAAS — WINDOWS — MODO “1 PASO”)
-(Se conserva aquí como “botón de reinicio” del proyecto)
+## 8) Changelog (resumen técnico de lo logrado)
+- Prisma instalado y funcionando
+- Postgres local operativo
+- Credenciales y permisos corregidos
+- Migrate OK (sin pendientes)
+- Prisma Studio se abrió (cuando lo corriste)
 
-Quiero reiniciar el proyecto QUELONIO SAAS desde CERO en Windows 10/11. Estoy mareado con setups viejos (Postgres local, puertos raros, roles, Prisma, NVM).
-Necesito un camino limpio y reproducible, sin parches.
-
-REGLA PRINCIPAL
-- Me guiás SIEMPRE de a UN SOLO PASO.
-- No me das métodos alternativos ni opciones múltiples.
-- Cada paso: (1) comando/clicks exactos, (2) output esperado, (3) qué te pego yo.
-- No seguimos hasta que confirme “OK”.
-
-OBJETIVO FINAL
-1) Node.js LTS instalado sin conflictos.
-2) Docker Desktop instalado.
-3) Postgres corriendo en Docker (no Postgres instalado en Windows).
-4) Proyecto nuevo en: C:\Users\flore\Documents\quelonio-saas
-5) Next.js (App Router + TS + Tailwind).
-6) Prisma funcionando con DB quelonio_saas en localhost:5432.
-7) Migración inicial aplicada con tablas base (Organization/User/Membership).
-8) Listo para continuar MVP SaaS (multi-tenant) sin tocar proyectos viejos.
+Siguiente: endpoints API dentro de Next.

@@ -307,3 +307,33 @@ Objetivo de la sesión: Consolidar “Docs P0” (datos duros) para habilitar el
 
 ## Próximo paso recomendado (1)
 Arrancar PROYECTO_WEB_API definiendo MVP v1 del asistente: “preguntas sobre cerveza + sobre el sistema”, usando los Docs P0 como fuentes preferidas.
+
+
+
+# CHECKPOINT (sesión de cierre)
+
+**Fecha:** 2025-12-22  
+**Objetivo de la sesión:** Validar integridad de links del sitio generado (sin .md en HTML), confirmar que no hay hrefs rotos y que el build strict pasa.
+
+## Estado técnico (APB)
+- Preflight (`.\preflight.ps1`): (NO CORRIDO / OK / NO)  
+- Build strict (`python -m mkdocs build --strict`): OK  
+- Deploy (`python -m mkdocs gh-deploy --clean`): (OK / NO / PENDIENTE)  
+- Sitio: https://zumajuano-byte.github.io/quelonio-pages/
+
+## Referencias de versión (para no “perderse”)
+- `main` (commit): `0fda720` docs: add MATRIZ_AFIRMACIONES_P0 and link from ASISTENTE_V1
+- `gh-pages` (deploy): (completar con `git log -1 gh-pages --oneline`)
+
+## Qué quedó hecho (resumen corto)
+- Se confirmó que el HTML final no contiene links `.md` (MkDocs convierte a rutas/carpeta).
+- Se corrigió el método de detección de links rotos: resolver `href` relativo a la carpeta del HTML, no al root del site.
+- Resultado: `$broken2u.Count = 0` (no hay hrefs rotos locales) y `mkdocs build --strict` OK.
+
+## Pendientes inmediatos (máx 5)
+1) (Opcional) Correr `.\preflight.ps1` y registrar OK.
+2) (Opcional) Si falta, ejecutar deploy: `python -m mkdocs gh-deploy --clean` y registrar hash `gh-pages`.
+3) Seguir con “siguiente paso”: PROYECTO_WEB_API — definir MVP v1 del Asistente (retrieval desde Biblia + contratos de salida).
+
+## Próximo paso recomendado (1)
+Arrancar PROYECTO_WEB_API: definir el MVP v1 del Asistente (alcance, endpoints, formatos de respuesta y fallback), usando los Docs P0 + estructura de citación.

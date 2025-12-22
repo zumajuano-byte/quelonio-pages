@@ -35,3 +35,17 @@ El estado vivo está en `PROYECTO_*.md` (uno por proyecto).
 **Próximo paso (1):**
 - ...
 **Release:** build --strict OK / deploy OK / commit SHA
+
+
+### 2025-12-22 — Checkpoint PROYECTO_WEB_API (Sprint 1 Infra OK)
+- Repo app: `C:\Users\flore\Documents\quelonio-saas`
+- Node v20.19.0 (nvm4w), npm 10.8.2
+- Next 16.1.0 OK (cuando corre, sirve en http://localhost:3000)
+- PostgreSQL local (service postgresql-x64-18) en 5432
+- DB `quelonio_saas`, user `quelonio` (CREATEDB), conexión validada
+- Prisma validate/generate OK; migrate dev quedó “Already in sync”
+- Próximo: crear endpoints en Next App Router:
+  - `app/api/health/route.ts`
+  - `lib/prisma.ts`
+  - endpoint DB ping / primer modelo
+- Nota: warning Next por lockfile extra en `C:\Users\flore\package-lock.json` (no bloqueante)

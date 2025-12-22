@@ -61,17 +61,18 @@ Regla simple:
 
 Procedimiento mínimo:
 1) Preparar línea/manguera sanitizada.
-2) **Purgar la línea con CO₂** (objetivo: que NO quede aire).
-3) Purgar el recipiente destino (keg / bright / llenadora) con CO₂.
+2) **Purgar la línea con CO2** (objetivo: que NO quede aire).
+3) Purgar el recipiente destino (keg / bright / llenadora) con CO2.
 4) Transferir con presión controlada (sin turbulencia innecesaria).
-5) Mantener headspace mínimo y/o “manta” de CO₂ donde aplique.
+5) Mantener headspace mínimo y/o “manta” de CO2 donde aplique.
 
 ---
 
 ## 5) Purgas por tipo de empaque (estándar simple)
+
 ### 5.1 Keg
 - Purgar el keg antes de llenar.
-- Mantener CO₂ en cabeza y cerrar sin “aspirar” aire.
+- Mantener CO2 en cabeza y cerrar sin “aspirar” aire.
 - Registrar método (y cantidad de ciclos si usás ciclos).
 
 Checklist rápido:
@@ -83,7 +84,7 @@ Checklist rápido:
 ### 5.2 Botella
 - Minimizar salpicado durante llenado.
 - Controlar headspace (no dejar “aire de más”).
-- Si purgás con CO₂, estandarizar método (tiempo/boquilla) y registrarlo.
+- Si purgás con CO2, estandarizar método (tiempo/boquilla) y registrarlo.
 
 Checklist rápido:
 - [ ] Llenado “suave” (sin turbulencia)
@@ -103,6 +104,7 @@ Checklist rápido:
 ---
 
 ## 6) Monitoreo (si medís) y “proxies” (si no medís)
+
 ### Si medís DO/TPO
 Usá las mediciones para aprender y corregir: compará corridas, detectá en qué parte sube, y fijá un estándar.
 
@@ -125,11 +127,12 @@ Por lote y por corrida de envasado, anotar:
 - incidentes (paradas, demoras, desconexión, salpicado)
 - resultado sensorial a 7 / 14 / 30 días (nota corta)
 
-➡️ [TP — Log de envasado y estabilidad](TP_Log_Envasado_y_Estabilidad.md)
+→ [TP — Log de envasado y estabilidad](TP_Log_Envasado_y_Estabilidad.md)
 
 ---
 
 ## 8) Troubleshooting rápido (oxígeno)
+
 ### Síntomas típicos
 - “apagado” aromático rápido
 - notas a cartón/papel (envejecimiento)
@@ -146,6 +149,47 @@ Por lote y por corrida de envasado, anotar:
 - Pausar corrida y re-purgar línea y envases.
 - Volver al estándar de transferencia cerrada (no seguir “a medias”).
 - Registrar incidente y ajustar el SOP (qué falló y dónde).
+
+---
+
+## BIBLIO (canónico) — plantilla mínima
+> Regla: no alcanza con “X dice…”. Registrar edición y ubicación (capítulo/sección/página).  
+> Si hay conflicto entre heurística y BIBLIO, manda BIBLIO y se actualiza la heurística.
+
+### Fuente (1)
+- source_id: BIB-09-O2-001
+- Obra: How to Brew
+- Autor: John Palmer
+- Edición / Año / Editorial: [COMPLETAR]
+- Capítulo / Sección: [COMPLETAR]
+- Página(s): [COMPLETAR]
+- Nota breve: oxígeno en etapas finales/envasado como driver de vida útil y “apagado” aromático.
+
+### Fuente (2)
+- source_id: BIB-09-O2-002
+- Obra: Yeast: The Practical Guide to Beer Fermentation
+- Autores: Chris White; Jamil Zainasheff
+- Edición / Año / Editorial: [COMPLETAR]
+- Capítulo / Sección: [COMPLETAR]
+- Página(s): [COMPLETAR]
+- Nota breve: riesgo de oxígeno en transferencias y efectos cuando ya hay poca levadura disponible.
+
+### Matriz de afirmaciones (3–5) — vinculadas a Fuente (1) y/o (2)
+- A1 (Oxígeno final = vida útil): el O2 en empaque acorta vida útil y reduce aroma percibido (“apagado”).
+  - Evidencia: BIB-09-O2-001 → cap/sección/pág [COMPLETAR]
+  - Impacto: prioridad operacional en purgas/cierre rápido.
+- A2 (TPO importa aunque no midas): TPO combina DO + headspace; por eso el headspace/purga y el cierre son críticos.
+  - Evidencia: BIB-09-O2-001 → cap/sección/pág [COMPLETAR]
+  - Impacto: estándares por tipo de envase (keg/botella/lata).
+- A3 (Transferencia cerrada reduce DO): circuito cerrado + línea purgada + sin salpicado reduce incorporación de O2.
+  - Evidencia: BIB-09-O2-002 → cap/sección/pág [COMPLETAR]
+  - Impacto: gate: “no envasar si no puedo transferir sin aire”.
+- A4 (Demoras con envase abierto elevan riesgo): cuanto más tiempo abierto, mayor TPO por headspace.
+  - Evidencia: BIB-09-O2-001 → cap/sección/pág [COMPLETAR]
+  - Impacto: regla: “cerrar inmediatamente” y evitar paradas.
+- A5 (Microfugas degradan a lo largo del tiempo): pequeñas entradas sostenidas elevan oxidación y aceleran envejecimiento.
+  - Evidencia: BIB-09-O2-001 y/o BIB-09-O2-002 → cap/sección/pág [COMPLETAR]
+  - Impacto: checklist de juntas/válvulas + registro de incidentes.
 
 ---
 

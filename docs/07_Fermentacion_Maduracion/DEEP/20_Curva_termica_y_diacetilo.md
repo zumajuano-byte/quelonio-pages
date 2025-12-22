@@ -78,6 +78,38 @@ Si entra oxígeno, el precursor se puede convertir a diacetilo y, si ya sacaste 
 
 ---
 
+## BIBLIO (canónico) — plantilla mínima
+> Regla: no alcanza con “X dice…”. Registrar edición y ubicación (capítulo/sección/página).  
+> Si hay conflicto entre heurística y BIBLIO, manda BIBLIO y se actualiza la heurística.
+
+### Fuente (1)
+- source_id: BIB-07-VDK-001
+- Obra: Yeast: The Practical Guide to Beer Fermentation
+- Autores: Chris White; Jamil Zainasheff
+- Edición / Año / Editorial: [COMPLETAR]
+- Capítulo / Sección: [COMPLETAR]
+- Página(s): [COMPLETAR]
+- Nota breve: reducción de VDK/diacetilo; relación con temperatura, tiempo y presencia de levadura.
+
+### Matriz de afirmaciones (3–5) — vinculadas a la Fuente (1)
+- A1 (Timing del descanso): iniciar el “descanso” antes de FG (cuando faltan ~2–5 puntos / ~0,5–1 °P).
+  - Evidencia: BIB-07-VDK-001 → cap/sección/pág [COMPLETAR]
+  - Impacto: gate: “no enfriar / no transferir” hasta completar descanso.
+- A2 (Enfriar frena limpieza): bajar temperatura al final puede frenar o detener reducción de VDK.
+  - Evidencia: BIB-07-VDK-001 → cap/sección/pág [COMPLETAR]
+  - Impacto: evita “falso cierre” por densidad final.
+- A3 (Prueba forzada detecta precursor): el calentamiento acelera conversión de precursores y revela riesgo.
+  - Evidencia: BIB-07-VDK-001 → cap/sección/pág [COMPLETAR]
+  - Impacto: gate práctico previo a crash/transferencia/envasado.
+- A4 (Separar temprano aumenta riesgo): transferir o enfriar temprano aumenta probabilidad de VDK residual/reaparición.
+  - Evidencia: BIB-07-VDK-001 → cap/sección/pág [COMPLETAR]
+  - Impacto: criterio “Listo para Empaque” y puente con 07/30.
+- A5 (Oxígeno en cierre empeora): ingreso de O2 en transferencias/envasado acelera envejecimiento y puede agravar defectos.
+  - Evidencia: BIB-07-VDK-001 → cap/sección/pág [COMPLETAR]
+  - Impacto: puente directo con 09/DEEP/20 (DO/TPO).
+
+---
+
 ## Conexión con el siguiente paso (Bloque 30)
 Si el gate está OK, el siguiente paso es:
 

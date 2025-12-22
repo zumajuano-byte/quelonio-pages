@@ -2,13 +2,13 @@
 status: active
 scope: proceso
 sources:
-  - "White & Zainasheff �?" Yeast (transferencias/oxígeno/diacetilo; cold crash/claridad)"
-  - "Palmer �?" How to Brew (acondicionamiento; oxígeno en etapas finales y estabilidad)"
+  - "White & Zainasheff — Yeast (transferencias/oxígeno/diacetilo; cold crash/claridad)"
+  - "Palmer — How to Brew (acondicionamiento; oxígeno en etapas finales y estabilidad)"
 ---
 
-# 30 �?" Transferencias, cold crash y criterios de �?olisto para envasar�?� (DEEP)
+# 30 — Transferencias, cold crash y criterios de “Listo para Empaque” (DEEP)
 
-> Este bloque depende del **20 �?" Curva térmica y diacetilo**.  
+> Este bloque depende del **20 — Curva térmica y diacetilo**.  
 > Si no está cerrado el diacetilo, no se transfiere ni se enfría.
 >
 > [Volver al bloque 20](20_Curva_termica_y_diacetilo.md)
@@ -17,12 +17,12 @@ sources:
 Definir **cuándo** y **cómo**:
 - trasvasar (si corresponde),
 - aplicar cold crash,
-- y declarar el lote �?oapto para pasar a Empaque�?�,
+- y declarar el lote **apto para pasar a Empaque**,
 minimizando riesgos clave: **diacetilo residual** y **oxígeno**.
 
 ---
 
-## 1) Gate previo: �?ocierre�?� antes de mover o enfriar
+## 1) Gate previo: “cierre” antes de mover o enfriar
 Antes de cualquier trasiego/cold crash, exigir:
 - densidad estable, y
 - maduración mínima (según estilo) con gate de diacetilo (prueba o criterio sensorial).
@@ -60,25 +60,25 @@ Reglas operativas:
 - mejorar repetibilidad de envasado.
 
 ### 3.2 Riesgo principal: ingreso de aire (suck-back)
-Si enfriás y el sistema �?osucciona�?�, podés meter aire por válvulas/airlock/conexiones.
+Si enfriás y el sistema “succiona”, podés meter aire por válvulas/airlock/conexiones.
 
 Controles mínimos:
-- estrategia de presión/CO�,, blanket (si aplica),
+- estrategia de presión / “blanket” con CO2 (si aplica),
 - revisar sellos/válvulas,
 - líneas purgadas,
 - evitar headspace con aire.
 
 ---
 
-## 4) Criterio de salida: �?oListo para Empaque�?�
-Declarar �?oListo para Empaque�?� solo si:
+## 4) Criterio de salida: “Listo para Empaque”
+Declarar “Listo para Empaque” solo si:
 
-- [ ] Densidad estable confirmada (ideal: 2 lecturas separadas 24�?"48 h).
+- [ ] Densidad estable confirmada (ideal: 2 lecturas separadas 24-48 h).
 - [ ] Gate de diacetilo resuelto (ideal: prueba forzada; si no, criterio sensorial consistente).
 - [ ] Temperatura y tiempos de maduración registrados.
 - [ ] Si hubo trasiego: ejecutado con control de oxígeno y headspace mínimo.
 - [ ] Claridad/turbidez acorde al estilo (incluye decisión consciente si la turbidez es intencional).
-- [ ] Plan de purgas y CO�,, confirmado para el paso siguiente.
+- [ ] Plan de purgas y CO2 confirmado para el paso siguiente.
 
 ---
 
@@ -91,16 +91,14 @@ Declarar �?oListo para Empaque�?� solo si:
 
 ---
 
-## 6) Siguiente paso (salida del 07 �?' entrada al 09)
+## 6) Siguiente paso (salida del 07 → entrada al 09)
 Si llegaste acá con:
 - diacetilo resuelto,
 - transferencias sin aire,
 - cerveza estable,
 
-entonces el trabajo sigue en **09 �?" Empaque y estabilidad**:
+entonces el trabajo sigue en **09 — Empaque y estabilidad**:
 
-�z�️ [Ir al módulo 09 (hub)](../../09_Empaque_Estabilidad/09_Empaque_Estabilidad.md)
+→ [Ir al módulo 09 (hub)](../../09_Empaque_Estabilidad/09_Empaque_Estabilidad.md)
 
-Recomendación: entrar por el índice DEEP de 09 y seguir el orden �?opreparar �?' envasar �?' chequear�?�.
-
-
+Recomendación: entrar por el índice DEEP de 09 y seguir el orden “preparar → envasar → chequear”.

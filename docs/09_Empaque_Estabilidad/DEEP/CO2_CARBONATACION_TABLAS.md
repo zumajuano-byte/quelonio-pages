@@ -1,7 +1,9 @@
 ---
-status: active
-module: 09_Empaque_Estabilidad
-topic: co2_carbonatacion_tablas
+status: stable
+operational_level: P0
+last_reviewed: 2025-12-22
+owner: Juan
+source: internal
 ---
 
 # Empaque — CO2: carbonatación y tablas (v0.1)

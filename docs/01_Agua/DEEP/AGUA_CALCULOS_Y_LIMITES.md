@@ -1,7 +1,9 @@
 ---
-status: active
-module: 01_Agua
-topic: calculos_y_limites
+status: stable
+operational_level: P0
+last_reviewed: 2025-12-22
+owner: Juan
+source: internal
 ---
 
 # Agua — Cálculos y límites operativos (v0.1)

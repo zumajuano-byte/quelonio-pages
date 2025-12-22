@@ -1,3 +1,11 @@
+---
+status: stable
+operational_level: P0
+last_reviewed: 2025-12-22
+owner: Juan
+source: internal
+---
+
 # TABLAS — Targets por estilo (v0.1)
 
 Objetivo: dar rangos operativos (targets) para que el asistente pueda:

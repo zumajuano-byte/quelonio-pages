@@ -1,7 +1,9 @@
 ---
-status: active
-module: 03_Levadura
-topic: pitch_rate_y_oxigenacion
+status: stable
+operational_level: P0
+last_reviewed: 2025-12-22
+owner: Juan
+source: internal
 ---
 
 # Levadura — Pitch rate y oxigenación (v0.1)

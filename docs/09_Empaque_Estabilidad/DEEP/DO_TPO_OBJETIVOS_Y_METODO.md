@@ -1,7 +1,9 @@
 ---
-status: active
-module: 09_Empaque_Estabilidad
-topic: do_tpo_objetivos_y_metodo
+status: stable
+operational_level: P0
+last_reviewed: 2025-12-22
+owner: Juan
+source: internal
 ---
 
 # Empaque — DO/TPO: objetivos y método (v0.1)

@@ -1,7 +1,9 @@
 ---
-status: active
-module: 09_Empaque_Estabilidad
-topic: shelf_life_plan_y_criterios
+status: stable
+operational_level: P0
+last_reviewed: 2025-12-22
+owner: Juan
+source: internal
 ---
 
 # Estabilidad — Shelf-life: plan y criterios (v0.1)

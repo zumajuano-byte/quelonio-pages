@@ -637,6 +637,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#d-powershell-no-usar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D) PowerShell: no usar &amp;&amp;
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1795,6 +1806,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#d-powershell-no-usar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D) PowerShell: no usar &amp;&amp;
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1854,27 +1876,28 @@ Regla: al cerrar una sesión de Biblia, <strong>se reemplaza este archivo comple
 <p>Links de referencia:
 - <a href="../START_HERE/">START_HERE</a>
 - <a href="../LAUNCHER/">LAUNCHER</a>
-- <a href="../SESSIONS_LOG/">SESSIONS_LOG (Regla de oro + histórico)</a></p>
+- <a href="../SESSIONS_LOG/">SESSIONS_LOG (Regla de oro + histórico)</a>
+- <a href="../PROYECTO_WEB_API/">PROYECTO_WEB_API (Quelonio Brew OS)</a></p>
 <hr />
 <h2 id="current_state-biblia-leer-esto-primero">CURRENT_STATE — Biblia (leer esto primero)<a class="headerlink" href="#current_state-biblia-leer-esto-primero" title="Permanent link">&para;</a></h2>
 <ul>
-<li>last_updated: 2025-12-18</li>
+<li>last_updated: 2025-12-22</li>
 <li>project: Biblia (Quelonio Pages)</li>
 <li>mode_default: Operación + Iteración (post-publicación)</li>
 </ul>
 <h3 id="objective_now-1-frase">objective_now (1 frase)<a class="headerlink" href="#objective_now-1-frase" title="Permanent link">&para;</a></h3>
-<p>Mantener la Biblia “deployable sin deuda” (preflight OK siempre) y arrancar la <strong>Pasada 2 (BIBLIO)</strong> en 07+09 con formato de cita canónico y 1 ejemplo completo.</p>
+<p>Mantener la Biblia “deployable sin deuda” (preflight OK siempre) y consolidar la <strong>Pasada 2 (BIBLIO)</strong> en 07+09 con formato canónico + ejemplos visibles, dejando trazabilidad lista para completar citas reales (cap/sección/página).</p>
 <h3 id="next_3-max-3">next_3 (máx 3)<a class="headerlink" href="#next_3-max-3" title="Permanent link">&para;</a></h3>
-<p>1) <strong>Pasada 2 (BIBLIO) — Sprint corto en 07 + 09:</strong> convertir heurísticas clave a BIBLIO (libro → capítulo → sección/página) empezando por: curva térmica/diacetilo, O₂ en transferencias, DO/TPO en empaque, shelf-life.
-2) <strong>Gate y criterio canónico de cita (mínimo viable):</strong> definir plantilla simple (1 bloque) y dejar <strong>1 ejemplo completo</strong> dentro de un DEEP (ideal: “Matriz de afirmaciones” con 3–5 items ya citados).
-3) <strong>1 caso real end-to-end:</strong> Spec v1.0 + 1 lote (logs mínimos) + sensorial + ajuste de Spec (registrar el loop en 11/DEEP/20).</p>
+<p>1) <strong>Pasada 2 (BIBLIO) — Completar citas reales:</strong> llenar “capítulo/sección/página” en BIBLIO de 07/20, 07/30 y 09/20 (mínimo 3–5 afirmaciones por doc).
+2) <strong>Extender BIBLIO a heurísticas de estabilidad/shelf-life:</strong> sumar 1–2 docs DEEP adicionales (p.ej. shelf-life, carbonatación/CO2, DO/TPO operativo) con el mismo patrón.
+3) <strong>1 caso real end-to-end:</strong> Spec v1.0 + 1 lote (logs mínimos) + sensorial + ajuste de Spec (registrar loop en 11/DEEP/20).</p>
 <h3 id="open_threads-max-5">open_threads (máx 5)<a class="headerlink" href="#open_threads-max-5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Auditoría de redundancias/solapamientos: definir qué es canónico vs “puentes”.</li>
-<li>Estandarizar formato de citas (plantilla simple) y ubicarla como norma.</li>
-<li>Gate mínimo de liberación (umbrales medibles) en QA/QC (incluye DO/TPO/CO₂ donde aplique).</li>
+<li>Estandarizar “BIBLIO canónico” como norma transversal (dónde vive la plantilla madre).</li>
+<li>Gate mínimo de liberación (umbrales medibles) en QA/QC (incluye DO/TPO/CO2 donde aplique).</li>
 <li>Cierre fino 11 Sensorial (opcional): Gate “Liberar / Retener / Investigar” en overview + puentes a 07/10.</li>
-<li>Definir “targets operativos por familia de estilos” (agua/pH, pitch/O₂/temp, dry hop, DO).</li>
+<li>Targets operativos por familia de estilos (agua/pH, pitch/O2/temp, dry hop, DO) como “tablas de referencia”.</li>
 </ul>
 <h3 id="truth_links-verdad-vigente-stubs">truth_links (verdad vigente / stubs)<a class="headerlink" href="#truth_links-verdad-vigente-stubs" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1887,19 +1910,19 @@ Regla: al cerrar una sesión de Biblia, <strong>se reemplaza este archivo comple
 </ul>
 <hr />
 <h2 id="checklist-de-publicacion-canonico">Checklist de publicación (canónico)<a class="headerlink" href="#checklist-de-publicacion-canonico" title="Permanent link">&para;</a></h2>
-<p>1) <code>git status</code><br />
-2) <code>python -m mkdocs build --strict</code><br />
-3) <code>git add -A</code> → <code>git commit -m "docs: update biblia &lt;tema&gt;"</code> → <code>git push</code><br />
-4) <code>python -m mkdocs gh-deploy --clean</code><br />
+<p>1) <code>git status</code>
+2) <code>python -m mkdocs build --strict</code>
+3) <code>git add -A</code> → <code>git commit -m "docs: update biblia &lt;tema&gt;"</code> → <code>git push</code>
+4) <code>python -m mkdocs gh-deploy --clean</code>
 5) Verificación rápida web: Home + módulo tocado</p>
 <p>Notas:
 - Regla APB: <strong>no deploy</strong> si <code>.\preflight.ps1</code> no da OK.
-- Si estás en Windows: vigilar LF/CRLF (ver “Runbook de line endings” abajo).</p>
+- Windows: vigilar LF/CRLF (ver Runbook).</p>
 <hr />
 <h2 id="runbook-limpieza-tecnica-atajos">Runbook — “limpieza técnica” (atajos)<a class="headerlink" href="#runbook-limpieza-tecnica-atajos" title="Permanent link">&para;</a></h2>
 <h3 id="a-mojibake-encoding-raro-en-md-a-a-a-etc">A) Mojibake / encoding raro en .md (Ã â€” Â, etc.)<a class="headerlink" href="#a-mojibake-encoding-raro-en-md-a-a-a-etc" title="Permanent link">&para;</a></h3>
 <p>1) Detectar:
-   - <code>Select-String -Path .\docs\...\**\*.md -Pattern 'Ã|â€”|Â' -AllMatches</code>
+   - <code>Select-String -Path .\docs\...\**\*.md -Pattern 'Ã|â€”|Â|�' -AllMatches</code>
 2) Fix (re-interpretar ISO-8859-1 → UTF-8) sobre lista <code>$files</code>:
    - <code>$latin1 = [System.Text.Encoding]::GetEncoding(28591)</code>
    - <code>$utf8   = [System.Text.Encoding]::UTF8</code>
@@ -1921,6 +1944,8 @@ Regla: al cerrar una sesión de Biblia, <strong>se reemplaza este archivo comple
 3) Renormalizar:
    - <code>git add --renormalize .</code>
    - <code>git commit -m "chore: renormalize line endings"</code></p>
+<h3 id="d-powershell-no-usar">D) PowerShell: no usar <code>&amp;&amp;</code><a class="headerlink" href="#d-powershell-no-usar" title="Permanent link">&para;</a></h3>
+<p>En PowerShell, ejecutar comandos en líneas separadas o con <code>;</code> (no <code>&amp;&amp;</code>).</p>
 <hr />
 <h2 id="checkpoint-plantilla-copiarpegar-al-cerrar-sesion">CHECKPOINT — Plantilla (copiar/pegar al cerrar sesión)<a class="headerlink" href="#checkpoint-plantilla-copiarpegar-al-cerrar-sesion" title="Permanent link">&para;</a></h2>
 <h3 id="sesion-aaaa-mm-dd">Sesión: AAAA-MM-DD<a class="headerlink" href="#sesion-aaaa-mm-dd" title="Permanent link">&para;</a></h3>
@@ -1946,8 +1971,8 @@ Regla: al cerrar una sesión de Biblia, <strong>se reemplaza este archivo comple
 </ul>
 <hr />
 <h1 id="checkpoint-sesion-de-cierre">CHECKPOINT (sesión de cierre)<a class="headerlink" href="#checkpoint-sesion-de-cierre" title="Permanent link">&para;</a></h1>
-<p><strong>Fecha:</strong> 2025-12-18<br />
-<strong>Objetivo de la sesión:</strong> Consolidación + limpieza técnica (encoding + contentReference + line endings LF) y publicación en GitHub Pages.</p>
+<p><strong>Fecha:</strong> 2025-12-22<br />
+<strong>Objetivo de la sesión:</strong> Consolidar Pasada 2 (BIBLIO) inicial en 07+09 y publicar sin deuda (build strict + deploy OK).</p>
 <h2 id="estado-tecnico-apb">Estado técnico (APB)<a class="headerlink" href="#estado-tecnico-apb" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Preflight (<code>.\preflight.ps1</code>): OK  </li>
@@ -1957,19 +1982,18 @@ Regla: al cerrar una sesión de Biblia, <strong>se reemplaza este archivo comple
 </ul>
 <h2 id="referencias-de-version-para-no-perderse">Referencias de versión (para no “perderse”)<a class="headerlink" href="#referencias-de-version-para-no-perderse" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>main</code> (último commit): <code>e373346 chore: renormalize line endings</code></li>
-<li><code>gh-pages</code> (último deploy): <code>2400762 Deployed e373346 with MkDocs version: 1.6.1</code></li>
+<li><code>main</code> (commit): <code>558cf18 docs: fix 07/30 encoding and add BIBLIO blocks in 07/20 and 09/20</code></li>
+<li><code>gh-pages</code> (deploy): <code>7ab5093</code> (último push por <code>mkdocs gh-deploy</code>)</li>
 </ul>
 <h2 id="que-quedo-hecho-resumen-corto">Qué quedó hecho (resumen corto)<a class="headerlink" href="#que-quedo-hecho-resumen-corto" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Reparación de encoding mojibake (Ã/Â/â—) en docs relevantes; build vuelve a pasar en strict.</li>
-<li>Eliminación de artefactos <code>:contentReference[...]</code> detectados por preflight.</li>
-<li>Normalización de line endings (LF) en repo: <code>.gitattributes</code> + <code>core.autocrlf=false</code> + <code>core.eol=lf</code> + <code>--renormalize</code>.</li>
-<li>Publicación actualizada en GitHub Pages (gh-pages en sync con main).</li>
+<li>Se incorporó/ajustó BIBLIO como base operativa en 07/20 y 09/20 (plantilla + afirmaciones).</li>
+<li>Se corrigió 07/30 (encoding/estandarización) y se validó publicación completa.</li>
+<li>Pipeline PowerShell confirmado: commit/push en <code>main</code> + build strict + deploy limpio.</li>
 </ul>
 <h2 id="pendientes-inmediatos-proximo-bloque-logico">Pendientes inmediatos (próximo bloque lógico)<a class="headerlink" href="#pendientes-inmediatos-proximo-bloque-logico" title="Permanent link">&para;</a></h2>
-<p>1) Pasada 2 (BIBLIO) en <strong>07 Fermentación/Maduración</strong> y <strong>09 Empaque/Estabilidad</strong> (3–5 citas completas mínimo).
-2) Definir formato canónico de cita + 1 ejemplo dentro de un DEEP (incluye “Matriz de afirmaciones”).
+<p>1) Completar citas reales (capítulo/sección/página) en los BIBLIO ya creados (07/20, 07/30, 09/20).
+2) Extender BIBLIO a 1–2 docs DEEP adicionales (shelf-life y/o CO2/estabilidad).
 3) Ejecutar 1 caso real end-to-end (Spec → lote → logs → sensorial → ajuste de Spec) y registrarlo como patrón.</p>
 <h2 id="regla-apb-vigente">Regla APB vigente<a class="headerlink" href="#regla-apb-vigente" title="Permanent link">&para;</a></h2>
 <ul>

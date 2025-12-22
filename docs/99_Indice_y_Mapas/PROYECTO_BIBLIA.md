@@ -277,3 +277,33 @@ Esta Biblia se convierte oficialmente en “Knowledge Base” de Brew OS:
 - Toda decisión crítica se conecta a BIBLIO.
 
 Estado: APROBADO (a implementar cuando arranque PROYECTO_WEB_API).
+
+# CHECKPOINT (sesión de cierre)
+
+Fecha: 2025-12-22
+Objetivo de la sesión: Consolidar “Docs P0” (datos duros) para habilitar el Asistente + corregir rutas/links para build strict.
+
+## Estado técnico (APB)
+- Build strict (`python -m mkdocs build --strict`): OK
+- Deploy (`python -m mkdocs gh-deploy --clean`): OK
+- Sitio: https://zumajuano-byte.github.io/quelonio-pages/
+
+## Referencias de versión
+- `main` (commit): `6f9fb13` docs: add P0 hard-data docs and fix assistant links (water/oxygenation/packaging/shelf-life)
+- `gh-pages` (deploy): `e3fd2c2` (último push de gh-deploy)
+
+## Qué quedó hecho (resumen corto)
+- “Docs P0” creados y ubicados por módulo:
+  - 01_Agua/DEEP/AGUA_CALCULOS_Y_LIMITES.md
+  - 03_Levadura/Fermentacion_DEEP/PITCH_RATE_Y_OXIGENACION.md
+  - 09_Empaque_Estabilidad/DEEP/{DO_TPO_OBJETIVOS_Y_METODO, CO2_CARBONATACION_TABLAS, SHELF_LIFE_PLAN_Y_CRITERIOS}.md
+  - 99_Indice_y_Mapas/TABLAS_TARGETS_POR_ESTILO.md
+- Links del Asistente corregidos para strict (sin warnings).
+
+## Pendientes inmediatos (máx 5)
+1) Pasada 2 (BIBLIO) en 07 + 09: convertir 3–5 afirmaciones críticas a citas completas.
+2) Definir plantilla canónica de cita (1 bloque) y dejar 1 ejemplo completo (“Matriz de afirmaciones”).
+3) Preparar el MVP Asistente v1 en PROYECTO_WEB_API (scope + endpoints + formato respuesta + fallback).
+
+## Próximo paso recomendado (1)
+Arrancar PROYECTO_WEB_API definiendo MVP v1 del asistente: “preguntas sobre cerveza + sobre el sistema”, usando los Docs P0 como fuentes preferidas.

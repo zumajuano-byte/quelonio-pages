@@ -10,12 +10,12 @@ Referencia conceptual / base de conocimiento:
 
 ## CURRENT_STATE — Quelonio Brew OS
 
-- last_updated: 2025-12-19
+- last_updated: 2025-12-22
 - project: Quelonio Brew OS (Excel + SaaS)
 - mode_default: Validación operativa (Excel) + Blueprint SaaS + Ejecución por sprints
 
 ### objective_now (1 frase)
-Consolidar un Excel “modelo” (prototipo operativo) para validar flujo completo con datos reales y luego convertirlo a SaaS multiusuario (login + multi-tenant + roles + auditoría + alertas + exports). 
+Consolidar un Excel “modelo” (prototipo operativo) para validar flujo completo con datos reales y luego convertirlo a SaaS multiusuario (login + multi-tenant + roles + auditoría + alertas + exports), incorporando un **Asistente v1** conectado a la Biblia.
 
 ### Estado del Excel (prototipo operativo)
 Archivos generados y validados:
@@ -27,6 +27,26 @@ Archivos generados y validados:
 Situación:
 - El Excel “se ve todo bien” y “trabaja” (validado).
 - IDs: en Excel conviene “Secuencia + ID derivado” (semi-automático estable); en SaaS IDs 100% automáticos.
+
+---
+
+## Links canónicos (Biblia + Asistente)
+
+Fuente de verdad de conocimiento (SOT):
+- Biblia (sitio): https://zumajuano-byte.github.io/quelonio-pages/
+
+Documentos canónicos del asistente (dentro de la Biblia):
+- 99_Indice_y_Mapas/ASISTENTE_KNOWLEDGE_MAP.md
+- 99_Indice_y_Mapas/ASISTENTE_CONTRATOS.md
+- 99_Indice_y_Mapas/ASISTENTE_DATA_CONTRACT.md
+
+Docs P0 (datos duros para respuestas operativas):
+- 99_Indice_y_Mapas/TABLAS_TARGETS_POR_ESTILO.md
+- 01_Agua/DEEP/AGUA_CALCULOS_Y_LIMITES.md
+- 03_Levadura/Fermentacion_DEEP/PITCH_RATE_Y_OXIGENACION.md
+- 09_Empaque_Estabilidad/DEEP/DO_TPO_OBJETIVOS_Y_METODO.md
+- 09_Empaque_Estabilidad/DEEP/CO2_CARBONATACION_TABLAS.md
+- 09_Empaque_Estabilidad/DEEP/SHELF_LIFE_PLAN_Y_CRITERIOS.md
 
 ---
 
@@ -61,13 +81,98 @@ Módulos MVP:
 
 ---
 
+# MVP ASISTENTE v1 (definición funcional)
+
+## Objetivo del Asistente v1
+Un asistente que:
+1) Responde preguntas cerveceras usando Biblia + Docs P0 (targets, límites, criterios).
+2) Guía el uso del sistema Brew OS (cómo registrar/validar) sin ejecutar cambios.
+3) Produce outputs estandarizados (SPEC / Plan / Checklist / Troubleshooting) listos para usar.
+
+## Qué responde (IN SCOPE v1)
+### A) Técnico cerveza (Biblia-first)
+- Proponer targets por estilo (OG/FG/ABV/IBU/CO2/pH) usando TABLAS_TARGETS_POR_ESTILO (marcando DEFAULT).
+- Planear receta baseline (SPEC v1.0) con BOM + proceso alto nivel + gates.
+- Ajustar receta por restricciones (volumen, insumos, perfil: más seco/cuerpo/amargor).
+- Plan de proceso por lote: cronograma + puntos de control (pH, densidad, temp).
+- QA/QC y gates: diacetilo/VDK (07), DO/TPO + empaque (09), estabilidad (shelf-life).
+- Shelf-life: plan D+7/D+14/D+30 y criterio liberar/retener/investigar.
+
+### B) Sistema (Brew OS)
+- “Cómo hago X”: guía paso a paso por módulos (recetas/lotes/stock/ventas/compras/settings).
+- Validación: “qué dato falta / por qué no cierra” contra el contrato de datos.
+
+### C) Salidas canónicas (obligatorio)
+Cada respuesta técnica o mixta debe devolver, cuando aplique:
+- SPEC v1.0 (ASISTENTE_CONTRATOS)
+- Checklist/Gates (ASISTENTE_CONTRATOS)
+- Plan de producción (ASISTENTE_CONTRATOS)
+- Troubleshooting (ASISTENTE_CONTRATOS)
+
+## Qué NO responde (OUT OF SCOPE v1)
+- No ejecuta acciones en DB (no crea/edita entidades). Solo propone y guía.
+- No inventa números dependientes de tu equipo:
+  - DO/TPO exacto por tu línea: propone benchmark inicial y pide medición si existe.
+  - eficiencia real del equipo: pide input o asume DEFAULT declarado.
+- No sustituye mediciones: si faltan datos críticos, pide el dato y sugiere cómo medir/registrar.
+- No “garantiza” seguridad/calidad: recomienda SOP y detener/verificar si hay riesgo.
+
+## Contrato mínimo de datos (para integrar Brew OS con Asistente v1)
+El asistente puede funcionar en “modo Biblia” sin DB, pero para “modo mixto” requiere:
+
+### Identidad y permisos
+- org_id
+- user_id
+- role (Owner/Admin/Producción/Ventas/Lectura)
+
+### Entidades mínimas (v1)
+**Recipe**
+- recipe_id, name, style, target_volume
+- targets: OG/FG/ABV/IBU/color/CO2
+- items[]: ingredient_id, type, amount, unit, timing, notes
+
+**Batch**
+- batch_id, recipe_id, status, planned_volume, actual_volume, start_date
+
+**Measurements (mínimo)**
+- gravity, temp, pH (timestamp, value, unit)
+
+**Opcionales v1 (mejoran mucho)**
+- Inventory (ingredient_id, qty_on_hand, unit)
+- PackagingRun (date, qty_produced, losses, notes, o2_controls)
+
+### Reglas de no-invención (v1)
+- Si targets faltan -> baseline desde TABLAS_TARGETS_POR_ESTILO marcado DEFAULT.
+- Si mediciones faltan -> pedir dato o disparar checklist.
+- Si stock faltante -> no confirma compras, propone BOM y lista “a validar”.
+
+## DoD del Asistente v1 (resultado esperado)
+- Responde con contratos (SPEC/Plan/Checklist/Troubleshooting) sin formatos libres.
+- Pide datos faltantes (no inventa) y marca DEFAULT cuando aplica.
+- Referencia docs canónicos (links internos de Biblia).
+- Puede funcionar en 2 modos:
+  - Biblia-only (sin DB)
+  - Mixto (Biblia + entidades mínimas vía API)
+
+---
+
 ## Sprint plan (ruta de ejecución)
 
-Sprint 1: Fundación (Identity + multi-tenant + RBAC + Settings + invitaciones + auditoría mínima).  
-Sprint 2: Maestros (ingredientes, productos, recetas+BOM).  
-Sprint 3: Operación (lotes/consumos/empaque + stock).  
-Sprint 4: Comercial/finanzas (ventas/cobros AR + compras/pagos AP).  
+Sprint 0.5 (Asistente v1 — Especificación y contratos)
+- Congelar alcance IN/OUT (este bloque).
+- Congelar formatos de salida (ASISTENTE_CONTRATOS).
+- Congelar data contract mínimo (ASISTENTE_DATA_CONTRACT + sección de arriba).
+- Definir endpoints “read-only” para contexto (ver Sprint 2/3).
+
+Sprint 1: Fundación (Identity + multi-tenant + RBAC + Settings + invitaciones + auditoría mínima).
+Sprint 2: Maestros (ingredientes, productos, recetas+BOM).
+Sprint 3: Operación (lotes/consumos/empaque + stock).
+Sprint 4: Comercial/finanzas (ventas/cobros AR + compras/pagos AP).
 Sprint 5: Planificación + alertas + dashboard + exports.
+
+Nota: El Asistente v1 se integra incrementalmente:
+- Primero Biblia-only (sin DB).
+- Luego Mixto cuando existan entidades mínimas y endpoints read-only.
 
 ---
 

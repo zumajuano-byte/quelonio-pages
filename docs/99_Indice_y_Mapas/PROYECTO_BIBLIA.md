@@ -8,6 +8,10 @@ Links de referencia:
 - [LAUNCHER](LAUNCHER.md)
 - [SESSIONS_LOG (Regla de oro + histórico)](SESSIONS_LOG.md)
 - [PROYECTO_WEB_API (Quelonio Brew OS)](PROYECTO_WEB_API.md)
+- [ASISTENTE — Knowledge Map](ASISTENTE_KNOWLEDGE_MAP.md)
+- [ASISTENTE — Contratos de salida](ASISTENTE_CONTRATOS.md)
+- [ASISTENTE — Data Contract Brew OS](ASISTENTE_DATA_CONTRACT.md)
+
 
 ---
 
@@ -140,3 +144,136 @@ En PowerShell, ejecutar comandos en líneas separadas o con `;` (no `&&`).
 ## Regla APB vigente
 - No commitear ni deployar sin correr `.\preflight.ps1` y que dé **OK**.
 - No tocar `SESSIONS_LOG.md` (solo si se decide explícitamente en una sesión).
+
+---
+
+# EXTENSION ESTRATEGICA — Asistente Virtual (Brew OS + Biblia)
+
+## Idea central (1 frase)
+La Biblia es la **fuente canónica** (SOT) de conocimiento cervecero y procedimientos; Brew OS es el **sistema operativo** (data + ejecución). El Asistente Virtual conecta ambos: responde, planifica y guía operaciones usando Biblia + datos del sistema.
+
+## Objetivo del Asistente
+1) Responder preguntas técnicas de cerveza basándose en la Biblia (recetas, procesos, QA/QC, sensorial).
+2) Guiar el uso del sistema Brew OS (cómo cargar recetas, lotes, inventario, ventas, reportes).
+3) Producir entregables operativos: Specs, checklists, planes de producción, listas de compras, logs, y “gates” (Listo para fermentar / empacar / liberar).
+
+## Principios (no negociables)
+- Fuente de verdad de contenido: **PROYECTO_BIBLIA** (docs).  
+- Fuente de verdad de datos: **Brew OS DB** (recetas/lotes/stock/ventas/etc.).
+- Si el asistente no puede apoyar una afirmación con Biblia (o datos), debe declararlo y proponer cómo obtenerlo.
+- Los “gates” (diacetilo, DO/TPO, estabilidad, liberación) se operan como checklist reproducible (evitar magia).
+
+## Docs canónicos del asistente (v0.1)
+- [ASISTENTE — Knowledge Map](ASISTENTE_KNOWLEDGE_MAP.md)
+- [ASISTENTE — Contratos de salida](ASISTENTE_CONTRATOS.md)
+- [ASISTENTE — Data Contract Brew OS](ASISTENTE_DATA_CONTRACT.md)
+
+
+---
+
+## Casos de uso (MVP) — definidos
+
+### A) Cerveza (técnico)
+- Diseñar receta: estilo objetivo -> targets -> malta -> lupulo -> levadura -> agua -> proceso -> empaque.
+- Ajustar receta: cambios por eficiencia, equipo, disponibilidad de insumos.
+- Plan de proceso: cronograma por día (mash, boil, whirlpool, pitch, dry hop, cold crash, empaque).
+- QA/QC: generar checklist de mediciones y gates (densidad, pH, diacetilo, oxigeno, CO2).
+- Troubleshooting: diagnostico por sintomas (off-flavors, baja atenuación, oxidación, turbidez).
+
+### B) Operación / Brew OS (uso del sistema)
+- Cómo registrar: receta, lote, consumos, stock, compras, ventas, pagos.
+- Validaciones: por qué no deja guardar / qué dato falta / cómo corregir.
+- Reportes: “costeo por lote”, “rentabilidad por SKU”, “vencimientos”, “alertas”, “OEE/capacidad”.
+- Auditoría: quién cambió qué, cuándo, y por qué.
+
+### C) Entregables automáticos
+- SPEC v1.0 (receta + proceso + gates + empaque + QA/QC) en formato canónico.
+- Plan de producción semanal (capacidad + calendario + alertas).
+- Lista de compras (BOM * lotes planificados - stock disponible).
+- Log de producción (TP) y log de empaque/estabilidad.
+
+---
+
+## Interfaz canónica (contrato de integración)
+
+### 1) Entradas del asistente
+- Pregunta del usuario (texto).
+- Contexto opcional:
+  - `org_id`, `user_id`, rol
+  - `recipe_id`, `batch_id`, `sku_id`
+  - fecha objetivo, volumen, equipo
+- Fuentes:
+  - Biblia (docs navegables y/o index)
+  - Brew OS (DB y entidades)
+
+### 2) Salidas del asistente (formatos estándar)
+- Respuesta explicativa + pasos operativos
+- Checklist (gates) con “OK/NO” y criterio
+- Plan (cronograma) con hitos y dependencias
+- Exportables: Markdown / CSV / PDF (más adelante)
+
+### 3) Reglas de citación (BIBLIO)
+- Para decisiones técnicas críticas: citar sección/archivo de Biblia (y BIBLIO si existe).
+- Si no hay BIBLIO en el doc, el asistente marca “Sin cita canónica aún” y propone completar.
+
+---
+
+## Arquitectura propuesta (alto nivel)
+
+### Componentes
+1) **Bible Indexer** (offline o job)
+   - Indexa los .md (títulos, anchors, tags) y genera un índice consultable.
+2) **Retriever**
+   - Dado un query, selecciona pasajes de Biblia relevantes (07/09/11 etc.).
+3) **Assistant Orchestrator**
+   - Decide si la consulta es: (A) técnico, (B) sistema, (C) mixto.
+   - Llama a Brew OS DB cuando se necesitan datos reales (stock, recetas, costos, lotes).
+4) **Safety + Policies**
+   - Control de permisos (RBAC).
+   - Filtrado de respuestas (no inventar datos; no ejecutar acciones sin confirmación).
+5) **UI Chat**
+   - Panel en Brew OS: chat contextual + botones “generar checklist”, “crear spec”, “exportar”.
+
+---
+
+## Seguridad / Gobernanza
+- RBAC: el asistente ve solo datos del `org_id`.
+- Auditoría: toda respuesta que genera cambios sugeridos se registra (prompt, entidad, timestamp).
+- “Modo operativo”: el asistente no cambia datos automáticamente salvo que el usuario confirme y el producto lo implemente.
+
+---
+
+## Definition of Done (Asistente MVP)
+- Responde sobre Biblia con referencias a archivos/secciones (por lo menos 1 link interno).
+- Puede generar SPEC v1.0 desde una receta y volumen objetivo.
+- Puede generar checklist de gates para 07->09 (diacetilo + oxigeno + empaque).
+- Puede responder “cómo hago X en Brew OS” con pasos concretos.
+- No inventa datos: si falta un dato, lo pide como input o indica dónde está en el sistema.
+
+---
+
+## Roadmap (1-2-3)
+
+### V1 (sin IA “profunda”)
+- Chat + FAQ guiado + búsqueda en Biblia (full-text) + links.
+- Plantillas automáticas (SPEC/checklists) basadas en módulos.
+
+### V2 (asistente con retrieval)
+- Retrieval sobre Biblia (pasajes + resumen).
+- Contexto por entidad (recipe/batch).
+- “Recomendaciones” con trazabilidad (por qué).
+
+### V3 (asistente operativo)
+- Acciones guiadas (crear receta, planificar lote, generar compra) con confirmación.
+- Reportes y alertas proactivas.
+- Aprendizaje: mejora de templates con feedback.
+
+---
+
+## Decisión de diseño
+Esta Biblia se convierte oficialmente en “Knowledge Base” de Brew OS:
+- Todo concepto técnico tiene un doc.
+- Todo procedimiento tiene un checklist.
+- Toda decisión crítica se conecta a BIBLIO.
+
+Estado: APROBADO (a implementar cuando arranque PROYECTO_WEB_API).

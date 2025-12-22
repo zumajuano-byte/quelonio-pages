@@ -50,3 +50,4 @@ Este hub define el comportamiento del Asistente v1 y centraliza los links canón
 
 
 - Glosario operativo: [GLOSARIO_OPERATIVO](GLOSARIO_OPERATIVO.md)
+- Matriz de afirmaciones P0: [MATRIZ_AFIRMACIONES_P0](MATRIZ_AFIRMACIONES_P0.md)

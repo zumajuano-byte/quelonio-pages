@@ -281,3 +281,42 @@ git add -A
 git commit -m "docs: update PROYECTO_WEB_API checkpoint (2025-12-23)"
 git push
 ```
+## Entrada 2025-12-23 — Quelonio SaaS (API multi-tenant + reportes + idempotencia)
+
+### Qué se logró (backend/API)
+- Multi-tenant operativo:
+  - Active org por cookie (`POST /api/active-org`)
+  - Alternativa por header `X-Org-Id` (estandarizado en scripts dev).
+- Dev tooling por terminal:
+  - `scripts/dev.ps1`: helpers `Set-Org`, `Q`, `QGet/QPost/QDel`, `QSmoke`.
+- Ventas:
+  - Invoices + lines + totals (subtotal/tax/total/paid/balance) y status auto (ISSUED/PAID).
+  - Payments con actualización de status de invoice según balance.
+- Reportes (KPIs):
+  - `GET /api/reports/sales-summary?from=YYYY-MM-DD&to=YYYY-MM-DD`
+  - `GET /api/reports/inventory-summary?from=YYYY-MM-DD&to=YYYY-MM-DD`
+
+### Idempotencia (verificada)
+- Recipes: por (organizationId, name) → mismo name no duplica.
+- Batches: por (organizationId, code) → upsert.
+- Invoices: por (organizationId, number) → mismo number no duplica.
+- StockMoves: `clientRef` + unique DB por (organizationId, clientRef) → mismo clientRef devuelve mismo move.id.
+- Payments: `clientRef` + unique DB por (organizationId, clientRef) → mismo clientRef devuelve mismo payment.id.
+
+### Notas operativas / lecciones
+- Si aparece “Forbidden: user is not a member of this organization”, crear/asegurar Membership OWNER del dev user en esa org.
+- Si VSCode marca en rojo delegates Prisma (ej: `prisma.invoice...`), correr `npx prisma generate` y luego reiniciar TS Server / Reload Window.
+
+### Comandos estándar (terminal) — forma de trabajo
+1) Cargar helpers:
+   - `. .\scripts\dev.ps1`
+2) Setear org activa:
+   - `Set-Org "<orgId>"`
+3) Smoke test rápido:
+   - `QSmoke`
+4) Requests:
+   - `QGet "/api/reports/sales-summary"`
+   - `QGet "/api/reports/inventory-summary"`
+
+### Próximo paso
+- Dashboard UI mínimo consumiendo `sales-summary` + `inventory-summary`.

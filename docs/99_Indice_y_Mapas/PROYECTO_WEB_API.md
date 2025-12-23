@@ -1,7 +1,7 @@
 # PROYECTO_WEB_API — Quelonio SaaS (Web App + API + DB)
 
-**Última actualización:** 2025-12-22  
-**Estado:** Sprint 1 en curso — Infra OK (PostgreSQL + Prisma + Next)  
+**Última actualización:** 2025-12-23  
+**Estado:** Sprint 1/2 — Vertical slice multi-tenant (Organizations + Memberships + Recipes) operativo  
 **Regla de trabajo:** micro-pasos (1 paso por vez). Si un paso requiere admin, se aclara explícitamente.
 
 ---
@@ -10,12 +10,16 @@
 
 Construir un **MVP tipo SaaS** para operación cervecera (recetas, lotes, stock, ventas, finanzas) + base para incorporar un **asistente IA** que responda en base a la Biblia (Quelonio Pages).
 
-Arquitectura recomendada (MVP):
+Principio de producto:
+- **Excel** = modelo / plantilla / análisis (import-export, simulaciones).
+- **SaaS** = operación diaria / “source of truth” (multiusuario, trazabilidad, consistencia).
+
+Arquitectura (MVP):
 - **Next.js (App Router) + TypeScript**
 - **PostgreSQL**
 - **Prisma**
 - Endpoints API dentro de Next (`app/api/*`)
-- Más adelante: auth/RBAC, auditoría, exports, jobs/alertas
+- Más adelante: auth/RBAC, auditoría, exports/imports, jobs/alertas
 
 ---
 
@@ -31,75 +35,202 @@ Este archivo vive en **quelonio-pages** para que el “asistente” y el “mét
 ## 2) Estado técnico actual (CHECKPOINT REAL)
 
 ### 2.1 Node / NPM
-- Node: **v20.19.0** (nvm4w)
+- Node: **v20.19.0**
 - npm: **10.8.2**
-- Señal importante: en tu máquina aparecen rutas duplicadas (`C:\nvm4w\nodejs\...` y `C:\Program Files\nodejs\...`). Funciona, pero conviene mantener consistencia (ver “Riesgos”).
 
 ### 2.2 Next.js
 - Next: **16.1.0**
-- `npm run dev` inicia el servidor local en `http://localhost:3000` **cuando está corriendo**.
-- Importante: si el servidor no está corriendo, `curl http://localhost:3000/...` falla (normal).
+- Dev: `npm run dev` (usa `next dev --webpack`)
+- URL: `http://localhost:3000`
+
+Notas:
+- Si reiniciás `npm run dev` y el puerto está ocupado, es porque **hay otro Next corriendo**.
+- Si ves: `Unable to acquire lock ... .next\dev\lock`, terminá el proceso anterior (o cerrá la terminal que lo estaba ejecutando) y volvé a correr dev.
 
 ### 2.3 PostgreSQL (Local Windows)
 - Servicio: `postgresql-x64-18` **Running**
 - Puerto: `localhost:5432`
 - Base: `quelonio_saas`
 - Usuario app: `quelonio`
-- Password: `1204` (por ahora; si esto es sensible, cambialo luego y actualizá `.env`)
-
-Prueba de conexión OK (ejemplo ya validado):
-- `select current_database(), current_user;` devolvió `quelonio_saas | quelonio`
+- Password: `1204` (temporal; cambiar más adelante)
 
 ### 2.4 Prisma
 - `npx prisma validate` OK
 - `npx prisma generate` OK
-- `npx prisma migrate dev --name init` quedó **“Already in sync”** (no hay migraciones pendientes)
+- Migraciones: OK (sin pendientes)
+- Migración creada para Recipes: `prisma/migrations/20251222214518_add_recipe/`
 
-Se resolvieron errores previos:
-- P1000 credenciales: se corrigió creando/ajustando usuario/credenciales
-- Permisos `_prisma_migrations`: se ajustaron owners/permisos
-- Shadow DB (P3014): se resolvió dando `CREATEDB` al rol `quelonio`
+Nota importante (scripts Node):
+- En este setup Prisma usa **adapter PG**. Si hacés scripts con `new PrismaClient()` “pelado”, puede fallar.
+- Recomendación: en scripts, **importar el prisma centralizado** desde `lib/prisma.ts` (el mismo que usa la app).
 
----
-
-## 3) Riesgos / alertas detectadas
-
-### 3.1 Warning de Next: “multiple lockfiles”
-Te apareció este warning:
-- Next detectó un `package-lock.json` en `C:\Users\flore\package-lock.json` y lo tomó como “workspace root”.
-
-Esto NO es bloqueante, pero ensucia y puede traer problemas de tooling.
-
-Opciones (elige una, cuando estemos en “limpieza”):
-1) **Eliminar/renombrar** `C:\Users\flore\package-lock.json` si no pertenece a nada importante.
-2) Configurar `turbopack.root` en `next.config.ts` apuntando al repo actual.
-3) Dejarlo así por ahora (válido para avanzar).
+### 2.5 Multi-tenant (estado funcional)
+**Ya quedó operativo un vertical slice multi-tenant completo:**
+- Organizations + Memberships (relación usuario↔org)
+- Recipes con scoping por Organization
+- UI “Dev Console” para operar todo lo anterior
 
 ---
 
-## 4) Convención de carpetas (importante)
+## 3) Decisiones / aprendizajes del Sprint (lo importante)
 
-En Next App Router:
-- No existe `/api` en raíz.  
-- Los endpoints se crean en: `app/api/<ruta>/route.ts`
-- La capa “lib” la creamos nosotros (si queremos): `lib/prisma.ts`, `lib/auth.ts`, etc.
+### 3.1 Tenant enforcement (paso clave)
+Antes: “confiar” en `X-Org-Id` (header libre) = fácil de romper.
 
-Si hoy “no tenés carpeta lib ni api”, es normal. Se crean en el siguiente paso de implementación.
+Ahora: **enforcement por Membership**:
+- Toda operación sensible valida que el “usuario dev actual” exista.
+- Valida que ese usuario tenga **Membership** en la Organization activa.
+- Resultado: separación real por tenant (base de un SaaS).
+
+### 3.2 Org activa (cookie) vs header
+Tenemos 2 caminos, en orden recomendado:
+
+1) **Cookie (recomendado)**: `POST /api/active-org` setea la org activa (persistida en cookie del navegador / session).
+   - A partir de ahí `GET/POST/PATCH/DELETE /api/recipes` funciona sin mandar headers.
+
+2) **Header (temporal)**: `X-Org-Id` se mantiene como fallback para smoke tests rápidos.
+   - Útil cuando probás con scripts o PowerShell sin sesión.
+
+### 3.3 Variables de entorno (pitfall detectado)
+- Si aparece error: `Dev user not found: <email>`
+  - Revisar `.env` → `DEV_USER_EMAIL=...`
+  - Debe coincidir con un `User.email` existente en DB.
+  - Si bootstrap usa `owner@quelonio.local`, lo más seguro es setear:
+    - `DEV_USER_EMAIL=owner@quelonio.local`
 
 ---
 
-## 5) Próximo objetivo inmediato (Sprint 1)
+## 4) Endpoints actuales (resumen)
 
-**Siguiente paso funcional mínimo:** un endpoint de salud + conexión DB real.
+Base: `http://localhost:3000`
+
+### Health / debug
+- `GET /api/health`
+- `GET /api/debug/users` (inspección rápida)
+
+### Bootstrap / orgs / memberships
+- `POST /api/bootstrap` (crea Org + User + Membership de forma idempotente por email)
+- `GET /api/organizations`
+- `POST /api/organizations`
+- `GET /api/memberships`
+- `GET /api/memberships?orgId=<ORG_ID>`
+
+### Tenant context
+- `POST /api/active-org` (setea cookie de org activa)
+
+### Recipes (multi-tenant)
+- `GET /api/recipes`
+- `POST /api/recipes`
+- `GET /api/recipes/[id]`
+- `PATCH /api/recipes/[id]`
+- `DELETE /api/recipes/[id]`
+
+---
+
+## 5) UI (Dev Console) — lo que existe hoy
+
+Página: `GET /` (http://localhost:3000)
+
+Incluye:
+- Selector de Organization activa (persistida en `localStorage` con key `quelonio.activeOrgId`)
+- Crear Organization
+- Ejecutar Bootstrap y auto-seleccionar la org creada
+- Sección Recipes:
+  - Crear recipe
+  - Listar recipes por org activa
+  - Editar / Borrar recipes
+
+Objetivo: consola mínima para validar APIs sin construir UI final todavía.
+
+---
+
+## 6) Smoke tests útiles (PowerShell)
+
+### 6.1 Nota sobre `Invoke-RestMethod`
+En PowerShell puede que NO exista `-SkipHttpErrorCheck`. En ese caso, usar `try/catch` para ver status y body (patrón estándar):
+
+```powershell
+$s = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+try {
+  Invoke-RestMethod -WebSession $s -Method Post -Uri http://localhost:3000/api/active-org `
+    -ContentType "application/json" `
+    -Body (@{ orgId = "PEGAR_ORG_ID" } | ConvertTo-Json)
+} catch {
+  $_.Exception.Response.StatusCode.value__
+  $r = New-Object IO.StreamReader($_.Exception.Response.GetResponseStream())
+  $r.ReadToEnd()
+}
+```
+
+### 6.2 Cookie path (recomendado)
+```powershell
+# 1) Crear sesión
+$s = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+
+# 2) Setear org activa (cookie)
+$orgId="PEGAR_ORG_ID"
+Invoke-RestMethod -WebSession $s -Method Post -Uri http://localhost:3000/api/active-org `
+  -ContentType "application/json" `
+  -Body (@{ orgId = $orgId } | ConvertTo-Json)
+
+# 3) Listar recipes (sin headers)
+Invoke-RestMethod -WebSession $s -Uri http://localhost:3000/api/recipes
+
+# 4) Crear recipe (sin headers)
+Invoke-RestMethod -WebSession $s -Method Post -Uri http://localhost:3000/api/recipes `
+  -ContentType "application/json" `
+  -Body '{"name":"IPA Cookie","style":"IPA","notes":"ok cookie+membership"}'
+```
+
+### 6.3 Header path (fallback)
+```powershell
+$orgId="PEGAR_ORG_ID"
+
+Invoke-RestMethod -Method Post -Uri http://localhost:3000/api/recipes `
+  -Headers @{ "X-Org-Id" = $orgId } `
+  -ContentType "application/json" `
+  -Body '{"name":"IPA Header","style":"IPA","notes":"header path"}'
+
+Invoke-RestMethod -Uri http://localhost:3000/api/recipes `
+  -Headers @{ "X-Org-Id" = $orgId }
+```
+
+---
+
+## 7) Mapa de producto (visión simple, sin tecnicismos)
+
+Orden lógico de módulos (uno alimenta al siguiente):
+
+1) **Recetas** (especificación)  ✅ HOY (multi-tenant)
+2) **Lotes** (producción real)  ⏭️ PRÓXIMO
+3) **Inventario** (entradas/salidas por movimientos)
+4) **Empaque** (lote → SKUs → unidades)
+5) **Ventas + Cobros**
+6) **Compras + Pagos**
+7) **Costos + Rentabilidad**
+8) **QA/QC** (controles y desvíos)
+9) **Dashboard** (decisión)
+
+Dónde entra Excel:
+- **Modelado** (costos, simulaciones, escenarios).
+- **Carga inicial** (import de catálogos/stock).
+- **Export/reportes** (contabilidad, socios, análisis).
+- **Portabilidad** (backup).
+
+---
+
+## 8) Próximo objetivo inmediato (Sprint 2)
+
+**Siguiente vertical slice recomendado:** módulo **Lotes (Batch)**, porque conecta Receta ↔ Producción real.
 
 Entregables mínimos:
-1) `GET /api/health` responde JSON `{ ok: true }`
-2) Prisma client centralizado (`lib/prisma.ts`)
-3) Un endpoint que pegue a DB (por ejemplo: `GET /api/db-ping` o listar “usuarios” si el schema ya tiene User)
+1) Modelo Prisma `Batch` (organizationId + recipeId + fechas + volumen + notas)
+2) CRUD API `/api/batches` scoping por org activa (mismo patrón que recipes)
+3) UI mínima en Dev Console: listar/crear batches
 
 ---
 
-## 6) Método operativo (micro-pasos)
+## 9) Método operativo (micro-pasos)
 
 **Regla:** 1 comando / 1 cambio por vez.  
 Vos pegás output, yo doy el siguiente paso.
@@ -110,7 +241,7 @@ No hace falta cortar un server para ejecutar comandos en paralelo.
 
 ---
 
-## 7) Prompt de reinicio (para retomar en un chat nuevo)
+## 10) Prompt de reinicio (para retomar en un chat nuevo)
 
 Pegá esto tal cual en un chat nuevo cuando quieras retomar:
 
@@ -120,17 +251,16 @@ Pegá esto tal cual en un chat nuevo cuando quieras retomar:
 Contexto:
 - Repo app: `C:\Users\flore\Documents\quelonio-saas`
 - Repo docs: `C:\Users\flore\Documents\quelonio-pages`
-- Stack: Next 16.1 + TS + Prisma 7.2 + PostgreSQL local (Windows service postgresql-x64-18)
-- DB: `quelonio_saas` en `localhost:5432`
-- Usuario DB: `quelonio` (tiene CREATEDB)
-- Prisma: migrate en sync (“Already in sync”)
+- Stack: Next 16.1 + TS + Prisma + PostgreSQL local
+- Multi-tenant operativo: Organizations + Memberships + Recipes
+- Tenant context: cookie `POST /api/active-org` (recomendado) y fallback `X-Org-Id`
 - Regla: micro-pasos (1 paso por vez)
 
 Qué quiero ahora:
-- Continuar Sprint 1 creando:
-  1) `app/api/health/route.ts`
-  2) `lib/prisma.ts`
-  3) Endpoint DB ping o primer modelo simple
+- Implementar **Lotes (Batch)**:
+  1) Schema Prisma `Batch` con `organizationId` + `recipeId` + campos mínimos
+  2) API routes `/api/batches` (GET/POST) y `/api/batches/[id]` (PATCH/DELETE)
+  3) UI mínima en `app/page.tsx` para listar/crear batches
 
 Restricciones:
 - No avances con 10 pasos juntos.
@@ -140,11 +270,14 @@ Restricciones:
 
 ---
 
-## 8) Changelog (resumen técnico de lo logrado)
-- Prisma instalado y funcionando
-- Postgres local operativo
-- Credenciales y permisos corregidos
-- Migrate OK (sin pendientes)
-- Prisma Studio se abrió (cuando lo corriste)
+## 11) Publicación en la Biblia (quelonio-pages)
 
-Siguiente: endpoints API dentro de Next.
+Desde `C:\Users\flore\Documents\quelonio-pages`:
+1) Copiar este archivo actualizado a su ubicación en docs (si aplica en tu árbol).
+2) `python -m mkdocs build --strict` (opcional pero recomendado)
+3) Commit + push:
+```bash
+git add -A
+git commit -m "docs: update PROYECTO_WEB_API checkpoint (2025-12-23)"
+git push
+```

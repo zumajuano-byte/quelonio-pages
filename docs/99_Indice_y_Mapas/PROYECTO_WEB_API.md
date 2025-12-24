@@ -1,14 +1,16 @@
 # PROYECTO_WEB_API — Quelonio SaaS (Web App + API + DB)
 
-**Última actualización:** 2025-12-23  
-**Estado:** Sprint 1/2 — Vertical slice multi-tenant (Organizations + Memberships + Recipes) operativo  
+**Última actualización:** 2025-12-23 (AR)  
+**Estado:** Sprint 1.5/2 — Vertical slice multi-tenant + Inventario/Ventas (API) operativo  
 **Regla de trabajo:** micro-pasos (1 paso por vez). Si un paso requiere admin, se aclara explícitamente.
 
 ---
 
 ## 0) Objetivo
 
-Construir un **MVP tipo SaaS** para operación cervecera (recetas, lotes, stock, ventas, finanzas) + base para incorporar un **asistente IA** que responda en base a la Biblia (Quelonio Pages).
+Construir un **MVP tipo SaaS** para operación cervecera:
+- Recetas, lotes, stock, ventas, finanzas
+- Base para incorporar un **asistente IA** que responda en base a la Biblia (Quelonio Pages)
 
 Principio de producto:
 - **Excel** = modelo / plantilla / análisis (import-export, simulaciones).
@@ -19,7 +21,6 @@ Arquitectura (MVP):
 - **PostgreSQL**
 - **Prisma**
 - Endpoints API dentro de Next (`app/api/*`)
-- Más adelante: auth/RBAC, auditoría, exports/imports, jobs/alertas
 
 ---
 
@@ -65,10 +66,11 @@ Nota importante (scripts Node):
 - Recomendación: en scripts, **importar el prisma centralizado** desde `lib/prisma.ts` (el mismo que usa la app).
 
 ### 2.5 Multi-tenant (estado funcional)
-**Ya quedó operativo un vertical slice multi-tenant completo:**
+Vertical slice multi-tenant operativo:
 - Organizations + Memberships (relación usuario↔org)
-- Recipes con scoping por Organization
-- UI “Dev Console” para operar todo lo anterior
+- Tenant enforcement por Membership (no confiar solo en headers)
+- Cookie de “active org” (`POST /api/active-org`) recomendada
+- Fallback `X-Org-Id` para smoke tests
 
 ---
 
@@ -78,25 +80,35 @@ Nota importante (scripts Node):
 Antes: “confiar” en `X-Org-Id` (header libre) = fácil de romper.
 
 Ahora: **enforcement por Membership**:
-- Toda operación sensible valida que el “usuario dev actual” exista.
+- Valida que el “usuario dev actual” exista.
 - Valida que ese usuario tenga **Membership** en la Organization activa.
 - Resultado: separación real por tenant (base de un SaaS).
 
 ### 3.2 Org activa (cookie) vs header
-Tenemos 2 caminos, en orden recomendado:
+Caminos (en orden recomendado):
 
 1) **Cookie (recomendado)**: `POST /api/active-org` setea la org activa (persistida en cookie del navegador / session).
-   - A partir de ahí `GET/POST/PATCH/DELETE /api/recipes` funciona sin mandar headers.
-
 2) **Header (temporal)**: `X-Org-Id` se mantiene como fallback para smoke tests rápidos.
-   - Útil cuando probás con scripts o PowerShell sin sesión.
 
 ### 3.3 Variables de entorno (pitfall detectado)
 - Si aparece error: `Dev user not found: <email>`
   - Revisar `.env` → `DEV_USER_EMAIL=...`
   - Debe coincidir con un `User.email` existente en DB.
-  - Si bootstrap usa `owner@quelonio.local`, lo más seguro es setear:
+  - Si bootstrap usa `owner@quelonio.local`, lo más seguro es:
     - `DEV_USER_EMAIL=owner@quelonio.local`
+
+### 3.4 Política de stock “estricta” (decisión)
+**Regla estricta MVP:** no permitir que **ningún movimiento que reste stock** deje stock negativo.
+- Aplica a:
+  - `OUT` (ventas, consumo, merma)
+  - `ADJUST` negativo (correcciones hacia abajo)
+- Permite:
+  - `IN`
+  - `ADJUST` positivo
+
+Resultado:
+- Evita stock negativo “silencioso”.
+- Obliga a cargar primero el stock real (o un ajuste positivo) antes de vender/consumir.
 
 ---
 
@@ -106,24 +118,38 @@ Base: `http://localhost:3000`
 
 ### Health / debug
 - `GET /api/health`
-- `GET /api/debug/users` (inspección rápida)
+- `GET /api/debug/users`
 
 ### Bootstrap / orgs / memberships
-- `POST /api/bootstrap` (crea Org + User + Membership de forma idempotente por email)
+- `POST /api/bootstrap` (idempotente por email)
 - `GET /api/organizations`
 - `POST /api/organizations`
 - `GET /api/memberships`
 - `GET /api/memberships?orgId=<ORG_ID>`
 
 ### Tenant context
-- `POST /api/active-org` (setea cookie de org activa)
+- `POST /api/active-org` (set cookie org activa)
 
-### Recipes (multi-tenant)
-- `GET /api/recipes`
-- `POST /api/recipes`
-- `GET /api/recipes/[id]`
-- `PATCH /api/recipes/[id]`
-- `DELETE /api/recipes/[id]`
+### Catálogo / inventario
+- `GET /api/items` (incluye `stockQty` agregado)
+- `POST /api/items` (idempotente por (orgId, name))
+- `GET /api/stock-moves`
+- `POST /api/stock-moves` (**strict no negativos**; idempotente por (orgId, clientRef))
+
+### Ventas (modelo contable)
+- `GET /api/invoices`
+- `POST /api/invoices` (idempotente por (orgId, number))
+- `POST /api/payments` (idempotente opcional por (orgId, clientRef); actualiza status invoice según balance)
+
+### Ventas (operación “1-click”)
+- `POST /api/sales`
+  - Transacción: invoice + (payment opcional) + stock-moves OUT por línea
+  - Idempotencia: por (orgId, number) (y clientRefs derivadas)
+  - Strict: si no hay stock suficiente, falla sin crear invoice/pago/moves
+
+### Reportes
+- `GET /api/reports/sales-summary?from=YYYY-MM-DD&to=YYYY-MM-DD`
+- `GET /api/reports/inventory-summary?from=YYYY-MM-DD&to=YYYY-MM-DD`
 
 ---
 
@@ -131,192 +157,154 @@ Base: `http://localhost:3000`
 
 Página: `GET /` (http://localhost:3000)
 
-Incluye:
-- Selector de Organization activa (persistida en `localStorage` con key `quelonio.activeOrgId`)
+Incluye (mínimo para validar APIs):
+- Selector de Organization activa (persistida en `localStorage`)
 - Crear Organization
 - Ejecutar Bootstrap y auto-seleccionar la org creada
-- Sección Recipes:
-  - Crear recipe
-  - Listar recipes por org activa
-  - Editar / Borrar recipes
+- Recipes CRUD (scoping por org activa)
 
-Objetivo: consola mínima para validar APIs sin construir UI final todavía.
+Nota: UI final de ventas/stock todavía no; se opera por API + scripts.
 
 ---
 
 ## 6) Smoke tests útiles (PowerShell)
 
-### 6.1 Nota sobre `Invoke-RestMethod`
-En PowerShell puede que NO exista `-SkipHttpErrorCheck`. En ese caso, usar `try/catch` para ver status y body (patrón estándar):
+### 6.1 Helpers (`scripts/dev.ps1`)
+Este repo usa helpers tipo:
+- `Set-Org`
+- `QGet`, `QPost`, `QDel`
+- `QSmoke`
 
-```powershell
-$s = New-Object Microsoft.PowerShell.Commands.WebRequestSession
-try {
-  Invoke-RestMethod -WebSession $s -Method Post -Uri http://localhost:3000/api/active-org `
-    -ContentType "application/json" `
-    -Body (@{ orgId = "PEGAR_ORG_ID" } | ConvertTo-Json)
-} catch {
-  $_.Exception.Response.StatusCode.value__
-  $r = New-Object IO.StreamReader($_.Exception.Response.GetResponseStream())
-  $r.ReadToEnd()
-}
-```
-
-### 6.2 Cookie path (recomendado)
-```powershell
-# 1) Crear sesión
-$s = New-Object Microsoft.PowerShell.Commands.WebRequestSession
-
-# 2) Setear org activa (cookie)
-$orgId="PEGAR_ORG_ID"
-Invoke-RestMethod -WebSession $s -Method Post -Uri http://localhost:3000/api/active-org `
-  -ContentType "application/json" `
-  -Body (@{ orgId = $orgId } | ConvertTo-Json)
-
-# 3) Listar recipes (sin headers)
-Invoke-RestMethod -WebSession $s -Uri http://localhost:3000/api/recipes
-
-# 4) Crear recipe (sin headers)
-Invoke-RestMethod -WebSession $s -Method Post -Uri http://localhost:3000/api/recipes `
-  -ContentType "application/json" `
-  -Body '{"name":"IPA Cookie","style":"IPA","notes":"ok cookie+membership"}'
-```
-
-### 6.3 Header path (fallback)
-```powershell
-$orgId="PEGAR_ORG_ID"
-
-Invoke-RestMethod -Method Post -Uri http://localhost:3000/api/recipes `
-  -Headers @{ "X-Org-Id" = $orgId } `
-  -ContentType "application/json" `
-  -Body '{"name":"IPA Header","style":"IPA","notes":"header path"}'
-
-Invoke-RestMethod -Uri http://localhost:3000/api/recipes `
-  -Headers @{ "X-Org-Id" = $orgId }
-```
+Regla: si un test requiere cookie/session, usar `Set-Org` primero.
 
 ---
 
-## 7) Mapa de producto (visión simple, sin tecnicismos)
+### 6.2 Stock strict (test rápido)
+1) Consultar inventario:
+```powershell
+$repI = QGet "/api/reports/inventory-summary"
+$repI.items | ? { $_.name -like "*APA*" } | ConvertTo-Json -Depth 10
+Esperado:
+
+Primera llamada: ok=true + invoice + payment + moves
+
+Segunda llamada: idempotentHit=true (sin duplicar side-effects)
+
+Caso stock insuficiente:
+
+Debe devolver 400 con error="Insufficient stock" y detalle itemId/currentStock/attemptedOut/projectedStock
+
+No debe crear invoice nueva (verificar count antes/después)
+
+6.4 Concurrencia (nota práctica PowerShell)
+
+ForEach-Object -Parallel requiere PowerShell 7+.
+
+Start-Job no “hereda” funciones como QPost (a menos que lo incluyas explícitamente o serialices invocaciones).
+
+Conclusión: el test “parallel” desde PS puede dar errores de tooling; para stress real:
+
+usar un script Node (fetch) o herramienta como k6/hey,
+
+o elevar PS a 7 y usar Invoke-RestMethod con manejo explícito de cookies.
+
+7) Regla adicional: encoding UTF-8 (Next)
+
+Se detectó un fallo de compilación:
+
+stream did not contain valid UTF-8 leyendo app/api/.../route.ts
+
+Lección:
+
+Asegurar que los .ts/.tsx queden en UTF-8 (preferible UTF-8 sin BOM).
+
+Si aparece el error: re-escribir el archivo como UTF-8 desde PowerShell o VS Code (Save with Encoding).
+
+8) Mapa de producto (visión simple)
 
 Orden lógico de módulos (uno alimenta al siguiente):
 
-1) **Recetas** (especificación)  ✅ HOY (multi-tenant)
-2) **Lotes** (producción real)  ⏭️ PRÓXIMO
-3) **Inventario** (entradas/salidas por movimientos)
-4) **Empaque** (lote → SKUs → unidades)
-5) **Ventas + Cobros**
-6) **Compras + Pagos**
-7) **Costos + Rentabilidad**
-8) **QA/QC** (controles y desvíos)
-9) **Dashboard** (decisión)
+Recetas (spec) ✅
 
-Dónde entra Excel:
-- **Modelado** (costos, simulaciones, escenarios).
-- **Carga inicial** (import de catálogos/stock).
-- **Export/reportes** (contabilidad, socios, análisis).
-- **Portabilidad** (backup).
+Lotes (producción real) ⏭️
 
----
+Inventario (movimientos) ✅ (MVP strict)
 
-## 8) Próximo objetivo inmediato (Sprint 2)
+Ventas + Cobros ✅ (API: invoices/payments + /api/sales)
 
-**Siguiente vertical slice recomendado:** módulo **Lotes (Batch)**, porque conecta Receta ↔ Producción real.
+Compras + Pagos ⏭️
+
+Costos + Rentabilidad ⏭️
+
+QA/QC ⏭️
+
+Dashboard ⏭️
+
+9) Próximo objetivo inmediato (Sprint 2)
+
+Dashboard UI mínimo + “Venta rápida” desde UI consumiendo:
+
+GET /api/reports/sales-summary
+
+GET /api/reports/inventory-summary
+
+POST /api/sales
 
 Entregables mínimos:
-1) Modelo Prisma `Batch` (organizationId + recipeId + fechas + volumen + notas)
-2) CRUD API `/api/batches` scoping por org activa (mismo patrón que recipes)
-3) UI mínima en Dev Console: listar/crear batches
 
----
+Pantalla “Dashboard” (KPIs + top items/stock)
 
-## 9) Método operativo (micro-pasos)
+Form “Venta rápida” (selección item + qty + price + cobro)
 
-**Regla:** 1 comando / 1 cambio por vez.  
+Validaciones UX: cuando stock insuficiente, mostrar error claro
+
+10) Método operativo (micro-pasos)
+
+Regla: 1 comando / 1 cambio por vez.
 Vos pegás output, yo doy el siguiente paso.
 
-**Cuando hay servidores corriendo:**
-- Abrí **otra terminal** (VS Code: *Terminal → New Terminal*).  
-No hace falta cortar un server para ejecutar comandos en paralelo.
+Cuando hay servidores corriendo:
 
----
+Abrí otra terminal (VS Code: Terminal → New Terminal).
 
-## 10) Prompt de reinicio (para retomar en un chat nuevo)
+No hace falta cortar el server para ejecutar comandos.
 
-Pegá esto tal cual en un chat nuevo cuando quieras retomar:
+11) Prompt de reinicio (para retomar en un chat nuevo)
 
----
-**PROMPT CHECKPOINT — Quelonio SaaS (Web/API)**
+Pegá esto tal cual:
+
+PROMPT CHECKPOINT — Quelonio SaaS (Web/API)
 
 Contexto:
-- Repo app: `C:\Users\flore\Documents\quelonio-saas`
-- Repo docs: `C:\Users\flore\Documents\quelonio-pages`
-- Stack: Next 16.1 + TS + Prisma + PostgreSQL local
-- Multi-tenant operativo: Organizations + Memberships + Recipes
-- Tenant context: cookie `POST /api/active-org` (recomendado) y fallback `X-Org-Id`
-- Regla: micro-pasos (1 paso por vez)
+
+Repo app: C:\Users\flore\Documents\quelonio-saas
+
+Repo docs: C:\Users\flore\Documents\quelonio-pages
+
+Stack: Next 16.1 + TS + Prisma + PostgreSQL local
+
+Multi-tenant: Organizations + Memberships + Active-Org cookie
+
+Inventario: items + stock-moves con política strict no-negativos
+
+Ventas: invoices/payments + endpoint /api/sales (transacción + idempotencia por number)
+
+Regla: micro-pasos (1 paso por vez)
 
 Qué quiero ahora:
-- Implementar **Lotes (Batch)**:
-  1) Schema Prisma `Batch` con `organizationId` + `recipeId` + campos mínimos
-  2) API routes `/api/batches` (GET/POST) y `/api/batches/[id]` (PATCH/DELETE)
-  3) UI mínima en `app/page.tsx` para listar/crear batches
+
+Dashboard UI mínimo + Venta rápida desde UI
+
+Consumir GET /api/reports/sales-summary y GET /api/reports/inventory-summary
+
+Vista dashboard (KPIs + stock)
+
+Form venta rápida llamando POST /api/sales
 
 Restricciones:
-- No avances con 10 pasos juntos.
-- Si un paso requiere Admin, avisar explícitamente.
-- Si hay que tocar archivos, decime exactamente ruta + contenido a pegar.
----
 
----
+No avances con 10 pasos juntos.
 
-## 11) Publicación en la Biblia (quelonio-pages)
+Si un paso requiere Admin, avisar explícitamente.
 
-Desde `C:\Users\flore\Documents\quelonio-pages`:
-1) Copiar este archivo actualizado a su ubicación en docs (si aplica en tu árbol).
-2) `python -m mkdocs build --strict` (opcional pero recomendado)
-3) Commit + push:
-```bash
-git add -A
-git commit -m "docs: update PROYECTO_WEB_API checkpoint (2025-12-23)"
-git push
-```
-## Entrada 2025-12-23 — Quelonio SaaS (API multi-tenant + reportes + idempotencia)
-
-### Qué se logró (backend/API)
-- Multi-tenant operativo:
-  - Active org por cookie (`POST /api/active-org`)
-  - Alternativa por header `X-Org-Id` (estandarizado en scripts dev).
-- Dev tooling por terminal:
-  - `scripts/dev.ps1`: helpers `Set-Org`, `Q`, `QGet/QPost/QDel`, `QSmoke`.
-- Ventas:
-  - Invoices + lines + totals (subtotal/tax/total/paid/balance) y status auto (ISSUED/PAID).
-  - Payments con actualización de status de invoice según balance.
-- Reportes (KPIs):
-  - `GET /api/reports/sales-summary?from=YYYY-MM-DD&to=YYYY-MM-DD`
-  - `GET /api/reports/inventory-summary?from=YYYY-MM-DD&to=YYYY-MM-DD`
-
-### Idempotencia (verificada)
-- Recipes: por (organizationId, name) → mismo name no duplica.
-- Batches: por (organizationId, code) → upsert.
-- Invoices: por (organizationId, number) → mismo number no duplica.
-- StockMoves: `clientRef` + unique DB por (organizationId, clientRef) → mismo clientRef devuelve mismo move.id.
-- Payments: `clientRef` + unique DB por (organizationId, clientRef) → mismo clientRef devuelve mismo payment.id.
-
-### Notas operativas / lecciones
-- Si aparece “Forbidden: user is not a member of this organization”, crear/asegurar Membership OWNER del dev user en esa org.
-- Si VSCode marca en rojo delegates Prisma (ej: `prisma.invoice...`), correr `npx prisma generate` y luego reiniciar TS Server / Reload Window.
-
-### Comandos estándar (terminal) — forma de trabajo
-1) Cargar helpers:
-   - `. .\scripts\dev.ps1`
-2) Setear org activa:
-   - `Set-Org "<orgId>"`
-3) Smoke test rápido:
-   - `QSmoke`
-4) Requests:
-   - `QGet "/api/reports/sales-summary"`
-   - `QGet "/api/reports/inventory-summary"`
-
-### Próximo paso
-- Dashboard UI mínimo consumiendo `sales-summary` + `inventory-summary`.
+Si hay que tocar archivos, decime ruta + contenido exacto.

@@ -847,6 +847,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#entrada-2025-12-26-validacion-uireports-seed-data-idempotencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrada 2025-12-26 — Validación UI+Reports + Seed Data + Idempotencia
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2161,6 +2172,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#entrada-2025-12-26-validacion-uireports-seed-data-idempotencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrada 2025-12-26 — Validación UI+Reports + Seed Data + Idempotencia
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2409,6 +2431,21 @@ Vos pegás output, yo doy el siguiente paso.</p>
 <p>No avances con 10 pasos juntos.</p>
 <p>Si un paso requiere Admin, avisar explícitamente.</p>
 <p>Si hay que tocar archivos, decime ruta + contenido exacto.</p>
+<h2 id="entrada-2025-12-26-validacion-uireports-seed-data-idempotencia">Entrada 2025-12-26 — Validación UI+Reports + Seed Data + Idempotencia<a class="headerlink" href="#entrada-2025-12-26-validacion-uireports-seed-data-idempotencia" title="Permanent link">&para;</a></h2>
+<p><strong>Objetivo</strong>
+- Encender Dashboard con datos reales y validar idempotencia end-to-end.</p>
+<p><strong>Acciones</strong>
+- Se creó org: <code>cmjitsnkd0000ognk0woc5sjc</code>
+- Se creó item <code>APA Test</code> (<code>cmjnhq3ir0000wwnk3bu9qh0t</code>, category=BEER)
+- Stock IN: <code>POST /api/stock-moves</code> (shape correcto: itemId/type/qty) con <code>clientRef=seed-in-001</code>, <code>qty=24</code> (OK)
+- Venta: <code>POST /api/sales</code> con <code>number=INV-SEED-20251226-202219</code> (OK, invoice PAID)
+- Repeat misma venta: <code>POST /api/sales</code> con mismo <code>number</code> devolvió <code>idempotentHit=true</code> (sin duplicar side-effects)</p>
+<p><strong>Resultados</strong>
+- Reporte inventario: itemsCount=1, totalStockMoves=2, stock BEER=23, topConsumed=1 u.
+- Reporte ventas: invoicesCount=1, openInvoicesCount=0.
+- Idempotencia <code>/api/sales</code> confirmada en repetición (idempotentHit=true).</p>
+<p><strong>Próximo paso</strong>
+- Dashboard: refresco automático post-venta + UI “Venta rápida” completa (UX: errores 400 con details, y banner idempotente).</p>
 
 
 

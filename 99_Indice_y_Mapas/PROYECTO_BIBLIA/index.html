@@ -2194,6 +2194,33 @@ Objetivo de la sesión: Consolidar “Docs P0” (datos duros) para habilitar el
 3) Preparar el MVP Asistente v1 en PROYECTO_WEB_API (scope + endpoints + formato respuesta + fallback).</p>
 <h2 id="proximo-paso-recomendado-1">Próximo paso recomendado (1)<a class="headerlink" href="#proximo-paso-recomendado-1" title="Permanent link">&para;</a></h2>
 <p>Arrancar PROYECTO_WEB_API definiendo MVP v1 del asistente: “preguntas sobre cerveza + sobre el sistema”, usando los Docs P0 como fuentes preferidas.</p>
+<h1 id="checkpoint-sesion-de-cierre_2">CHECKPOINT (sesión de cierre)<a class="headerlink" href="#checkpoint-sesion-de-cierre_2" title="Permanent link">&para;</a></h1>
+<p><strong>Fecha:</strong> 2025-12-22<br />
+<strong>Objetivo de la sesión:</strong> Validar integridad de links del sitio generado (sin .md en HTML), confirmar que no hay hrefs rotos y que el build strict pasa.</p>
+<h2 id="estado-tecnico-apb_2">Estado técnico (APB)<a class="headerlink" href="#estado-tecnico-apb_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Preflight (<code>.\preflight.ps1</code>): (NO CORRIDO / OK / NO)  </li>
+<li>Build strict (<code>python -m mkdocs build --strict</code>): OK  </li>
+<li>Deploy (<code>python -m mkdocs gh-deploy --clean</code>): (OK / NO / PENDIENTE)  </li>
+<li>Sitio: https://zumajuano-byte.github.io/quelonio-pages/</li>
+</ul>
+<h2 id="referencias-de-version-para-no-perderse_1">Referencias de versión (para no “perderse”)<a class="headerlink" href="#referencias-de-version-para-no-perderse_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>main</code> (commit): <code>0fda720</code> docs: add MATRIZ_AFIRMACIONES_P0 and link from ASISTENTE_V1</li>
+<li><code>gh-pages</code> (deploy): (completar con <code>git log -1 gh-pages --oneline</code>)</li>
+</ul>
+<h2 id="que-quedo-hecho-resumen-corto_2">Qué quedó hecho (resumen corto)<a class="headerlink" href="#que-quedo-hecho-resumen-corto_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Se confirmó que el HTML final no contiene links <code>.md</code> (MkDocs convierte a rutas/carpeta).</li>
+<li>Se corrigió el método de detección de links rotos: resolver <code>href</code> relativo a la carpeta del HTML, no al root del site.</li>
+<li>Resultado: <code>$broken2u.Count = 0</code> (no hay hrefs rotos locales) y <code>mkdocs build --strict</code> OK.</li>
+</ul>
+<h2 id="pendientes-inmediatos-max-5_1">Pendientes inmediatos (máx 5)<a class="headerlink" href="#pendientes-inmediatos-max-5_1" title="Permanent link">&para;</a></h2>
+<p>1) (Opcional) Correr <code>.\preflight.ps1</code> y registrar OK.
+2) (Opcional) Si falta, ejecutar deploy: <code>python -m mkdocs gh-deploy --clean</code> y registrar hash <code>gh-pages</code>.
+3) Seguir con “siguiente paso”: PROYECTO_WEB_API — definir MVP v1 del Asistente (retrieval desde Biblia + contratos de salida).</p>
+<h2 id="proximo-paso-recomendado-1_1">Próximo paso recomendado (1)<a class="headerlink" href="#proximo-paso-recomendado-1_1" title="Permanent link">&para;</a></h2>
+<p>Arrancar PROYECTO_WEB_API: definir el MVP v1 del Asistente (alcance, endpoints, formatos de respuesta y fallback), usando los Docs P0 + estructura de citación.</p>
 
 
 

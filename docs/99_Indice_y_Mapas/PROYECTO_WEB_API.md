@@ -308,3 +308,23 @@ No avances con 10 pasos juntos.
 Si un paso requiere Admin, avisar explícitamente.
 
 Si hay que tocar archivos, decime ruta + contenido exacto.
+
+## Entrada 2025-12-26 — Validación UI+Reports + Seed Data + Idempotencia
+
+**Objetivo**
+- Encender Dashboard con datos reales y validar idempotencia end-to-end.
+
+**Acciones**
+- Se creó org: `cmjitsnkd0000ognk0woc5sjc`
+- Se creó item `APA Test` (`cmjnhq3ir0000wwnk3bu9qh0t`, category=BEER)
+- Stock IN: `POST /api/stock-moves` (shape correcto: itemId/type/qty) con `clientRef=seed-in-001`, `qty=24` (OK)
+- Venta: `POST /api/sales` con `number=INV-SEED-20251226-202219` (OK, invoice PAID)
+- Repeat misma venta: `POST /api/sales` con mismo `number` devolvió `idempotentHit=true` (sin duplicar side-effects)
+
+**Resultados**
+- Reporte inventario: itemsCount=1, totalStockMoves=2, stock BEER=23, topConsumed=1 u.
+- Reporte ventas: invoicesCount=1, openInvoicesCount=0.
+- Idempotencia `/api/sales` confirmada en repetición (idempotentHit=true).
+
+**Próximo paso**
+- Dashboard: refresco automático post-venta + UI “Venta rápida” completa (UX: errores 400 con details, y banner idempotente).

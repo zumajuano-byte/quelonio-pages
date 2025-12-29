@@ -858,6 +858,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#entrada-2025-12-29-pos-operativo-venta-real-redirect-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrada 2025-12-29 — POS operativo + venta real + redirect a Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -922,6 +933,89 @@
     <span class="md-status md-status--stable"></span>
   
 
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plantillas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Plantillas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PLANTILLAS/SPEC_v1_0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPEC v1.0
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -2183,6 +2277,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#entrada-2025-12-29-pos-operativo-venta-real-redirect-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrada 2025-12-29 — POS operativo + venta real + redirect a Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2204,7 +2309,7 @@
 
 
 <h1 id="proyecto_web_api-quelonio-saas-web-app-api-db">PROYECTO_WEB_API — Quelonio SaaS (Web App + API + DB)<a class="headerlink" href="#proyecto_web_api-quelonio-saas-web-app-api-db" title="Permanent link">&para;</a></h1>
-<p><strong>Última actualización:</strong> 2025-12-23 (AR)<br />
+<p><strong>Última actualización:</strong> 2025-12-29 (AR)
 <strong>Estado:</strong> Sprint 1.5/2 — Vertical slice multi-tenant + Inventario/Ventas (API) operativo<br />
 <strong>Regla de trabajo:</strong> micro-pasos (1 paso por vez). Si un paso requiere admin, se aclara explícitamente.</p>
 <hr />
@@ -2225,6 +2330,7 @@
 <ul>
 <li><strong>Repo Web App:</strong> <code>C:\Users\flore\Documents\quelonio-saas</code></li>
 <li><strong>Repo Biblia / Docs (GitHub Pages):</strong> <code>C:\Users\flore\Documents\quelonio-pages</code></li>
+<li>Plantilla oficial: <a href="../PLANTILLAS/SPEC_v1_0/">SPEC v1.0</a></li>
 </ul>
 <p>Este archivo vive en <strong>quelonio-pages</strong> para que el “asistente” y el “método” queden publicados y versionados.</p>
 <hr />
@@ -2446,6 +2552,14 @@ Vos pegás output, yo doy el siguiente paso.</p>
 - Idempotencia <code>/api/sales</code> confirmada en repetición (idempotentHit=true).</p>
 <p><strong>Próximo paso</strong>
 - Dashboard: refresco automático post-venta + UI “Venta rápida” completa (UX: errores 400 con details, y banner idempotente).</p>
+<h2 id="entrada-2025-12-29-pos-operativo-venta-real-redirect-a-dashboard">Entrada 2025-12-29 — POS operativo + venta real + redirect a Dashboard<a class="headerlink" href="#entrada-2025-12-29-pos-operativo-venta-real-redirect-a-dashboard" title="Permanent link">&para;</a></h2>
+<p>Objetivo
+- Completar el flujo “operación 1-click”: POS → POST /api/sales → impacto en KPIs del Dashboard.</p>
+<p>Acciones
+- Se corrigió el payload del POS para ventas: <code>lines[0].description</code> (requerido por el backend).
+- Se validó venta real desde UI POS (precio unitario editable).
+- Se implementó redirección automática: luego de “Venta OK…”, espera 1s y navega a <code>/dashboard</code>.
+- Resultado visible: POS muestra “Venta OK: INV-POS-...”, redirige al Dashboard y los KPIs reflejan la operación.</p>
 
 
 

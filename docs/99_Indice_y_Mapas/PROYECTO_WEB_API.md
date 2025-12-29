@@ -1,6 +1,6 @@
 # PROYECTO_WEB_API — Quelonio SaaS (Web App + API + DB)
 
-**Última actualización:** 2025-12-23 (AR)  
+**Última actualización:** 2025-12-29 (AR)
 **Estado:** Sprint 1.5/2 — Vertical slice multi-tenant + Inventario/Ventas (API) operativo  
 **Regla de trabajo:** micro-pasos (1 paso por vez). Si un paso requiere admin, se aclara explícitamente.
 
@@ -328,3 +328,15 @@ Si hay que tocar archivos, decime ruta + contenido exacto.
 
 **Próximo paso**
 - Dashboard: refresco automático post-venta + UI “Venta rápida” completa (UX: errores 400 con details, y banner idempotente).
+
+
+## Entrada 2025-12-29 — POS operativo + venta real + redirect a Dashboard
+
+Objetivo
+- Completar el flujo “operación 1-click”: POS → POST /api/sales → impacto en KPIs del Dashboard.
+
+Acciones
+- Se corrigió el payload del POS para ventas: `lines[0].description` (requerido por el backend).
+- Se validó venta real desde UI POS (precio unitario editable).
+- Se implementó redirección automática: luego de “Venta OK…”, espera 1s y navega a `/dashboard`.
+- Resultado visible: POS muestra “Venta OK: INV-POS-...”, redirige al Dashboard y los KPIs reflejan la operación.

@@ -35,7 +35,8 @@ nav:
           - Web + API (MVP): 99_Indice_y_Mapas/PROYECTO_WEB_API.md
           - Latas (Branding): 99_Indice_y_Mapas/PROYECTO_LATAS.md
           - Asistente v1: 99_Indice_y_Mapas/ASISTENTE_V1.md
-
+      - Plantillas:
+          - SPEC v1.0: 99_Indice_y_Mapas/PLANTILLAS/SPEC_v1_0.md
       - Home interno: 99_Indice_y_Mapas/Home.md
       - Mapa general: 99_Indice_y_Mapas/Mapa_General_Quelonio.md
   - Glosario: 00_Glosario.md
@@ -64,7 +65,7 @@ nav:
       - QA/QC: 98_Verdad_Negocio/04_QAQC.md
       - Branding & comms: 98_Verdad_Negocio/05_Branding_Comms.md
   - Soporte bibliográfico: 97_Soporte_Bibliografico/index.md
-  
+
 # Archivos que existen "a propósito" fuera del menú (por diseño).
 # Sigue el patrón .gitignore.
 not_in_nav: |
